@@ -8,34 +8,41 @@ import java.util.List;
 @RequestMapping("/usuario")
 public class ClienteController {
     private List<Cliente> clientes;
-    private List<Cliente> clientesLogados;
+//    private List<FuncionarioOficina> clientesLogados;
 
     public ClienteController(List<Cliente> clientes) {
         this.clientes = clientes;
     }
+
     @GetMapping("/")
     public List<Cliente> getClientes() {
         return clientes;
     }
+
     @GetMapping("/funcionario/{email}/{senha}")
     public String loginFuncionario(@PathVariable String email, @PathVariable String senha) {
-        for (Cliente c: clientes) {
-            if(c.getEmail().equals(email) && c.getSenha().equals(senha)) {
-                clientesLogados.add(c);
-                return "Funcionario "+ c.getNome() + " logado com sucesso!";
+        String msg = "";
+        for (Cliente c : clientes) {
+            if (c.getEmail().equals(email) && c.getSenha().equals(senha)) {
+                msg = "Funcionario " + c.getNome() + " logado com sucesso!";
+            } else {
+                msg = "Funcionario não cadastrado";
             }
         }
-        return "Funcionario não cadastrado";
+        return msg;
     }
+
     @GetMapping("/usuario-oficina/{email}/{senha}")
     public String loginUsuario(@PathVariable String email, @PathVariable String senha) {
-        for (Cliente c: clientes) {
-            if(c.getEmail().equals(email) && c.getSenha().equals(senha)) {
-                clientesLogados.add(c);
-                return "Usuário "+ c.getNome() + " logado com sucesso!";
+        String msg = "";
+        for (Cliente c : clientes) {
+            if (c.getEmail().equals(email) && c.getSenha().equals(senha)) {
+                msg = "Usuário " + c.getNome() + " logado com sucesso!";
+            } else {
+                msg = "Usuário não cadastrado";
             }
         }
-        return "Usuário não cadastrado";
+        return msg;
     }
 
     @PostMapping("/funcionario")
@@ -43,6 +50,7 @@ public class ClienteController {
         clientes.add(funcionario);
         return "Funcionario cadastrado com sucesso";
     }
+
     @PostMapping("/usuario-oficina")
     public String addUsuario(@RequestBody UsuarioOficina usuario) {
         clientes.add(usuario);

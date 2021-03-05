@@ -7,4 +7,8 @@ public class FuncionarioOficina extends Cliente{
         super(id, nome, dataNasc, email, telefone, senha, cpf);
         this.nivelAcesso = nivelAcesso;
     }
+
+    public int getNivelAcesso() {
+        return nivelAcesso;
+    }
 }
