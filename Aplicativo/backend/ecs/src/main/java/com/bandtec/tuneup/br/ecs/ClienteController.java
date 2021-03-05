@@ -8,7 +8,7 @@ import java.util.List;
 @RequestMapping("/usuario")
 public class ClienteController {
     private List<Cliente> clientes;
-//    private List<FuncionarioOficina> clientesLogados;
+    private List<Cliente> clientesLogados;
 
     public ClienteController(List<Cliente> clientes) {
         this.clientes = clientes;
