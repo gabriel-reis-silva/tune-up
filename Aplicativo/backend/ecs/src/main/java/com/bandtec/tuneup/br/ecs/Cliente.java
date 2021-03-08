@@ -1,7 +1,7 @@
 package com.bandtec.tuneup.br.ecs;
 
 public abstract class Cliente {
-    private int id;
+    private Integer id;
     private String nome, dataNasc, email, telefone, senha, cpf;
 
     public Cliente(int id, String nome, String dataNasc, String email, String telefone, String senha, String cpf) {
