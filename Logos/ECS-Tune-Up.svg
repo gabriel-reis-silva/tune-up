@@ -15,7 +15,7 @@
    id="svg8"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="ECS-Tune-Up.svg"
-   inkscape:export-filename="C:\Users\gabri\OneDrive\Documentos\Logos\PNGs\Tune-Up.png"
+   inkscape:export-filename="C:\Users\gabri\OneDrive\Documentos\Logos\PNGs\EMS-Fundo-Colorido.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -296,6 +296,54 @@
        width="51.324135"
        height="21.479202"
        id="rect1207" />
+    <rect
+       x="63.95541"
+       y="150.11395"
+       width="58.068829"
+       height="21.304543"
+       id="rect1588-7-1" />
+    <rect
+       x="63.95541"
+       y="150.11395"
+       width="58.068829"
+       height="21.304543"
+       id="rect147" />
+    <rect
+       x="70.700104"
+       y="149.9393"
+       width="51.324135"
+       height="21.479202"
+       id="rect1594-0-97" />
+    <rect
+       x="70.700104"
+       y="149.9393"
+       width="51.324135"
+       height="21.479202"
+       id="rect150" />
+    <rect
+       x="63.95541"
+       y="150.11395"
+       width="58.068829"
+       height="21.304543"
+       id="rect1588-7-1-0" />
+    <rect
+       x="63.95541"
+       y="150.11395"
+       width="58.068829"
+       height="21.304543"
+       id="rect406" />
+    <rect
+       x="70.700104"
+       y="149.9393"
+       width="51.324135"
+       height="21.479202"
+       id="rect1594-0-97-4" />
+    <rect
+       x="70.700104"
+       y="149.9393"
+       width="51.324135"
+       height="21.479202"
+       id="rect409" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -304,9 +352,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.51498135"
-     inkscape:cx="264.64661"
-     inkscape:cy="568.17307"
+     inkscape:zoom="0.42327715"
+     inkscape:cx="535.32086"
+     inkscape:cy="517.71639"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -328,7 +376,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -346,75 +394,84 @@
            dx="0 5.5448637 5.9892797 5.9892788 5.5345287 4.2322865 7.2708511"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Segoe UI Historic';-inkscape-font-specification:'Segoe UI Historic'">Tune-Up</tspan></tspan></text>
     <g
-       id="g1462"
-       transform="translate(-2.5688604,-48.294629)">
+       id="g290"
+       transform="translate(-0.62508296,-32.504314)">
       <rect
          style="fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.533544;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
          id="rect1309-5"
          width="180.83733"
          height="71.509819"
-         x="14.938656"
-         y="99.660408" />
+         x="18.256674"
+         y="99.125771" />
       <g
-         id="g1532"
-         style="fill:#ffffff;fill-opacity:1"
-         transform="matrix(1.6449223,0,0,1.6449223,-201.40357,-164.4384)">
-        <path
-           id="path2060-1"
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.440621px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           d="m 164.63026,167.29263 -3.56309,2.10891 -0.0191,19.67012 0.89814,-0.50023 c 0.82408,-2.9483 4.13054,0.92261 0.54363,1.02785 l -1.418,1.05006 -0.0517,4.09433 3.17397,1.73271 3.24941,-1.74977 -2.54609,-1.45521 c -3.78853,0.16923 -0.89442,-4.10384 0.60409,-1.15083 l 3.26337,1.71411 3.31918,-1.92702 -0.0362,-6.94479 c -2.65714,-2.98023 3.67906,-3.13132 1.12707,0.0729 v 2.14509 l 2.87217,-1.59938 -0.10903,-7.27191 -3.16312,-2.17351 -2.9285,1.32601 c -1.86588,2.75374 -3.94897,-1.68685 -0.44855,-1.1591 l 2.54041,-1.12034 0.0558,-3.49643 -3.40083,-1.9575 -2.30528,1.50791 c -0.45476,0.27285 -0.44284,0.58435 -0.53072,0.89194 l 0.0558,7.38094 2.41691,1.34514 c 2.9434,-0.32414 0.80065,3.55877 -0.69092,1.34514 l -2.83755,-1.418 c -0.54477,-0.31276 -0.65051,-0.31767 -0.63355,-0.98134 l -0.0558,-7.84138 c -0.78849,-0.70479 -0.0424,-2.08635 1.09089,-1.72134 l 1.92701,-1.27227 z m -0.3421,15.37115 c 0.34324,-7.9e-4 0.7316,0.19438 1.10588,0.70745 l 3.81785,2.29082 v 3.67213 c 1.65292,2.54651 -2.8531,2.63564 -1.38183,0 v -3.09025 l -2.76313,-1.5999 c -2.65184,0.52803 -2.00462,-1.97734 -0.77877,-1.98025 z" />
-        <path
-           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.440622px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           d="m 160.3109,190.89778 0.0291,-1.5776 c -2.35578,0.28513 -5.14482,-1.28953 -6.53819,-2.94711 -3.24732,-3.86317 -1.56452,-11.16149 5.44124,-11.56026 l 0.0706,-6.47309 -1.37962,-0.0824 0.0266,2.47465 -1.43538,0.49776 -1.34808,-2.11859 -3.4401,1.70414 0.83811,2.13793 -1.24161,1.23181 -1.77934,-1.18711 -2.39847,3.19404 1.87865,1.48147 -0.35137,1.80722 -2.54247,-0.12124 -0.0721,4.36301 2.3293,-0.0313 c 0.0583,0.43502 0.24637,0.93729 0.49656,1.4717 l -2.30657,1.63627 2.07016,3.26697 1.79033,-1.32263 1.62185,1.54567 -1.44879,1.98884 3.42177,2.11506 1.66438,-1.90892 1.58315,0.52577 -0.0446,2.43588 1.38325,-0.0266 0.0133,-3.67384 c -1.06335,-0.13456 -2.07199,-0.0858 -3.38426,-1.05879 l -0.77044,1.28393 c -0.71948,0.24655 -1.29321,0.22427 -1.39658,-0.66506 l 0.77892,-1.5383 c -0.91611,-0.68474 -1.81027,-1.40342 -2.42488,-2.55469 l -1.40026,0.53536 c -1.27101,0.33605 -1.50046,-0.59699 -0.54747,-1.03688 l 1.19316,-0.86967 c -0.59746,-1.22044 -1.03746,-2.43562 -1.15177,-3.63994 l -1.416,-0.0834 c -0.48135,-0.38844 -0.95885,-0.77723 0.0801,-1.30697 l 1.60494,-0.12839 c -0.003,-1.20059 0.30449,-2.39084 0.88317,-3.57202 l -0.84906,-0.71955 c -1.06529,-0.86944 -0.40626,-1.7408 0.728,-1.10344 l 0.9242,0.64928 c 1.01548,-1.53789 1.88434,-1.89939 2.77271,-2.4176 l -0.54988,-0.96422 c -0.73309,-1.72028 0.77663,-1.91956 1.26463,-0.83085 l 0.69282,1.04172 1.28881,-0.4663 0.36091,1.17619 c -7.1231,0.9192 -8.12819,9.22439 -4.90258,13.82293 1.91626,2.73192 4.92093,3.73918 7.88906,3.59928 z"
-           id="path2172-0"
-           sodipodi:nodetypes="ccsccccccccccccccccccccccccccccccccccccccccccccccccccscc" />
+         id="g277"
+         inkscape:export-filename="C:\Users\gabri\OneDrive\Documentos\Logos\PNGs\EMS-Blackpng.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"
+         style="fill:#ffffff">
+        <g
+           id="g1532"
+           style="fill:#ffffff;fill-opacity:1"
+           transform="matrix(1.6449128,-0.00559865,0.00559865,1.6449128,-209.00206,-164.95173)">
+          <path
+             id="path2060-1"
+             style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.440621px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 164.63026,167.29263 -3.56309,2.10891 -0.0191,19.67012 0.89814,-0.50023 c 0.82408,-2.9483 4.13054,0.92261 0.54363,1.02785 l -1.418,1.05006 -0.0517,4.09433 3.17397,1.73271 3.24941,-1.74977 -2.54609,-1.45521 c -3.78853,0.16923 -0.89442,-4.10384 0.60409,-1.15083 l 3.26337,1.71411 3.31918,-1.92702 -0.0362,-6.94479 c -2.65714,-2.98023 3.67906,-3.13132 1.12707,0.0729 v 2.14509 l 2.87217,-1.59938 -0.10903,-7.27191 -3.16312,-2.17351 -2.9285,1.32601 c -1.86588,2.75374 -3.94897,-1.68685 -0.44855,-1.1591 l 2.54041,-1.12034 0.0558,-3.49643 -3.40083,-1.9575 -2.30528,1.50791 c -0.45476,0.27285 -0.44284,0.58435 -0.53072,0.89194 l 0.0558,7.38094 2.41691,1.34514 c 2.9434,-0.32414 0.80065,3.55877 -0.69092,1.34514 l -2.83755,-1.418 c -0.54477,-0.31276 -0.65051,-0.31767 -0.63355,-0.98134 l -0.0558,-7.84138 c -0.78849,-0.70479 -0.0424,-2.08635 1.09089,-1.72134 l 1.92701,-1.27227 z m -0.3421,15.37115 c 0.34324,-7.9e-4 0.7316,0.19438 1.10588,0.70745 l 3.81785,2.29082 v 3.67213 c 1.65292,2.54651 -2.8531,2.63564 -1.38183,0 v -3.09025 l -2.76313,-1.5999 c -2.65184,0.52803 -2.00462,-1.97734 -0.77877,-1.98025 z" />
+          <path
+             style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.440622px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 160.3109,190.89778 0.0291,-1.5776 c -2.35578,0.28513 -5.14482,-1.28953 -6.53819,-2.94711 -3.24732,-3.86317 -1.56452,-11.16149 5.44124,-11.56026 l 0.0706,-6.47309 -1.37962,-0.0824 0.0266,2.47465 -1.43538,0.49776 -1.34808,-2.11859 -3.4401,1.70414 0.83811,2.13793 -1.24161,1.23181 -1.77934,-1.18711 -2.39847,3.19404 1.87865,1.48147 -0.35137,1.80722 -2.54247,-0.12124 -0.0721,4.36301 2.3293,-0.0313 c 0.0583,0.43502 0.24637,0.93729 0.49656,1.4717 l -2.30657,1.63627 2.07016,3.26697 1.79033,-1.32263 1.62185,1.54567 -1.44879,1.98884 3.42177,2.11506 1.66438,-1.90892 1.58315,0.52577 -0.0446,2.43588 1.38325,-0.0266 0.0133,-3.67384 c -1.06335,-0.13456 -2.07199,-0.0858 -3.38426,-1.05879 l -0.77044,1.28393 c -0.71948,0.24655 -1.29321,0.22427 -1.39658,-0.66506 l 0.77892,-1.5383 c -0.91611,-0.68474 -1.81027,-1.40342 -2.42488,-2.55469 l -1.40026,0.53536 c -1.27101,0.33605 -1.50046,-0.59699 -0.54747,-1.03688 l 1.19316,-0.86967 c -0.59746,-1.22044 -1.03746,-2.43562 -1.15177,-3.63994 l -1.416,-0.0834 c -0.48135,-0.38844 -0.95885,-0.77723 0.0801,-1.30697 l 1.60494,-0.12839 c -0.003,-1.20059 0.30449,-2.39084 0.88317,-3.57202 l -0.84906,-0.71955 c -1.06529,-0.86944 -0.40626,-1.7408 0.728,-1.10344 l 0.9242,0.64928 c 1.01548,-1.53789 1.88434,-1.89939 2.77271,-2.4176 l -0.54988,-0.96422 c -0.73309,-1.72028 0.77663,-1.91956 1.26463,-0.83085 l 0.69282,1.04172 1.28881,-0.4663 0.36091,1.17619 c -7.1231,0.9192 -8.12819,9.22439 -4.90258,13.82293 1.91626,2.73192 4.92093,3.73918 7.88906,3.59928 z"
+             id="path2172-0"
+             sodipodi:nodetypes="ccsccccccccccccccccccccccccccccccccccccccccccccccccccscc" />
+        </g>
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.677739;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+           id="rect1598"
+           width="1.3458731"
+           height="51.066849"
+           x="86.298515"
+           y="108.58447"
+           transform="rotate(-0.1950121)" />
+        <text
+           xml:space="preserve"
+           id="text1600"
+           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1602);fill:#ffffff;fill-opacity:1;stroke:none;"
+           transform="matrix(1.6449128,-0.00559865,0.00559865,1.6449128,-150.3582,-304.21031)"><tspan
+             x="147.46289"
+             y="267.23874"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Medium';fill:#ffffff">EMS</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:7.54379px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.435218"
+           x="93.731865"
+           y="143.45702"
+           id="text1628"
+           transform="rotate(-0.1950121)"><tspan
+             sodipodi:role="line"
+             id="tspan1626"
+             x="93.731865"
+             y="143.45702"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.54379px;font-family:Poppins;-inkscape-font-specification:Poppins;fill:#ffffff;stroke-width:0.435218">Ease Mechanic System</tspan></text>
       </g>
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.677739;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
-         id="rect1598"
-         width="1.3458731"
-         height="51.066849"
-         x="93.334373"
-         y="109.80819" />
-      <text
-         xml:space="preserve"
-         id="text1600"
-         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1602);fill:#000000;fill-opacity:1;stroke:none;"
-         transform="matrix(1.6449223,0,0,1.6449223,-142.28607,-303.49656)"><tspan
-           x="147.46289"
-           y="267.23874"><tspan
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';fill:#ffffff">ECS</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:7.54379px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.435218"
-         x="100.76772"
-         y="144.68074"
-         id="text1628"><tspan
-           sodipodi:role="line"
-           id="tspan1626"
-           x="100.76772"
-           y="144.68074"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.54379px;font-family:'Sitka Text';-inkscape-font-specification:'Sitka Text Bold';fill:#ffffff;stroke-width:0.435218">Ease Mechanic System</tspan></text>
     </g>
     <g
-       id="g1511"
-       transform="translate(-6.1652718,24.661087)">
+       id="g256"
+       transform="translate(2.5003329,41.880558)">
+      <rect
+         style="fill:#f6c409;fill-opacity:1;stroke:none;stroke-width:0.54609;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect134-7-0-7"
+         width="152.39052"
+         height="59.460339"
+         x="23.636644"
+         y="111.27325" />
       <g
-         id="g1429"
-         transform="matrix(1.3950881,0,0,1.3950881,-39.367058,-93.315147)"
+         id="g238"
          inkscape:export-filename="C:\Users\gabri\OneDrive\Documentos\Logos\PNGs\Tune-Up.png"
          inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96">
-        <rect
-           style="fill:#f6c409;fill-opacity:1;stroke:none;stroke-width:0.391438;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
-           id="rect134-7-0-7"
-           width="109.23361"
-           height="42.621208"
-           x="48.925613"
-           y="151.66217" />
+         inkscape:export-ydpi="96"
+         transform="translate(-5.0006637,-1.8752489)">
         <g
            id="g2109"
-           transform="translate(250.95418,120.07807)">
+           transform="matrix(1.3950881,0,0,1.3950881,309.85988,68.460799)">
           <path
              id="path1045"
              style="fill:url(#linearGradient142);fill-opacity:1;stroke:none;stroke-width:0.601056px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -444,32 +501,32 @@
         </g>
         <text
            xml:space="preserve"
-           id="text1586-1"
-           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0.806979px;white-space:pre;shape-inside:url(#rect1588-7);fill:#000000;fill-opacity:1;stroke:none;"
-           transform="translate(31.060383,18.085526)"><tspan
+           id="text1586-1-4-6"
+           style="font-style:normal;font-weight:normal;font-size:12.1378px;line-height:1.25;font-family:sans-serif;letter-spacing:0.948267px;white-space:pre;shape-inside:url(#rect1588-7-1-0);fill:#000000;fill-opacity:1;stroke:none;"
+           transform="matrix(1.3950881,0,0,1.3950881,1.7995155,-74.729396)"><tspan
              x="63.955078"
-             y="159.47702"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Sitka Small';-inkscape-font-specification:'Sitka Small Bold';fill:#000000;fill-opacity:1">TUNE</tspan></tspan></text>
+             y="160.85239"><tspan
+               style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:12.1378px;font-family:Poppins;-inkscape-font-specification:'Poppins Medium Italic'">TUNE</tspan></tspan></text>
         <text
            xml:space="preserve"
-           id="text1592-3"
-           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1594-0);fill:#000080;fill-opacity:1;stroke:none;"
-           transform="translate(62.160943,18.434016)"><tspan
+           id="text1592-3-0-8"
+           style="font-style:normal;font-weight:normal;font-size:12.1378px;line-height:1.25;font-family:sans-serif;letter-spacing:0.948267px;white-space:pre;shape-inside:url(#rect1594-0-97-4);fill:#000080;fill-opacity:1;stroke:none;"
+           transform="matrix(1.3950881,0,0,1.3950881,46.043694,-74.595526)"><tspan
              x="70.699219"
-             y="159.30319"><tspan
-               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Sitka Small';-inkscape-font-specification:'Sitka Small Bold';fill:#000080;fill-opacity:1">UP</tspan></tspan></text>
+             y="160.67856"><tspan
+               style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:12.1378px;font-family:Poppins;-inkscape-font-specification:'Poppins Medium Italic'">UP</tspan></tspan></text>
         <circle
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0598515;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
-           id="path1794-0"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.101747;stroke-linejoin:round;stroke-opacity:1;paint-order:markers fill stroke"
+           id="path1794-0-6-8"
            sodipodi:type="arc"
-           sodipodi:cx="131.49802"
-           sodipodi:cy="174.28015"
-           sodipodi:rx="0.80276942"
-           sodipodi:ry="0.75508022"
+           sodipodi:cx="142.3472"
+           sodipodi:cy="143.35735"
+           sodipodi:rx="1.3647003"
+           sodipodi:ry="1.2836289"
            sodipodi:start="5.0103865"
            sodipodi:end="5.0086586"
            sodipodi:arc-type="slice"
-           d="m 131.73371,173.55835 a 0.80276942,0.75508022 0 0 1 0.5318,0.94319 0.80276942,0.75508022 0 0 1 -1.00253,0.5006 0.80276942,0.75508022 0 0 1 -0.53266,-0.94275 0.80276942,0.75508022 0 0 1 1.00207,-0.50142 l -0.23437,0.72218 z" />
+           d="m 142.74788,142.13029 a 1.3647003,1.2836289 0 0 1 0.90404,1.60341 1.3647003,1.2836289 0 0 1 -1.70428,0.85103 1.3647003,1.2836289 0 0 1 -0.90551,-1.60268 1.3647003,1.2836289 0 0 1 1.7035,-0.85241 l -0.39843,1.22771 z" />
       </g>
     </g>
   </g>
