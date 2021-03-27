@@ -1,23 +1,29 @@
-package com.bandtec.tuneup.br.ecs;
+package com.bandtec.tuneup.br.ecs.controle;
 
+import com.bandtec.tuneup.br.ecs.dominio.Cliente;
+import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
+import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/clientes")
 public class ClienteController {
-    private List<Cliente> clientes = new ArrayList<Cliente>();
+    private List<Cliente> clientes;
     private List<Cliente> clientesLogados = new ArrayList<Cliente>();
 
     public ClienteController(List<Cliente> clientes) {
-        this.clientes = clientes;
+        this.clientes = new ArrayList<Cliente>();
     }
+
     @GetMapping("/")
     public List<Cliente> getClientes() {
         return clientes;
     }
+
+    /* LOGIN */
     @GetMapping("/funcionario/{email}/{senha}")
     public String loginFuncionario(@PathVariable String email, @PathVariable String senha) {
         for (Cliente c: clientes) {
@@ -39,16 +45,7 @@ public class ClienteController {
         return "Usuário não cadastrado";
     }
 
-    @PostMapping("/funcionario")
-    public String addFuncionario(@RequestBody FuncionarioOficina funcionario) {
-        clientes.add(funcionario);
-        return "Funcionario cadastrado com sucesso";
-    }
-    @PostMapping("/usuario-oficina")
-    public String addUsuario(@RequestBody UsuarioOficina usuario) {
-        clientes.add(usuario);
-        return "Usuário cadastrado com sucesso";
-    }
+
     @GetMapping("/logados")
     public List<Cliente> getLogados(){
         return clientesLogados;
