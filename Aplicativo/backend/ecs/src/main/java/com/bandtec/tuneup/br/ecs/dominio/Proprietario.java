@@ -15,4 +15,8 @@ public class Proprietario extends Cliente {
     public int getNivelAcesso() {
         return nivelAcesso;
     }
+
+    public void setNivelAcesso(int nivelAcesso) {
+        this.nivelAcesso = nivelAcesso;
+    }
 }

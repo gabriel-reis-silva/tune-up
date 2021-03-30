@@ -28,9 +28,20 @@ public class UsuarioOficinaController {
     @GetMapping
     public ResponseEntity getUsuarios() {
         List<UsuarioOficina> usuarios = repository.findAll();
-        if(usuarios.isEmpty()) {
+        if (usuarios.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
         return ResponseEntity.status(200).body(usuarios);
+    }
+
+    @GetMapping("/login/{email}/{senha}")
+    public ResponseEntity loginUsuario(@PathVariable String email, @PathVariable String senha) {
+        UsuarioOficina usuarioEmail = repository.findByEmail(email);
+        UsuarioOficina usuarioSenha = repository.findBySenha(senha);
+        if (usuarioEmail == null || usuarioSenha == null) {
+            return ResponseEntity.status(204).build();
+        } else {
+            return ResponseEntity.status(200).body("Usuário logado com sucesso! Bem vindo," + usuarioEmail.getNome());
+        }
     }
 }
