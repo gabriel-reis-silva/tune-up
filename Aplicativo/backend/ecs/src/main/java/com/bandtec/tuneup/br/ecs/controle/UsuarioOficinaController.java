@@ -1,6 +1,5 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
-import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
 import com.bandtec.tuneup.br.ecs.repositorio.UsuarioOficinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class UsuarioOficinaController {
         UsuarioOficina usuarioEmail = repository.findByEmail(email);
         UsuarioOficina usuarioSenha = repository.findBySenha(senha);
         if (usuarioEmail == null || usuarioSenha == null) {
-            return ResponseEntity.status(204).build();
+            return ResponseEntity.status(401).build();
         } else {
             return ResponseEntity.status(200).body("Usuário logado com sucesso! Bem vindo," + usuarioEmail.getNome());
         }
