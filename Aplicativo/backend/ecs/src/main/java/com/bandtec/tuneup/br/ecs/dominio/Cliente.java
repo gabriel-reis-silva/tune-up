@@ -39,6 +39,8 @@ public abstract class Cliente {
     @Column(length = 11, name = "cpf_cliente")
     private String cpf;
 
+    private Boolean logado = false;
+
     public Integer getId() {
         return id;
     }
@@ -93,5 +95,13 @@ public abstract class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Boolean getLogado() {
+        return logado;
+    }
+
+    public void setLogado(Boolean logado) {
+        this.logado = logado;
     }
 }

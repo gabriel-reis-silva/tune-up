@@ -40,6 +40,7 @@ public class ProprietarioController {
         if (proprietarioEmail == null || proprietarioSenha == null) {
             return ResponseEntity.status(401).build();
         } else {
+            proprietarioEmail.setLogado(true);
             return ResponseEntity.status(200).body("Proprietário logado com sucesso! Bem vindo," + proprietarioEmail.getNome());
         }
     }
