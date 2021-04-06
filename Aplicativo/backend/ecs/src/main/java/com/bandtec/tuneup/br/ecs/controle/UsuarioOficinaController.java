@@ -49,7 +49,6 @@ public class UsuarioOficinaController {
     @GetMapping("/logados")
     public ResponseEntity getLogados() {
         logados = repository.findAllByLogado(true);
-        System.out.println("logados:" + logados);
         if (logados.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {
