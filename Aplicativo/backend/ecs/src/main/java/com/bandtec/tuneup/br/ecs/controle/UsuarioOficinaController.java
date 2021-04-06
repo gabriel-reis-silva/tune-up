@@ -7,19 +7,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioOficinaController {
-    private List<UsuarioOficina> clientesLogados = new ArrayList<UsuarioOficina>();
 
     @Autowired
     public UsuarioOficinaRepository repository;
 
-    UsuarioOficina usera = new UsuarioOficina();
+    List<UsuarioOficina> usuarios;
+    List<UsuarioOficina> logados;
 
     @PostMapping
     public ResponseEntity postUsuario(@RequestBody @Valid UsuarioOficina novoUsuario) {
@@ -29,7 +27,7 @@ public class UsuarioOficinaController {
 
     @GetMapping
     public ResponseEntity getUsuarios() {
-        List<UsuarioOficina> usuarios = repository.findAll();
+        usuarios = repository.findAll();
         if (usuarios.isEmpty()) {
             return ResponseEntity.status(204).build();
         }
@@ -38,47 +36,36 @@ public class UsuarioOficinaController {
 
     @GetMapping("/login/{email}/{senha}")
     public ResponseEntity loginUsuario(@PathVariable String email, @PathVariable String senha) {
-        UsuarioOficina usuarioEmail = repository.findByEmail(email);
-        UsuarioOficina usuarioSenha = repository.findBySenha(senha);
-         usera = usuarioEmail;
-        usera.setLogado(true);
-        System.out.println("o usuario " + repository.findByEmail(email).getNome()+" está lodago?" + repository.findByEmail(email).getLogado());
-        if (usuarioEmail == null || usuarioSenha == null) {
+        UsuarioOficina usuarioLogin = repository.findByEmailAndSenha(email, senha);
+        if (usuarioLogin == null) {
             return ResponseEntity.status(401).build();
         } else {
-            repository.findByEmail(email).setLogado(true);
-            usuarioEmail.setLogado(true);
-            return ResponseEntity.status(200).body("Usuário logado com sucesso! Bem vindo," + usuarioEmail.getNome());
+            usuarioLogin.setLogado(true);
+            repository.save(usuarioLogin);
+            return ResponseEntity.status(200).build();
         }
     }
 
     @GetMapping("/logados")
     public ResponseEntity getLogados() {
-        List<UsuarioOficina> usuario = repository.findAll();
-        UsuarioOficina sa = new UsuarioOficina();
-//        for (int i = 0; i >= usuario.size(); i++) {
-//            System.out.println("\nlogado: " + usuario.get(i).getLogado());
-//            if (u.getLogado()) {
-//                sa = u;
-//                return ResponseEntity.status(200).body(u);
-//            } else if (!u.getLogado()) {
-////                return ResponseEntity.status(204).body("Não há usuários logados");
-//                return ResponseEntity.status(200).body(u);
-//            }
-//        }
-        return ResponseEntity.status(200).body(usera.getLogado());
-    }
-
-    @GetMapping("/logout/{id}")
-    public ResponseEntity logoutUsuario(@PathVariable Integer id) {
-        UsuarioOficina user = repository.getOne(id);
-        if (user == null) {
-            return ResponseEntity.status(404).body("Usuário não cadastrado");
-        } else if (user.getLogado()) {
-            user.setLogado(false);
-            return ResponseEntity.status(200).body("Usuário " + user.getNome() + " deslogado!");
+        logados = repository.findAllByLogado(true);
+        System.out.println("logados:" + logados);
+        if (logados.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        } else {
+            return ResponseEntity.status(200).body(logados);
         }
-        return ResponseEntity.status(404).body("O usuário não estava logado");
     }
 
+    @GetMapping("/logout/{email}/{senha}")
+    public ResponseEntity logoutUsuario(@PathVariable String email, @PathVariable String senha) {
+        UsuarioOficina usuarioLogout = repository.findByEmailAndSenha(email, senha);
+        if (usuarioLogout == null) {
+            return ResponseEntity.status(401).build();
+        } else {
+            usuarioLogout.setLogado(false);
+            repository.save(usuarioLogout);
+            return ResponseEntity.status(200).build();
+        }
+    }
 }

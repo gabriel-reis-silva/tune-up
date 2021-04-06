@@ -24,6 +24,7 @@ public abstract class Cliente {
 
     @Email
     @NotBlank
+    @Column(unique = true)
     private String email;
 
     @NotNull
