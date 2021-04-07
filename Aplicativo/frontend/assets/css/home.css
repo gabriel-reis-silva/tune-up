@@ -5,6 +5,7 @@
     --cor-secundaria: #0942B4;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +14,11 @@
 
     font-weight: 600;
     font-family: "Poppins", sans-serif;
-    
+
     outline: none;
 }
+
+
 /* NAVIGATION */
 .navigation {
     background: #FFC000;
@@ -23,6 +26,7 @@
     height: 18vh;
     width: 100%;
 }
+
 .topbar_navigation {
     height: 40%;
     padding: 5px 30px 5px 0px;
@@ -33,21 +37,24 @@
 
     border-bottom: 3px solid #000;
 }
+
 .btn_login {
     cursor: pointer;
     margin-right: 30px;
     padding: 5px;
     transition-duration: .5s;
 }
+
 .btn_login:hover {
     padding: 0px;
     border-bottom: 1px solid;
 }
+
 .topbar_navigation i {
     font-size: 40px;
 }
 
-.bottombar_navigation{
+.bottombar_navigation {
     display: flex;
     align-items: center;
 
@@ -66,6 +73,7 @@
     display: flex;
     justify-content: space-around;
 }
+
 .link_navigation {
     border: none;
     background-color: transparent;
@@ -81,20 +89,20 @@
     transform: scale(1.1) translateX(-3px) translateY(-3px);
 }
 
-/* BODY */
 
+/* BODY */
 .container {
     height: min-content;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-/* BANNER */
 
+/* BANNER */
 .div_banner {
     width: 100%;
     height: 82vh;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +114,7 @@
 
     filter: brightness(40%);
 
-    background-image: url("./images/banner_home.png");
+    background-image: url("../img/banner_home.png");
 }
 
 .title_banner {
@@ -117,14 +125,14 @@
     font-weight: bold;
 
     position: absolute;
-    
+
     animation-name: anm_title_banner;
     animation-duration: 2s;
 }
 
-/* ABOUT US */
 
-.container_aboutus{
+/* ABOUT US */
+.container_aboutus {
     height: 60vh;
     width: 100%;
 
@@ -133,17 +141,19 @@
     align-items: center;
     justify-content: center;
 }
+
 .aboutus {
-    height:50%;
+    height: 50%;
     width: 40%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.title_aboutus{
+
+.title_aboutus {
     margin-bottom: 30px;
-    
+
     text-transform: uppercase;
     font-weight: 900;
 }
@@ -159,8 +169,9 @@
     align-self: center;
 }
 
+
 /* MSV */
-.container_msv{
+.container_msv {
     height: 50vh;
 }
 
@@ -169,6 +180,7 @@
         filter: opacity(0%);
         transform: translateY(10px);
     }
+
     100% {
         filter: opacity(100%);
         transform: translateY(0px);

@@ -70,8 +70,8 @@
 }
 
 .container .first-page button.search:hover {
-    background-color: #0942B4;
-    color: white;
+    background-color: #fdd73c;
+    color: black;
 }
 
 .container .first-page button.modern {
