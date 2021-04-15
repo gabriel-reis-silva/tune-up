@@ -50,7 +50,7 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.container .first-page button {
+.container .first-page a button {
     border: none;
     border-radius: 8px;
 
@@ -62,6 +62,8 @@
     font-size: 20px;
 
     transition-duration: 0.5s;
+
+    cursor: pointer;
 }
 
 .container .first-page button.search {
