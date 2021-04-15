@@ -1,17 +1,140 @@
 package com.bandtec.tuneup.br.ecs.controle;
-
+import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
+import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
 import com.bandtec.tuneup.br.ecs.repositorio.UsuarioOficinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.MalformedURLException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.validation.Valid;
-import java.util.List;
+import java.io.*;
+import java.util.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioOficinaController {
+
+    private ListaObj<UsuarioOficina> usuarioCadastrado = new ListaObj<UsuarioOficina>(10);
+    FileReader teste = null;
+
+    public static void gravaLista(ListaObj<UsuarioOficina> lista, boolean isCSV, String nomeArquivo) {
+
+        FileWriter arq = null;
+        Formatter saida = null;
+        boolean deuErro = false;
+
+
+        if (isCSV) {
+            nomeArquivo += ".csv";
+        } else {
+            nomeArquivo += ".txt";
+        }
+
+        try {
+            arq = new FileWriter(nomeArquivo, true);
+            saida = new Formatter(arq);
+        } catch (IOException erro) {
+            System.err.println("Erro ao abrir arquivo");
+            System.exit(1);
+        }
+
+        try {
+            for (int i = 0; i < lista.getTamanho(); i++) {
+                UsuarioOficina u = lista.getElemento(i);
+
+                if (isCSV) {
+                    saida.format("%d;%s;%s;%s;%s;%s;%s",
+                            u.getId(), u.getNome(), u.getDataNasc(),
+                            u.getEmail(), u.getTelefone(),
+                            u.getCpf());
+                } else {
+                    saida.format("%d;%s;%s;%s;%s;%s;%s",
+                            u.getId(), u.getNome(), u.getDataNasc(),
+                            u.getEmail(), u.getTelefone(),
+                            u.getCpf());
+                }
+            }
+        } catch (FormatterClosedException erro) {
+            System.err.println("Erro ao gravar no arquivo");
+            deuErro = true;
+        } finally {
+            saida.close();
+            try {
+                arq.close();
+            } catch (IOException erro) {
+                System.err.println("Erro ao fechar arquivo.");
+                deuErro = true;
+            }
+            if (deuErro) {
+                System.exit(1);
+            }
+        }
+    }
+    public static void gravaRegistro (String nomeArq, String registro) {
+        BufferedWriter saida = null;
+        try {
+            // o argumento true é para indicar que o arquivo não será sobrescrito e sim
+            // gravado com append (no final do arquivo)
+            saida = new BufferedWriter(new FileWriter(nomeArq, true));
+        } catch (IOException e) {
+            System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+        }
+
+        try {
+            saida.append(registro + "\n");
+            saida.close();
+
+        } catch (IOException e) {
+            System.err.printf("Erro ao gravar arquivo: %s.\n", e.getMessage());
+        }
+    }
+    public void geraNotas(){
+        String nomeArq = "usuario.csv";
+        String header = "";
+        String corpo = "";
+        String trailer = "";
+        int contRegDados = 0;
+
+
+        Date dataDeHoje = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+
+        header += "00USUARIO2021";
+        header += formatter.format(dataDeHoje);
+        header += "01";
+        List<UsuarioOficina> u = repository.findAll();
+        gravaRegistro(nomeArq, header);
+
+        corpo += "02";
+        corpo += String.format("%-2s",u.get(1).getId());
+        corpo += String.format("%-50s",u.get(1).getNome());
+        corpo += String.format("%-8s",u.get(1).getDataNasc());
+        corpo += String.format("%-50s",u.get(1).getEmail());
+        corpo += String.format("%-14s",u.get(1).getTelefone());
+        corpo += String.format("%-15",u.get(1).getCpf());
+
+        contRegDados++;
+        gravaRegistro(nomeArq,corpo);
+
+        // monta o trailer
+        trailer += "01";
+        trailer += String.format("%010d", contRegDados);
+        gravaRegistro(nomeArq,trailer);
+    }
 
     @Autowired
     public UsuarioOficinaRepository repository;
@@ -22,6 +145,7 @@ public class UsuarioOficinaController {
     @PostMapping
     public ResponseEntity postUsuario(@RequestBody @Valid UsuarioOficina novoUsuario) {
         repository.save(novoUsuario);
+        usuarioCadastrado.adiciona(novoUsuario);
         return ResponseEntity.status(201).build();
     }
 
@@ -30,6 +154,11 @@ public class UsuarioOficinaController {
         usuarios = repository.findAll();
         if (usuarios.isEmpty()) {
             return ResponseEntity.status(204).build();
+        }
+        if (usuarioCadastrado.getTamanho() == 0) {
+            System.out.println("\nLista vazia");
+        } else {
+            usuarioCadastrado.exibe();
         }
         return ResponseEntity.status(200).body(usuarios);
     }
@@ -67,4 +196,51 @@ public class UsuarioOficinaController {
             return ResponseEntity.status(200).build();
         }
     }
-}
+
+    @DeleteMapping("/delete/{email}/{senha}")
+    public ResponseEntity deleteUsuario(@PathVariable String email, @PathVariable String senha) {
+        UsuarioOficina usuarioDelete = repository.findByEmailAndSenha(email, senha);
+        if (usuarioDelete == null) {
+            return ResponseEntity.status(401).build();
+        } else {
+            usuarioDelete.setLogado(false);
+            repository.delete(usuarioDelete);
+            for (int i = 0; i >= usuarioCadastrado.getTamanho(); i++) {
+                if (usuarioCadastrado.getElemento(i) == usuarioDelete) {
+                    usuarioCadastrado.removePeloIndice(i);
+                    usuarioCadastrado.exibe();
+                } else {
+                    System.out.println("Usuário não encontrado :( ");
+                }
+            }
+            return ResponseEntity.status(200).build();
+        }
+    }
+
+    //   @GetMapping(value = "/arquivo-loko", produces = "application/vnd.ms-excel")
+//    @ResponseBody
+//    public ResponseEntity getLoko() {
+//        return ResponseEntity.status(200).body("Só que não!");
+//        //return ResponseEntity.ok("Só que não!");
+    //}
+
+    @GetMapping("/gera-csv")
+    @ResponseBody
+        public ResponseEntity geraCsv() {
+            String fileBasePath = "C:\\BANDTEC\\pi-3adsb-2021-1-grupo-8\\Aplicativo\\backend\\ecs\\";
+            Path path = Paths.get(fileBasePath + "usuario.csv");
+            Resource resource = null;
+            try {
+                resource = new UrlResource(path.toUri());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                    .body(resource);
+        }
+
+
+    }
+
