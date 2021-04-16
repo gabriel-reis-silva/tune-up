@@ -223,7 +223,7 @@ public class UsuarioOficinaController {
         }
     }
 
-    @GetMapping("/gera-csv")
+    @GetMapping("/download")
     @ResponseBody
     public ResponseEntity geraCsv() {
         gravaLista(usuarioCadastrado, true, "usuario");
