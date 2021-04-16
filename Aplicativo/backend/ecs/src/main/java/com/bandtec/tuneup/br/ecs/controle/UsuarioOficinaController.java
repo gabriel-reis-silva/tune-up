@@ -1,4 +1,5 @@
 package com.bandtec.tuneup.br.ecs.controle;
+
 import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
@@ -57,12 +58,12 @@ public class UsuarioOficinaController {
                 UsuarioOficina u = lista.getElemento(i);
 
                 if (isCSV) {
-                    saida.format("%d;%s;%s;%s;%s;%s;%s",
+                    saida.format("%d;%s;%s;%s;%s;%s;",
                             u.getId(), u.getNome(), u.getDataNasc(),
                             u.getEmail(), u.getTelefone(),
                             u.getCpf());
                 } else {
-                    saida.format("%d;%s;%s;%s;%s;%s;%s",
+                    saida.format("%d;%s;%s;%s;%s;%s;",
                             u.getId(), u.getNome(), u.getDataNasc(),
                             u.getEmail(), u.getTelefone(),
                             u.getCpf());
@@ -84,7 +85,8 @@ public class UsuarioOficinaController {
             }
         }
     }
-    public static void gravaRegistro (String nomeArq, String registro) {
+
+    public static void gravaRegistro(String nomeArq, String registro) {
         BufferedWriter saida = null;
         try {
             // o argumento true é para indicar que o arquivo não será sobrescrito e sim
@@ -102,38 +104,42 @@ public class UsuarioOficinaController {
             System.err.printf("Erro ao gravar arquivo: %s.\n", e.getMessage());
         }
     }
-    public void geraNotas(){
-        String nomeArq = "usuario.csv";
+
+    public void geraRegistro(ListaObj<UsuarioOficina> lista) {
+        String nomeArq = "usuario.txt";
         String header = "";
         String corpo = "";
         String trailer = "";
         int contRegDados = 0;
 
-
         Date dataDeHoje = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        if(lista.getTamanho() > 0){
+            for (int i = 0; i < lista.getTamanho() ; i++) {
+                header += "00USUARIO2021";
+                header += formatter.format(dataDeHoje);
+                header += "01";
+                gravaRegistro(nomeArq, header);
 
-        header += "00USUARIO2021";
-        header += formatter.format(dataDeHoje);
-        header += "01";
-        List<UsuarioOficina> u = repository.findAll();
-        gravaRegistro(nomeArq, header);
+                corpo += "02";
+                corpo += String.format("%-2s", lista.getElemento(i).getId());
+                corpo += String.format("%-30s", lista.getElemento(i).getNome());
+                corpo += String.format("%-8s", lista.getElemento(i).getDataNasc());
+                corpo += String.format("%-20s", lista.getElemento(i).getEmail());
+                corpo += String.format("%-9s", lista.getElemento(i).getTelefone());
+                corpo += String.format("%-15s", lista.getElemento(i).getCpf());
 
-        corpo += "02";
-        corpo += String.format("%-2s",u.get(1).getId());
-        corpo += String.format("%-50s",u.get(1).getNome());
-        corpo += String.format("%-8s",u.get(1).getDataNasc());
-        corpo += String.format("%-50s",u.get(1).getEmail());
-        corpo += String.format("%-14s",u.get(1).getTelefone());
-        corpo += String.format("%-15",u.get(1).getCpf());
+                contRegDados++;
+                gravaRegistro(nomeArq, corpo);
 
-        contRegDados++;
-        gravaRegistro(nomeArq,corpo);
-
-        // monta o trailer
-        trailer += "01";
-        trailer += String.format("%010d", contRegDados);
-        gravaRegistro(nomeArq,trailer);
+                // monta o trailer
+                trailer += "01";
+                trailer += String.format("%010d", contRegDados);
+                gravaRegistro(nomeArq, trailer);
+            }
+        }else{
+            System.out.println("Lista vazia");
+        }
     }
 
     @Autowired
@@ -217,30 +223,24 @@ public class UsuarioOficinaController {
         }
     }
 
-    //   @GetMapping(value = "/arquivo-loko", produces = "application/vnd.ms-excel")
-//    @ResponseBody
-//    public ResponseEntity getLoko() {
-//        return ResponseEntity.status(200).body("Só que não!");
-//        //return ResponseEntity.ok("Só que não!");
-    //}
-
     @GetMapping("/gera-csv")
     @ResponseBody
-        public ResponseEntity geraCsv() {
-            String fileBasePath = "C:\\BANDTEC\\pi-3adsb-2021-1-grupo-8\\Aplicativo\\backend\\ecs\\";
-            Path path = Paths.get(fileBasePath + "usuario.csv");
-            Resource resource = null;
-            try {
-                resource = new UrlResource(path.toUri());
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            return ResponseEntity.ok()
-                    .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                    .body(resource);
+    public ResponseEntity geraCsv() {
+        gravaLista(usuarioCadastrado, true, "usuario");
+        Path path = Paths.get("usuario.csv");
+        Resource resource = null;
+        geraRegistro(usuarioCadastrado);
+        try {
+            resource = new UrlResource(path.toUri());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-
-
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
+
+
+}
 
