@@ -1,5 +1,6 @@
-package com.bandtec.tuneup.br.ec.controle;
+package com.bandtec.tuneup.br.ecs.controle;
 
+import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
 import com.bandtec.tuneup.br.ecs.repositorio.ProprietarioRepository;
@@ -14,13 +15,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/proprietarios")
 public class ProprietarioController {
-    private List<Proprietario> clientesLogados = new ArrayList<Proprietario>();
 
     @Autowired
     public ProprietarioRepository repository;
 
-    List<Proprietario> proprietarios;
-    List<Proprietario> logados;
+   List<Proprietario> proprietarios;
+   List<Proprietario> logados;
 
     @PostMapping
     public ResponseEntity postUsuario(@RequestBody @Valid Proprietario novoProprietario) {
