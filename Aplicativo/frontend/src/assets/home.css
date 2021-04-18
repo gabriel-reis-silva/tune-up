@@ -1,0 +1,255 @@
+
+:root {
+    --cor-primaria: #FFC000;
+    --cor-secundaria: #0942B4;
+}
+h1 {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    
+    outline: none;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* NAVIGATION */
+.navigation {
+    background: #FFC000;
+
+    height: 18vh;
+    width: 100%;
+}
+.topbar_navigation {
+    height: 40%;
+    padding: 5px 30px 5px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    border-bottom: 3px solid #000;
+}
+.btn_login {
+    cursor: pointer;
+    margin-right: 30px;
+    padding: 5px;
+    transition-duration: .5s;
+}
+.btn_login:hover {
+    padding: 0px;
+    border-bottom: 1px solid;
+}
+.topbar_navigation i {
+    font-size: 40px;
+}
+
+.bottombar_navigation{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-around;
+
+    height: 60%;
+}
+
+.logo_navigation {
+    height: 80%;
+}
+
+.links_navigation {
+    margin-left: 30%;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.link_navigation {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition-duration: 0.5s;
+}
+
+.link_navigation:hover {
+    text-decoration: underline;
+
+    transform: scale(1.1) translateX(-3px) translateY(-3px);
+}
+
+/* BODY */
+
+.container {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* BANNER */
+
+.div_banner {
+    width: 100%;
+    height: 82vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+
+    filter: brightness(40%);
+
+    background-image: url("./images/banner_home.png");
+}
+
+.title_banner {
+    color: #FFF;
+
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    position: absolute;
+    
+    animation-name: anm_title_banner;
+    animation-duration: 2s;
+}
+
+/* ABOUT US */
+
+.container_aboutus{
+    height: 50vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aboutus {
+    height:70%;
+    width: 50%;
+
+    text-align: justify;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title_aboutus{
+    margin-bottom: 30px;
+    
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.paragraph_aboutus {
+    font-size: 25px;
+}
+
+.division_aboutus_msv {
+    width: 50%;
+    height: 2px;
+
+    border: none;
+
+    background-color: #000;
+
+    align-self: center;
+}
+
+/* MSV */
+.container_msv{
+    margin: 80px 0px;
+
+    height: 50vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.container_msv .card {
+    height: 100%;
+    width: 20%;
+    
+    background-color: var(--cor-primaria);
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container_msv .card p{ 
+    width: 80%;
+}
+
+/* ECS */
+
+.container_ecs {
+    height: 100vh;
+
+    background-color: var(--cor-secundaria);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card_ecs {
+    width: 30%;
+    height: 80%;
+
+    background-color: #FFF;
+
+    box-shadow: 10px 10px 20px black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card_ecs p {
+    width: 80%;
+}
+.card_ecs .btn_ecs {
+    font-size: 18px;
+    
+    transition-duration: 0.5s;
+}
+
+.card_ecs .btn_ecs:hover {
+    transform: scale(1.09);
+}
+
+.card_ecs .btn_ecs:active {
+    transform: scale(1.01);
+}
+
+@keyframes anm_title_banner {
+    0% {
+        filter: opacity(0%);
+        transform: translateY(10px);
+    }
+    100% {
+        filter: opacity(100%);
+        transform: translateY(0px);
+    }
+}
