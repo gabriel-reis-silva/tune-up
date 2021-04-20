@@ -30,16 +30,7 @@ a:hover {
     color: #08558B;
 }
 
-#login-container .img-back {
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.img-back img {
-    width: 90%;
-}
-
-#login-container {
+#owner-register-container {
     background-color: #FFF;
 
     width: 400px;
@@ -53,6 +44,21 @@ a:hover {
     border-radius: 10px;
 
     text-align: center;
+}
+
+#owner-register-container .img-back {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-back img {
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 form {
@@ -82,37 +88,4 @@ input {
     margin-bottom: 20px;
 
     font-size: 1rem;
-}
-
-#forgot-pass {
-    text-align: left;
-    display: block;
-}
-
-button {
-    text-align: center;
-    text-transform: uppercase;
-
-    border: none;
-    border-radius: 10px;
-
-    height: 40px;
-    width: 47%;
-
-    cursor: pointer;
-}
-
-.login-button {
-    background-color: var(--cor-primaria);
-    color: black;
-}
-
-.register-button {
-    background-color: var(--cor-secundaria);
-    color: rgb(255, 255, 255);
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
 }
