@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/proprietarios")
@@ -19,8 +20,8 @@ public class ProprietarioController {
     @Autowired
     public ProprietarioRepository repository;
 
-   List<Proprietario> proprietarios;
-   List<Proprietario> logados;
+    List<Proprietario> proprietarios;
+    List<Proprietario> logados;
 
     @PostMapping
     public ResponseEntity postUsuario(@RequestBody @Valid Proprietario novoProprietario) {
@@ -68,6 +69,19 @@ public class ProprietarioController {
             proprietarioLogout.setLogado(false);
             repository.save(proprietarioLogout);
             return ResponseEntity.status(200).build();
+        }
+    }
+
+    @PutMapping("/alterarsenha/{id}/{senha}")
+    public ResponseEntity putPasswordProprietario(@PathVariable int id, @PathVariable String senha) {
+        Optional<Proprietario> proprietario = repository.findById(id);
+        if (proprietario.isPresent()) {
+            Proprietario proprietario1 = proprietario.get();
+            proprietario1.setSenha(senha);
+            repository.save(proprietario1);
+            return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(404).build();
         }
     }
 }
