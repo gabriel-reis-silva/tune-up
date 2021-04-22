@@ -1,8 +1,10 @@
 package com.bandtec.tuneup.br.ecs.dominio;
 
 
-import javax.persistence.Entity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+import javax.persistence.Entity;
+@CrossOrigin
 @Entity
 public class UsuarioOficina extends Cliente {
 

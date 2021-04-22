@@ -19,8 +19,8 @@ public class ProprietarioController {
     @Autowired
     public ProprietarioRepository repository;
 
-   List<Proprietario> proprietarios;
-   List<Proprietario> logados;
+    List<Proprietario> proprietarios;
+    List<Proprietario> logados;
 
     @PostMapping
     public ResponseEntity postUsuario(@RequestBody @Valid Proprietario novoProprietario) {
@@ -70,4 +70,17 @@ public class ProprietarioController {
             return ResponseEntity.status(200).build();
         }
     }
+
+    @DeleteMapping("/delete/{email}/{senha}")
+    public ResponseEntity deleteUsuario(@PathVariable String email, @PathVariable String senha) {
+        Proprietario proprietarioDelete = repository.findByEmailAndSenha(email, senha);
+        if (proprietarioDelete == null) {
+            return ResponseEntity.status(401).build();
+        } else {
+            proprietarioDelete.setLogado(false);
+            repository.delete(proprietarioDelete);
+        }
+        return ResponseEntity.status(200).build();
+    }
+
 }
