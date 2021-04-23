@@ -51,6 +51,7 @@ public class ClienteController {
         return clientesLogados;
     }
 
+
     @DeleteMapping("/{id}")
     public String logoffCliente(@PathVariable Integer id) {
         String res = "Usuário não logado";
@@ -64,5 +65,8 @@ public class ClienteController {
         }
         return res;
     }
+
+
+
 
 }
