@@ -14,7 +14,8 @@ const getData = () => {
         const resposta = xhr.response;
         console.log(xhr.status);       
         if(xhr.status == 200) {
-console.log("foi")
+            console.log("foi")
+            window.location.href="https://www.google.com";
         }else{
             console.log("ruim")
         }
