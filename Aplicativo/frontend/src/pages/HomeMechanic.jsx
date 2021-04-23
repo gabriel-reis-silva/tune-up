@@ -6,6 +6,9 @@ import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
 import logoEms from '../assets/img/EMS-Sem-Fundo-Branco.png'
 import Button from "../components/Button";
+import Footer from "../components/Footer";
+
+
 
 export default function HomeMechanic() {
     return (
@@ -93,7 +96,9 @@ export default function HomeMechanic() {
                         </div>
                         <Button classNameButton="btn_send">Enviar</Button>
                     </div>
+
                 </div>
+                <Footer />
             </div>
         </React.Fragment>
     );
