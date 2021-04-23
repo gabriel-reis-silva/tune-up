@@ -11,7 +11,7 @@ const getData = () => {
     xhr.responseType = 'json';
     xhr.onload = () => {
         // const resposta = JSON.parse(xhr.response);
-        const resposta = xhr.response;
+        const resposta = xhr.response;//pega o que retorna do get
         console.log(xhr.status);       
         if(xhr.status == 200) {
             console.log("foi")
