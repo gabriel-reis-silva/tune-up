@@ -1,18 +1,20 @@
 import React from "react";
-import "../assets/reset.css";
-import "../assets/home.css";
+import Nav from '../components/Nav';
+import Button from "../components/Button";
+import Footer from "../components/Footer";
 import missionIcon from '../assets/img/missaoIcon.png';
 import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
 import logoEms from '../assets/img/EMS-Sem-Fundo-Branco.png'
-import Button from "../components/Button";
-import Footer from "../components/Footer";
+import "../assets/reset.css";
+import "../assets/home.css";
 
 
 
 export default function HomeMechanic() {
     return (
         <React.Fragment>
+            <Nav />
             <div class="container">
                 <div class="div_banner">
                     <div class="banner"></div>
@@ -79,15 +81,15 @@ export default function HomeMechanic() {
                         <div className="box_inputs-contact">
                             <div className="description_input-contact">
                                 <label htmlFor="name">Nome:</label>
-                                <input type="text" name="name" />
+                                <input type="text" name="name" placeholder="Damião Oliveira" />
                             </div>
                             <div className="description_input-contact">
                                 <label htmlFor="name">Email:</label>
-                                <input type="email" />
+                                <input type="email" placeholder="damiãoOliveira@gmail.com" />
                             </div>
                             <div className="description_input-contact">
                                 <label htmlFor="name">Telefone:</label>
-                                <input type="text" />
+                                <input type="text" placeholder="(11) 94123-4560" />
                             </div>
                         </div>
                         <div className="box_msg-contact">

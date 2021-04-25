@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import logoNav from '../assets/img/Tune-Up.png';
 
 export default function Nav() {
     return (
         <nav class="navigation">
             <div class="topbar_navigation">
-                <a class="btn_login">Entrar</a>
+                <Link to="/login" class="btn_login">Entrar</Link>
                 <i class="far fa-user-circle"></i>
             </div>
             <div class="bottombar_navigation">
