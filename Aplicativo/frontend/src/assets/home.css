@@ -22,6 +22,7 @@ h2 {
 body {
     font-family: 'Poppins', sans-serif;
 }
+
 /* NAVIGATION */
 .navigation {
     background: #FFC000;
@@ -112,7 +113,9 @@ body {
 
     filter: brightness(40%);
 
-    background-image: url("./images/banner_home.png");
+    background-image: url("./img/banner_home.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title_banner {
