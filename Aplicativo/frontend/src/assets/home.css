@@ -56,9 +56,7 @@ body {
 .bottombar_navigation{
     display: flex;
     align-items: center;
-
     justify-content: space-around;
-
     height: 60%;
 }
 
@@ -68,10 +66,11 @@ body {
 
 .links_navigation {
     margin-left: 30%;
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
 }
+
 .link_navigation {
     border: none;
     background-color: transparent;
@@ -112,7 +111,7 @@ body {
 
     filter: brightness(40%);
 
-    background-image: url("./images/banner_home.png");
+    background-image: url("./img/banner_home.png");
 }
 
 .title_banner {
@@ -261,9 +260,7 @@ body {
 .card_ems .btn_ems:hover {
     transform: scale(1.09);
 
-    color: #FFF;
-
-    box-shadow: 0px 0px 10px black;
+    border: 2px solid black;
 }
 
 .card_ems .btn_ems:active {
@@ -279,6 +276,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
 }
 
 .box_contact {
@@ -295,12 +293,14 @@ body {
     font-weight: bold;
     text-align: center;
 
-    margin-bottom: 50px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    color: black;
 }
 .box_inputs-contact {
     width: 80%;
@@ -312,7 +312,7 @@ body {
     display: flex;
     justify-content: space-around;
 
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .description_input-contact label {
@@ -322,6 +322,8 @@ body {
     
     display: flex;
     align-items: center;
+
+    color: black;
 }
 .description_input-contact input {
     width: 60%;
@@ -332,7 +334,7 @@ body {
 
     padding: 5px;
 
-    font-size: 20px;
+    font-size: 16px;
     
     transition-duration: .5s;
 }
@@ -360,6 +362,7 @@ body {
     width: 70%;
 
     margin-bottom: 10px;
+    color: black;
 }
 
 .box_msg-contact textarea {
@@ -404,6 +407,18 @@ body {
 .btn_send:active {
     transform: scale(1.1);
 }
+
+.container_footer {
+    background-color: var(--cor-primaria);
+    
+    width: 100%;
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 @keyframes anm_title_banner {
     0% {
         filter: opacity(0%);

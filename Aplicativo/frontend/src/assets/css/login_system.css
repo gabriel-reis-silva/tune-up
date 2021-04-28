@@ -14,10 +14,16 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+#body-login {
+    height: 100vh;
+
     background-image: url("../img/fundo-login.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* filter: contrast(10%); */
 }
@@ -41,17 +47,16 @@ a:hover {
 }
 
 .img-back img {
-    width: 90%;
+    width: 80%;
 }
 
 #login-container {
     background-color: #FFF;
 
-    width: 400px;
+    width: 500px;
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10vh;
 
     padding: 20px 30px;
 
@@ -120,4 +125,25 @@ button {
 .buttons {
     display: flex;
     justify-content: space-between;
+}
+
+.container-back-login {
+    display: block;
+    position: relative;
+    height: 40px;
+}
+
+.back-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #323232;
+    padding: 6px 12px 6px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.back-login:hover {
+    color: var(--cor-primaria);
 }
