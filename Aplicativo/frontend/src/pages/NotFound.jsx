@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import notFound from "../assets/img/not-found.png"
 import "../assets/css/style.css"
-import Button from "../components/Button"
+// import Button from "../components/Button"
 
 export default function NotFound() {
     return (
