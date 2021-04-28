@@ -25,6 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioOficinaController {
