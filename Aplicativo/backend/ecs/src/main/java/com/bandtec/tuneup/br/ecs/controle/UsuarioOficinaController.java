@@ -242,6 +242,18 @@ public class UsuarioOficinaController {
                 .body(resource);
     }
 
+    @PutMapping("/alterarsenha/{id}/{senha}")
+    public ResponseEntity putPasswordUsuario(@PathVariable int id, @PathVariable String senha) {
+        Optional<UsuarioOficina> usuarioOficina = repository.findById(id);
+        if (usuarioOficina.isPresent()) {
+            UsuarioOficina usuarioOficina1 = usuarioOficina.get();
+            usuarioOficina1.setSenha(senha);
+            repository.save(usuarioOficina1);
+            return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
 
 }
 

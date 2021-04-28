@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/proprietarios")
@@ -71,6 +72,20 @@ public class ProprietarioController {
         }
     }
 
+
+    @PutMapping("/alterarsenha/{id}/{senha}")
+    public ResponseEntity putPasswordProprietario(@PathVariable int id, @PathVariable String senha) {
+        Optional<Proprietario> proprietario = repository.findById(id);
+        if (proprietario.isPresent()) {
+            Proprietario proprietario1 = proprietario.get();
+            proprietario1.setSenha(senha);
+            repository.save(proprietario1);
+            return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
     @DeleteMapping("/delete/{email}/{senha}")
     public ResponseEntity deleteUsuario(@PathVariable String email, @PathVariable String senha) {
         Proprietario proprietarioDelete = repository.findByEmailAndSenha(email, senha);
@@ -82,5 +97,6 @@ public class ProprietarioController {
         }
         return ResponseEntity.status(200).build();
     }
+
 
 }
