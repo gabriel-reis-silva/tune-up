@@ -7,7 +7,8 @@ import HomeUser from "../pages/HomeUser";
 import NotFound from "../pages/NotFound";
 import UsersList from "../services/UsuariosLista";
 import Home from "../pages/Home";
-
+import Home_System from "../pages/Home_System";
+import Dashboard from "../pages/Dashboard";
 
 export default function Routes() {
     return (
@@ -22,6 +23,8 @@ export default function Routes() {
                 <Route path="/home-mechanic" component={HomeMechanic} />
                 <Route path="/home-user" component={HomeUser} />
                 <Route path="/login" component={LoginSystem} />
+                <Route path="/home-system" component={Home_System} />
+                <Route path="/dashboard" component={Dashboard} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </Router>

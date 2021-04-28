@@ -54,8 +54,8 @@ export default function LoginSystem() {
                     <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link>
                 </form>
                 <div className="buttons">
-                    <Button classNameButton="register-button" name="cadastrar" id="cadastrar">Cadastrar-se</Button>
-                    <button style={{backgroundColor: '#FFC000', color: 'white'}} onClick={() => getData (email, senha)}>Entrar</button>
+               <Button classNameButton="register-button" name="cadastrar" id="cadastrar">Cadastrar-se</Button> 
+                 <button style={{backgroundColor: '#FFC000', color: 'white'}} onClick={() => getData (email, senha)}>Entrar</button> 
                 </div>
             </div>
         </div>

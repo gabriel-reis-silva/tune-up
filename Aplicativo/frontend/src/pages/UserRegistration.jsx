@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../assets/css/user_registration.css";
 import Logo from "../assets/img/Tune-Up.png";
 import Button from "../components/Button";
@@ -18,7 +19,7 @@ export default function UserRegistration() {
                         <input type="text" placeholder="Email" />
                         <input type="text" placeholder="Senha" />
                         <input type="text" placeholder="Confirmação senha" />
-                        <Button classNameButton="btn_regitration" >Cadastrar</Button>
+                     <Link to=""> <Button classNameButton="btn_regitration" >Cadastrar</Button> </Link>
                     </div>
 
                 </form>
