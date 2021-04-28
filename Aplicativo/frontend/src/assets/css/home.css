@@ -1,4 +1,4 @@
-.container {
+.container-home {
     display: flex;
 
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: rgb(0, 0, 0);
 }
 
-.container img.imgfundo {
+.container-home img.imgfundo-home {
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -17,11 +17,11 @@
     filter: brightness(55%) blur(2px);
 }
 
-.container .first-page img.lgo {
+.container-home .first-page-home img.lgo-home {
     width: 30%;
 }
 
-.container .first-page .banner-lgo {
+.container-home .first-page-home .banner-lgo-home {
     background-color: #ffcc00af;
 
     width: 100%;
@@ -32,14 +32,14 @@
     justify-content: center;
 }
 
-.container .first-page {
+.container-home .first-page-home {
     width: 100%;
 
     z-index: 1;
     text-align: center;
 }
 
-.container .first-page h1 {
+.container-home .first-page-home h1 {
     margin-top: 20px;
     font-size: 40px;
 
@@ -50,7 +50,7 @@
     text-shadow: 2px 2px 2px black;
 }
 
-.container .first-page a button {
+.container-home .first-page-home a button {
     border: none;
     border-radius: 8px;
 
@@ -66,22 +66,22 @@
     cursor: pointer;
 }
 
-.container .first-page button.search {
+.container-home .first-page-home button.search-home {
     background-color: #ffcc00;
     color: black;
 }
 
-.container .first-page button.search:hover {
+.container-home .first-page-home button.search-home:hover {
     background-color: #fdd73c;
     color: black;
 }
 
-.container .first-page button.modern {
+.container-home .first-page-home button.modern-home {
     background-color: #000080;
     color: white;
 }
 
-.container .first-page button.modern:hover {
+.container-home .first-page-home button.modern-home:hover {
     background-color: #0942B4;
     color: white;
 }

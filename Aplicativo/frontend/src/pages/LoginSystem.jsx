@@ -15,7 +15,7 @@ function getData(email, senha) {
         console.log(xhr.status);       
         if(xhr.status === 200) {
             console.log("foi");
-            window.location.href="http://localhost:3000/home-mechanic";
+            window.location.href="http://localhost:3000/home-user";
         }else{
             alert("E-mail ou senha incorretos!");
             console.log("não autorizado")
