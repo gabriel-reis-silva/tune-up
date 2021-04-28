@@ -72,6 +72,7 @@ public class ProprietarioController {
         }
     }
 
+
     @PutMapping("/alterarsenha/{id}/{senha}")
     public ResponseEntity putPasswordProprietario(@PathVariable int id, @PathVariable String senha) {
         Optional<Proprietario> proprietario = repository.findById(id);
@@ -84,4 +85,18 @@ public class ProprietarioController {
             return ResponseEntity.status(404).build();
         }
     }
+
+    @DeleteMapping("/delete/{email}/{senha}")
+    public ResponseEntity deleteUsuario(@PathVariable String email, @PathVariable String senha) {
+        Proprietario proprietarioDelete = repository.findByEmailAndSenha(email, senha);
+        if (proprietarioDelete == null) {
+            return ResponseEntity.status(401).build();
+        } else {
+            proprietarioDelete.setLogado(false);
+            repository.delete(proprietarioDelete);
+        }
+        return ResponseEntity.status(200).build();
+    }
+
+
 }

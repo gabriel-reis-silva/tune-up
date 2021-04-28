@@ -1,0 +1,58 @@
+.container_tuneup {
+    background-image: url("../img/background_home_user.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_tuneup {
+    background-color: #FFF;
+    
+    width: 70%;
+    height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    border-radius: 20px;
+}
+
+.title_tuneup {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3em;
+
+    margin-top: 30px;
+}
+
+.box_tuneup p {
+    width: 90%;
+
+    font-size: 25px
+}
+
+.btn_search_tuneup  {
+    background-color: var(--cor-primaria);
+
+    font-size: 1em;
+    transition-duration: .5s;
+    text-transform: uppercase;
+}
+
+.btn_search_tuneup:hover {
+    background-color: #222;
+    color: var(--cor-primaria);
+
+    transform: scale(1.09)
+}
+
+.btn_search_tuneup:active{
+    transform: scale(1.01)
+}
