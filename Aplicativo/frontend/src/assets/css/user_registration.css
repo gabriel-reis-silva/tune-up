@@ -1,0 +1,94 @@
+.navigation {
+    display: none;
+}
+
+body {
+    background-color: black;
+}
+
+.container_registration {
+    background-image: url('../img/fundo-login.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.box_registration {
+    width: 70vw;
+    height: 80vh;
+
+    background-color: #FFF;
+
+    box-shadow: 0px 0px 999px black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo_registration {
+    width: 25vw;
+}
+.title_registration {
+    text-transform: uppercase;
+    font-size: 30px;
+
+    height: 1%;
+}
+
+.form_registration {
+    height: 60%;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.inputs_left_registration,
+.inputs_right_registration {
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form_registration input {
+    padding: 10px;
+
+    border: 3px solid #222;
+
+    height: 35px;
+    width: 20vw;
+
+    transition-duration: .5s;
+}
+
+.form_registration input:hover,
+.form_registration input:focus {
+    border-color: var(--cor-primaria);
+}
+
+.btn_regitration {
+    background-color: var(--cor-primaria);
+
+    transition-duration: .2s;
+}
+
+.btn_regitration:hover {
+    background-color: #222;
+    color: var(--cor-primaria);
+
+    transform: scale(1.03);
+}
+
+.btn_regitration:active {
+    transform: scale(1.0001);
+}
