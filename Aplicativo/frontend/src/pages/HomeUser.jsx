@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/reset.css";
 import "../assets/home.css";
 import "../assets/css/home_user.css";
+import Nav from '../components/Nav';
 import missionIcon from '../assets/img/missaoIcon.png';
 import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
@@ -13,6 +14,7 @@ import Footer from "../components/Footer";
 export default function HomeMechanic() {
     return (
         <React.Fragment>
+            <Nav />
             <div class="container">
                 <div class="div_banner">
                     <div class="banner"></div>
