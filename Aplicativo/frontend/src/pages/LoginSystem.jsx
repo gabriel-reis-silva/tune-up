@@ -9,7 +9,7 @@ let email = 'nulo';
 let senha = 'nulo';
 function getData(email, senha) {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:8080/usuarios/login/${email}/${senha}`);
+    xhr.open('GET', `http://localhost:8080/proprietarios/login/${email}/${senha}`);
     xhr.responseType = 'json';
     xhr.onload = () => {
         console.log(xhr.status);       
