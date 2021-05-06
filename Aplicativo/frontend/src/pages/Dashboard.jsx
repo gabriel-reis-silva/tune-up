@@ -5,7 +5,7 @@ import "../assets/reset.css";
 import "../assets/home.css";
 // import "../assets/css/style.css";
 // import "../assets/css/system_page.css";
-// import '../assets/css/styte_dashboards.css';
+import '../assets/css/style_dashboards.css';
 
 export default function Dashboard() {
     return (
