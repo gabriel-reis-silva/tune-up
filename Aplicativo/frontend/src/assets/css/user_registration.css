@@ -46,6 +46,9 @@
 .form_registration {
     height: 60%;
     width: 80%;
+}
+.inputs-form_registration {
+    height: 70%;
 
     display: flex;
     align-items: center;
@@ -53,27 +56,59 @@
 }
 .inputs_left_registration,
 .inputs_right_registration {
-    height: 60%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-
 .form_registration input {
-    padding: 10px;
-
+    margin: 0;
+    
     border: 3px solid #222;
 
     height: 35px;
-    width: 20vw;
+    width: 25vw;
 
     transition-duration: .5s;
 }
+.input-terms_registration {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
+    height: 35px;
+    width: 25vw;
+}
+.input-terms_registration input {
+    width: 20px;
+
+    margin: 0;
+}
+
+.input-terms_registration label {
+    margin: 0;
+    margin-left: 5px;
+
+    font-size: 15px;
+}
 .form_registration input:hover,
 .form_registration input:focus {
     border-color: var(--cor-primaria);
+}
+.buttons_register {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+}
+.link_register {
+    width: 45%;
+}
+
+.link_register button {
+    width: 100%;
 }
 
 .btn_regitration {
@@ -91,4 +126,9 @@
 
 .btn_regitration:active {
     transform: scale(1.0001);
+}
+
+.btn_back_registration {
+    background-color: var(--cor-terciaria);
+    color: #FFF;
 }

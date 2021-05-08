@@ -2,6 +2,7 @@
 :root {
     --cor-primaria: #FFC000;
     --cor-secundaria: #0942B4;
+    --cor-terciaria: #222;
 }
 h2 {
     font-weight: 600;
