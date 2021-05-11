@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.Entity;
 @CrossOrigin
-@Entity
+@Entity(name = "Cliente")
 public class UsuarioOficina extends Cliente {
 
 }

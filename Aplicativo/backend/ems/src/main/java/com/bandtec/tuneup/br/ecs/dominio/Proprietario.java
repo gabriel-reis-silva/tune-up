@@ -1,6 +1,7 @@
 package com.bandtec.tuneup.br.ecs.dominio;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 

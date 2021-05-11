@@ -115,8 +115,8 @@ public class UsuarioOficinaController {
 
         Date dataDeHoje = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        if(lista.getTamanho() > 0){
-            for (int i = 0; i < lista.getTamanho() ; i++) {
+        if (lista.getTamanho() > 0) {
+            for (int i = 0; i < lista.getTamanho(); i++) {
                 header += "00USUARIO2021";
                 header += formatter.format(dataDeHoje);
                 header += "01";
@@ -138,7 +138,7 @@ public class UsuarioOficinaController {
                 trailer += String.format("%010d", contRegDados);
                 gravaRegistro(nomeArq, trailer);
             }
-        }else{
+        } else {
             System.out.println("Lista vazia");
         }
     }
@@ -242,13 +242,29 @@ public class UsuarioOficinaController {
                 .body(resource);
     }
 
-    @PutMapping("/alterarsenha/{id}/{senha}")
-    public ResponseEntity putPasswordUsuario(@PathVariable int id, @PathVariable String senha) {
+    @PutMapping("/alterar-dados/{id}")
+    public ResponseEntity putPasswordUsuario(@PathVariable int id, @RequestBody UsuarioOficina usuarioAtributo) {
         Optional<UsuarioOficina> usuarioOficina = repository.findById(id);
         if (usuarioOficina.isPresent()) {
-            UsuarioOficina usuarioOficina1 = usuarioOficina.get();
-            usuarioOficina1.setSenha(senha);
-            repository.save(usuarioOficina1);
+            if(usuarioAtributo.getNome() != null) {
+                usuarioOficina.get().setNome(usuarioAtributo.getNome());
+            }
+            if(usuarioAtributo.getDataNasc() != null) {
+                usuarioOficina.get().setDataNasc(usuarioAtributo.getDataNasc());
+            }
+            if(usuarioAtributo.getEmail() != null) {
+                usuarioOficina.get().setEmail(usuarioAtributo.getEmail());
+            }
+            if(usuarioAtributo.getCpf() != null) {
+                usuarioOficina.get().setCpf(usuarioAtributo.getCpf());
+            }
+            if(usuarioAtributo.getTelefone() != null) {
+                usuarioOficina.get().setTelefone(usuarioAtributo.getTelefone());
+            }
+            if(usuarioAtributo.getSenha() != null){
+                usuarioOficina.get().setSenha(usuarioAtributo.getSenha());
+            }
+            repository.save(usuarioOficina.get());
             return ResponseEntity.status(200).build();
         } else {
             return ResponseEntity.status(404).build();
