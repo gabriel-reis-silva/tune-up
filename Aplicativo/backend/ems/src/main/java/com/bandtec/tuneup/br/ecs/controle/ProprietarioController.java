@@ -73,34 +73,32 @@ public class ProprietarioController {
     }
 
 
-    @PutMapping("/alterarsenha/{id}/{senha}")
-    public ResponseEntity putPasswordProprietario(@PathVariable int id, @PathVariable String senha) {
+    @PutMapping("/alterar-dados/{id}")
+    public ResponseEntity putProprietario(@PathVariable int id, @RequestBody Proprietario proprietarioAtributo) {
         Optional<Proprietario> proprietario = repository.findById(id);
         if (proprietario.isPresent()) {
-            Proprietario proprietario1 = proprietario.get();
-            proprietario1.setSenha(senha);
-            repository.save(proprietario1);
-//            if(proprietarioAtributo.getNome() != null) {
-//                proprietario.get().setNome(proprietarioAtributo.getNome());
-//            }
-//            if(proprietarioAtributo.getDataNasc() != null) {
-//                proprietario.get().setDataNasc(proprietarioAtributo.getDataNasc());
-//            }
-//            if(proprietarioAtributo.getEmail() != null) {
-//                proprietario.get().setEmail(proprietarioAtributo.getEmail());
-//            }
-//            if(proprietarioAtributo.getCpf() != null) {
-//                proprietario.get().setCpf(proprietarioAtributo.getCpf());
-//            }
-//            if(proprietarioAtributo.getTelefone() != null) {
-//                proprietario.get().setTelefone(proprietarioAtributo.getTelefone());
-//            }
-//            if(proprietarioAtributo.getNivelAcesso() > 0 && proprietarioAtributo.getNivelAcesso() <= 3) {
-//                proprietario.get().setNivelAcesso(proprietarioAtributo.getNivelAcesso());
-//            }
-//            if(proprietarioAtributo.getSenha() != null){
-//                proprietario.get().setSenha(proprietarioAtributo.getSenha());
-//            }
+            if(proprietarioAtributo.getNome() != null) {
+                proprietario.get().setNome(proprietarioAtributo.getNome());
+            }
+            if(proprietarioAtributo.getDataNasc() != null) {
+                proprietario.get().setDataNasc(proprietarioAtributo.getDataNasc());
+            }
+            if(proprietarioAtributo.getEmail() != null) {
+                proprietario.get().setEmail(proprietarioAtributo.getEmail());
+            }
+            if(proprietarioAtributo.getCpf() != null) {
+                proprietario.get().setCpf(proprietarioAtributo.getCpf());
+            }
+            if(proprietarioAtributo.getTelefone() != null) {
+                proprietario.get().setTelefone(proprietarioAtributo.getTelefone());
+            }
+            if(proprietarioAtributo.getNivelAcesso() > 0 && proprietarioAtributo.getNivelAcesso() <= 3) {
+                proprietario.get().setNivelAcesso(proprietarioAtributo.getNivelAcesso());
+            }
+            if(proprietarioAtributo.getSenha() != null){
+                proprietario.get().setSenha(proprietarioAtributo.getSenha());
+            }
+            repository.save(proprietario.get());
             return ResponseEntity.status(200).build();
         } else {
             return ResponseEntity.status(404).build();

@@ -243,7 +243,7 @@ public class UsuarioOficinaController {
     }
 
     @PutMapping("/alterar-dados/{id}")
-    public ResponseEntity putPasswordUsuario(@PathVariable int id, @RequestBody UsuarioOficina usuarioAtributo) {
+    public ResponseEntity putUsuario(@PathVariable int id, @RequestBody UsuarioOficina usuarioAtributo) {
         Optional<UsuarioOficina> usuarioOficina = repository.findById(id);
         if (usuarioOficina.isPresent()) {
             if(usuarioAtributo.getNome() != null) {
