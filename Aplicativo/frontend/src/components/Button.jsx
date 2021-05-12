@@ -1,10 +1,8 @@
 import React from 'react'
-import { browserHistory } from 'react-router';
 
-
-export default function Button({ children, colorButton, classNameButton, isBackButton }) {
+export default function Button({ children, colorButton, classNameButton, onClick }) {
 
     return (
-        <button className={classNameButton + " btn"} style={{ backgroundColor: colorButton }}>{children}</button>
+        <button onClick={onClick} className={classNameButton + " btn"} style={{ backgroundColor: colorButton }}>{children}</button>
     );
 }

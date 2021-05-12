@@ -24,8 +24,8 @@ export default function UserRegistration() {
                             <input type="text" placeholder="Email" />
                         </div>
                         <div className="passwords">
-                            <input type="text" placeholder="Senha" />
-                            <input type="text" placeholder="Confirmação senha" />
+                            <input type="password" placeholder="Senha" />
+                            <input type="password" placeholder="Confirmação senha" />
                         </div>
                         <div className="input-terms_registration">
                             <input type="checkbox" name="terms" />

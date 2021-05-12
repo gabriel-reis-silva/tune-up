@@ -8,14 +8,40 @@ import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import logo from "../assets/img/Tune-Up.png"
 
 
 
 export default function HomeMechanic() {
     return (
         <React.Fragment>
-            <Nav />
-            <div class="container">
+            <div className="search" id="searchScreen">
+                <div className="box_search" id="boxScreen">
+                    <img src={logo} alt="" />
+                    <h1 className="title">BUSCAR POR OFICINAS</h1>
+                    <div className="inputs_search">
+                        <div className="field">
+                            <label htmlFor="state">Estado:</label>
+                            <input type="text" name="state" />
+                        </div>
+                        <div className="field">
+                            <label htmlFor="city">Cidade:</label>
+                            <input type="text" name="city" />
+                        </div>
+                        <div className="field">
+                            <label htmlFor="cep">CEP:</label>
+                            <input type="text" name="cep" />
+                        </div>
+                    </div>
+                    <div className="buttons_search">
+                        <Button onClick={hideSearch}>Cancelar</Button>
+                        <Button>Buscar</Button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="containerPage">
+                <Nav />
                 <div class="div_banner">
                     <div class="banner"></div>
                     <h1 class="title_banner">Qualquer problema, nós vamos solucionar</h1>
@@ -75,7 +101,7 @@ export default function HomeMechanic() {
                             o desafio de oferec er meios para que usuários
                             acompanhem a dinâmica e correria do dia a dia.
                         </p>
-                        <Button classNameButton="btn_search_tuneup">Buscar por oficinas</Button>
+                        <Button onClick={showSearch} classNameButton="btn_search_tuneup">Buscar por oficinas</Button>
                     </div>
                 </div>
                 <div className="container_contact">
@@ -107,4 +133,22 @@ export default function HomeMechanic() {
             </div>
         </React.Fragment>
     );
+}
+
+function hideSearch() {
+    const search = document.getElementById("searchScreen");
+    const boxSearch = document.getElementById("boxScreen");
+    const containerPage = document.getElementById("containerPage");
+    search.style.display = "none";
+    boxSearch.style.display = "none";
+    containerPage.style.filter = "blur(0px)";
+}
+
+function showSearch() {
+    const search = document.getElementById("searchScreen");
+    const boxSearch = document.getElementById("boxScreen");
+    const containerPage = document.getElementById("containerPage");
+    search.style.display = "flex";
+    boxSearch.style.display = "flex";
+    containerPage.style.filter = "blur(3px)";
 }
