@@ -37,7 +37,7 @@ public abstract class Cliente {
 
     @CPF
     @NotNull
-    @Column(length = 11)
+    @Column(length = 11, unique = true)
     private String cpf;
 
     private Boolean logado = false;

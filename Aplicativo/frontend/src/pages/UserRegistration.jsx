@@ -22,9 +22,9 @@ export default function UserRegistration() {
               ...usuario,
             });
             if(resposta.status === 201){
-              alert("Usuário cadastrado" + resposta.status);
+              alert("Usuário cadastrado");
             }else{
-              alert("erro!" + resposta.status);
+              alert("erro! " + resposta.status);
             }
           }
     
