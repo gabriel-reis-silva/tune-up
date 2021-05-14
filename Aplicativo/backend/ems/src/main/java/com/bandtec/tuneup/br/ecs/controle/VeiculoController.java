@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public class VeiculoController {
     List<Veiculo> veiculos;
 
     @PostMapping
-    public ResponseEntity postVeiculo(@RequestBody Veiculo veiculoNovo){
+    public ResponseEntity postVeiculo(@RequestBody @Valid Veiculo veiculoNovo){
         veiculos.add(veiculoNovo);
         repository.save(veiculoNovo);
         return ResponseEntity.status(201).build();
