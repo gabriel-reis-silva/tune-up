@@ -18,7 +18,7 @@ export default function UserRegistration() {
         });
     
         async function cadastrar(){
-            const resposta = await api.post("/", {
+            const resposta = await api.post("/usuarios", {
               ...usuario,
             });
             if(resposta.status === 201){
@@ -35,7 +35,6 @@ export default function UserRegistration() {
               ...usuario,
               [name]: value
             });
-            console.log(usuario);
         
           }
     
