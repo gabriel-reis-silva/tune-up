@@ -76,19 +76,19 @@
     border-color: var(--cor-primaria);
 }
 
-.btn_regitration {
+.btn_registration {
     background-color: var(--cor-primaria);
 
     transition-duration: .2s;
 }
 
-.btn_regitration:hover {
+.btn_registration:hover {
     background-color: #222;
     color: var(--cor-primaria);
 
     transform: scale(1.03);
 }
 
-.btn_regitration:active {
+.btn_registration:active {
     transform: scale(1.0001);
 }
