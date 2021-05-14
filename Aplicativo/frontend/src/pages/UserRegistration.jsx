@@ -9,17 +9,26 @@ export default function UserRegistration() {
                 <img className="logo_registration" src={Logo} alt="" />
                 <h2 className="title_registration">Cadastre-se</h2>
                 <form action="" className="form_registration">
-                    <div className="inputs_left_registration">
-                        <input type="text" placeholder="Nome completo" />
-                        <input type="date" placeholder="Nome completo" />
-                        <input type="text" placeholder="CPF" />
-                        <input type="text" placeholder="Telefone" />
+                    <div className="inputs-form_registration">
+                        <div className="inputs_left_registration">
+                            <input type="text" placeholder="Nome completo" />
+                            <input type="date" placeholder="Nome completo" />
+                            <input type="text" placeholder="CPF" />
+                            <input type="text" placeholder="Telefone" />
+                        </div>
+                        <div className="inputs_right_registration">
+                            <input type="text" placeholder="Email" />
+                            <input type="text" placeholder="Senha" />
+                            <input type="text" placeholder="Confirmação senha" />
+                            <div className="input-terms_registration">
+                                <input type="checkbox" name="terms" />
+                                <label htmlFor="terms">Li e concordo com os termos de serviço</label>
+                            </div>
+                        </div>
                     </div>
-                    <div className="inputs_right_registration">
-                        <input type="text" placeholder="Email" />
-                        <input type="text" placeholder="Senha" />
-                        <input type="text" placeholder="Confirmação senha" />
-                     <Link to=""> <Button classNameButton="btn_regitration" >Cadastrar</Button> </Link>
+                    <div className="buttons_register">
+                        <Link className="link_register" to=""> <Button isBackButton={true} classNameButton="btn_back_registration" >Voltar</Button> </Link>
+                        <Link className="link_register" to=""> <Button classNameButton="btn_regitration" >Cadastrar</Button> </Link>
                     </div>
 
                 </form>

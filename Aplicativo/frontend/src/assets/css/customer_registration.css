@@ -21,7 +21,7 @@
 
 .box_registration {
     width: 70vw;
-    height: 80vh;
+    height: 70vh;
 
     background-color: #FFF;
 
@@ -47,8 +47,18 @@
     height: 60%;
     width: 80%;
 }
+
 .inputs-form_registration {
-    height: 70%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.inputs_top_registration {
+    width: 100%;
+    height: 50%;
 
     display: flex;
     align-items: center;
@@ -62,6 +72,9 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+
+
 .form_registration input {
     margin: 0;
     
@@ -72,6 +85,15 @@
 
     transition-duration: .5s;
 }
+.input_email {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+.input_email input {
+    width: 95%;
+}
 .input-terms_registration {
     display: flex;
     align-items: center;
@@ -79,6 +101,12 @@
 
     height: 35px;
     width: 25vw;
+}
+.passwords {
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-around;
 }
 .input-terms_registration input {
     width: 20px;
@@ -100,8 +128,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     width: 100%;
+    
 }
 .link_register {
     width: 45%;
