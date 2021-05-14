@@ -9,6 +9,9 @@ import UsersList from "../services/UsuariosLista";
 import Home from "../pages/Home";
 import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
+import OwnerRegistration from "../pages/OwnerRegistration";
+import CustomerRegistration from "../pages/CustomerRegistration";
+
 
 export default function Routes() {
     return (
@@ -17,6 +20,8 @@ export default function Routes() {
                 <Route exact path="/">
                     <Redirect to="home" />
                 </Route>
+                <Route path="/customer-registration" component={CustomerRegistration} />
+                <Route path="/owner-registration"  component={OwnerRegistration} />
                 <Route path="/home" component={Home} />
                 <Route path="/user-list" component={UsersList} />
                 <Route path="/user-registration" component={UserRegistration} />
