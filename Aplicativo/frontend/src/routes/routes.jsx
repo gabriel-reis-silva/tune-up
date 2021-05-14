@@ -26,7 +26,7 @@ export default function Routes() {
                 <Route path="/login" component={LoginSystem} />
                 <Route path="/home-system" component={Home_System} />
                 <Route path="/dashboard" component={Dashboard} />
-                <Route path="/register-employee" component={RegisterEmployee} />
+                <Route path="/employee-registration" component={RegisterEmployee} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </Router>
