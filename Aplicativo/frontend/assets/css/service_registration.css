@@ -33,7 +33,8 @@ body {
     border-radius: 10px;
 }
 
-#container-service .header-register {
+#container-service .header-register,
+.finished-register {
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -54,24 +55,28 @@ body {
     font-size: 40px;
 }
 
-.service-brakes,
-.service-motor,
-.service-electrical-electronic,
-.service-automotive-preparation,
-.service-aesthetics {
-    width: 100%;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .title {
     width: 100%;
 
     margin: 15px auto 15px auto;
 
     text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin: 20px 30px 10px 60px;
+}
+
+.container-embreagem {
+    margin: 20px 30px 10px 60px;
+}
+
+.service-right,
+.service-left {
+    margin: 25px;
 }
 
 .custom-checkbox input {
@@ -106,4 +111,32 @@ body {
     border: none;
 
     padding: 1px;
+}
+
+.finished-register button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 7px;
+    margin: 15px auto 20px auto;
+
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+    transition-duration: 0.5s;
+
+    cursor: pointer;
+}
+
+button {
+    background-color: #0942B4;
+    color: rgb(255, 255, 255);
+}
+
+button:hover {
+    background-color: #1b50b9;
+    color: rgb(255, 255, 255);
+
+    transform: scale(1.09);
 }
