@@ -1,50 +1,21 @@
 import React from "react";
 import "../assets/reset.css";
 import "../assets/home.css";
-import "../assets/css/home_user.css";
 import Nav from '../components/Nav';
 import missionIcon from '../assets/img/missaoIcon.png';
 import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
 import Button from "../components/Button";
 import Footer from "../components/Footer";
-import logo from "../assets/img/Tune-Up.png"
-import { useHistory } from "react-router-dom";
+import Search from "../components/Search";
 
 export default function HomeMechanic() {
-    let history = useHistory();
-    function redirect() {
-        history.push('/search-result')
-    }
     return (
         <React.Fragment>
-            <div className="search" id="searchScreen">
-                <div className="box_search" id="boxScreen">
-                    <img src={logo} alt="" />
-                    <h1 className="title">BUSCAR POR OFICINAS</h1>
-                    <div className="inputs_search">
-                        <div className="field">
-                            <label htmlFor="state">Estado:</label>
-                            <input type="text" name="state" />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="city">Cidade:</label>
-                            <input type="text" name="city" />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="cep">CEP:</label>
-                            <input type="text" name="cep" />
-                        </div>
-                    </div>
-                    <div className="buttons_search">
-                        <Button onClick={hideSearch}>Cancelar</Button>
-                        <Button onClick={redirect}>Buscar</Button>
-                    </div>
-                </div>
-            </div>
-
+            <Search />
             <div className="container" id="containerPage">
                 <Nav />
+
                 <div className="div_banner">
                     <div className="banner"></div>
                     <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
@@ -136,15 +107,6 @@ export default function HomeMechanic() {
             </div>
         </React.Fragment>
     );
-}
-
-function hideSearch() {
-    const search = document.getElementById("searchScreen");
-    const boxSearch = document.getElementById("boxScreen");
-    const containerPage = document.getElementById("containerPage");
-    search.style.display = "none";
-    boxSearch.style.display = "none";
-    containerPage.style.filter = "blur(0px)";
 }
 
 function showSearch() {

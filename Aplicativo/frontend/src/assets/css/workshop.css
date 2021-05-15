@@ -5,6 +5,8 @@
     margin: 20px 0px;
 
     background-color: var(--cor-secundaria);
+
+    border-radius: 20px;
 }
 
 .workshop_details {
@@ -21,6 +23,9 @@
     float: left;
 
     height: 150px;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .name-address {
     width: 60%;
