@@ -3,18 +3,18 @@ import logoNav from '../assets/img/Tune-Up.png';
 
 export default function Nav() {
     return (
-        <nav class="navigation">
-            <div class="topbar_navigation">
-                <Link to="/login" class="btn_login">Entrar</Link>
-                <i class="far fa-user-circle"></i>
+        <nav className="navigation">
+            <div className="topbar_navigation">
+                <Link to="/login" className="btn_login">Entrar</Link>
+                <i className="far fa-user-circle"></i>
             </div>
-            <div class="bottombar_navigation">
-                <img class="logo_navigation" src={logoNav} alt="Logo da empresa tuneup" />
-                <div class="links_navigation">
-                    <button class="link_navigation">PÁGINA INICIAL</button>
-                    <button class="link_navigation">QUEM SOMOS</button>
-                    <button class="link_navigation">EMS</button>
-                    <button class="link_navigation">CONTATO CONOSCO</button>
+            <div className="bottombar_navigation">
+                <img className="logo_navigation" src={logoNav} alt="Logo da empresa tuneup" />
+                <div className="links_navigation">
+                    <button className="link_navigation">PÁGINA INICIAL</button>
+                    <button className="link_navigation">QUEM SOMOS</button>
+                    <button className="link_navigation">EMS</button>
+                    <button className="link_navigation">CONTATO CONOSCO</button>
                 </div>
             </div>
         </nav>

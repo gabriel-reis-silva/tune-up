@@ -9,10 +9,13 @@ import valuesIcon from '../assets/img/valoresIcon.png';
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import logo from "../assets/img/Tune-Up.png"
-
-
+import { useHistory } from "react-router-dom";
 
 export default function HomeMechanic() {
+    let history = useHistory();
+    function redirect() {
+        history.push('/search-result')
+    }
     return (
         <React.Fragment>
             <div className="search" id="searchScreen">
@@ -35,23 +38,23 @@ export default function HomeMechanic() {
                     </div>
                     <div className="buttons_search">
                         <Button onClick={hideSearch}>Cancelar</Button>
-                        <Button>Buscar</Button>
+                        <Button onClick={redirect}>Buscar</Button>
                     </div>
                 </div>
             </div>
 
-            <div class="container" id="containerPage">
+            <div className="container" id="containerPage">
                 <Nav />
-                <div class="div_banner">
-                    <div class="banner"></div>
-                    <h1 class="title_banner">Qualquer problema, nós vamos solucionar</h1>
+                <div className="div_banner">
+                    <div className="banner"></div>
+                    <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
                 </div>
-                <div class="container_aboutus">
-                    <div class="aboutus">
-                        <h2 class="title_aboutus">
+                <div className="container_aboutus">
+                    <div className="aboutus">
+                        <h2 className="title_aboutus">
                             Quem somos
                         </h2>
-                        <p class="paragraph_aboutus">
+                        <p className="paragraph_aboutus">
                             TUNE-UP é uma plataforma que integra, um sistema desenvolvido especialmente para as oficinas
                             mecânicas.
                             Combinando ferramentas de gestão e suporte à operação, especializado em colocar nas suas mãos tudo o
@@ -60,8 +63,8 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <hr class="division_aboutus_msv" />
-                <div class="container_msv">
+                <hr className="division_aboutus_msv" />
+                <div className="container_msv">
                     <div className="card">
                         <h2>Missão</h2>
                         <img src={missionIcon} alt="" />

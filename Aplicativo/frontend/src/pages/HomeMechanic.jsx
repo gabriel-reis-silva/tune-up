@@ -15,17 +15,17 @@ export default function HomeMechanic() {
     return (
         <React.Fragment>
             <Nav />
-            <div class="container">
-                <div class="div_banner">
-                    <div class="banner"></div>
-                    <h1 class="title_banner">Qualquer problema, nós vamos solucionar</h1>
+            <div className="container">
+                <div className="div_banner">
+                    <div className="banner"></div>
+                    <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
                 </div>
-                <div class="container_aboutus">
-                    <div class="aboutus">
-                        <h2 class="title_aboutus">
+                <div className="container_aboutus">
+                    <div className="aboutus">
+                        <h2 className="title_aboutus">
                             Quem somos
                         </h2>
-                        <p class="paragraph_aboutus">
+                        <p className="paragraph_aboutus">
                             TUNE-UP é uma plataforma que integra, um sistema desenvolvido especialmente para as oficinas
                             mecânicas.
                             Combinando ferramentas de gestão e suporte à operação, especializado em colocar nas suas mãos tudo o
@@ -34,8 +34,8 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <hr class="division_aboutus_msv" />
-                <div class="container_msv">
+                <hr className="division_aboutus_msv" />
+                <div className="container_msv">
                     <div className="card">
                         <h2>Missão</h2>
                         <img src={missionIcon} alt="" />
