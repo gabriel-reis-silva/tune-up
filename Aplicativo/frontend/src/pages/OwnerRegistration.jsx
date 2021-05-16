@@ -40,10 +40,10 @@ export default function UserRegistration() {
           }
 
     return (
-        <div className="container_registration">
-            <div className="box_registration">
-                <img className="logo_registration" src={Logo} alt="" />
-                <h2 className="title_registration">CADASTRO DO PROPRIETÁRIO</h2>
+        <div className="container_registration_owner">
+            <div className="box_registration_owner">
+                <img className="logo_registration_owner" src={Logo} alt="" />
+                <h2 className="title_registration_owner">CADASTRO DO PROPRIETÁRIO</h2>
                 <form action="" className="form_registration">
                     <div className="inputs-form_registration">
                         <div className="inputs_top_registration">

@@ -1,12 +1,4 @@
-/* .navigation {
-    display: none;
-} */
-
-/* body {
-    background-color: black;
-} */
-
-.container_registration {
+.container_registration_owner {
     background-image: url('../img/fundo-login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,7 +11,7 @@
     height: 100vh;
 }
 
-.box_registration {
+.box_registration_owner {
     width: 70vw;
     height: 80vh;
 
@@ -33,10 +25,10 @@
     align-items: center;
 }
 
-.logo_registration {
+.logo_registration_owner {
     width: 25vw;
 }
-.title_registration {
+.title_registration_owner {
     text-transform: uppercase;
     font-size: 30px;
 
