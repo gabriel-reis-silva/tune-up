@@ -5,8 +5,18 @@ export default function Nav() {
     return (
         <nav class="navigation">
             <div class="topbar_navigation">
-                <Link to="/login" class="btn_login">Entrar</Link>
-                <i class="far fa-user-circle"></i>
+                <div className="search-nav">
+                    <input type="text" className="search_bar" />
+                    <select name="" id="" className="selection_search">
+                        <option value="">CEP</option>
+                        <option value="">Estado</option>
+                        <option value="">Cidade</option>
+                    </select>
+                </div>
+                <div className="login_field">
+                    <Link to="/login" class="btn_login">Entrar</Link>
+                    <i class="far fa-user-circle"></i>
+                </div>
             </div>
             <div class="bottombar_navigation">
                 <img class="logo_navigation" src={logoNav} alt="Logo da empresa tuneup" />
