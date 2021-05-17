@@ -11,6 +11,7 @@ import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
 import OwnerRegistration from "../pages/OwnerRegistration";
 import CustomerRegistration from "../pages/CustomerRegistration";
+import WorkshopRegistration from "../pages/WorkshopRegistration";
 
 
 export default function Routes() {
@@ -20,6 +21,7 @@ export default function Routes() {
                 <Route exact path="/">
                     <Redirect to="home" />
                 </Route>
+                <Route path="/workshop-registration" component={WorkshopRegistration}/>
                 <Route path="/customer-registration" component={CustomerRegistration} />
                 <Route path="/owner-registration"  component={OwnerRegistration} />
                 <Route path="/home" component={Home} />
