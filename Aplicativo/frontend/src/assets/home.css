@@ -3,11 +3,11 @@
     --cor-primaria: #FFC000;
     --cor-secundaria: #0942B4;
 }
-h2 {
+/* h2 {
     font-weight: 600;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
-}
+} */
 * {
     margin: 0;
     padding: 0;
