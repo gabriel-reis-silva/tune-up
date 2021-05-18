@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="orderOfService.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="create-order-service">
+            <div id="container-orderService">
+                <h1 class="title-order-service">Adicionando uma nova ordem de serviço</h1>
+
+                <div class="adding-service-in-order">
+                    <h2 class="title-order-service-min">Serviços</h2>
+
+                    <div class="add-service">
+                        <label for="">Pesquisa de Serviço</label><input type="text" id="searchService"
+                            placeholder="Ex: Troca de pneus..." class="addService-order" />
+                        <button class="buttonSearch" id="searchService">Pesquisar</button>
+                    </div>
+                </div>
+
+                <hr width="noshade" class="tophr">
+                <div id="services-adding">
+
+                </div>
+                <hr width="noshade" class="bottomhr">
+
+                <div class="register-order">
+                    <h2 class="title-order-service-min">Dados do Cliente</h2>
+                    <form action="">
+                        <div class="group-order">
+                            <label for="clientName">Nome do Cliente</label>
+                            <input type="text" name="clientname" id="clientName" class="clientName"
+                                placeholder="Carlos Augusto Pereira" />
+                        </div>
+
+                        <div class="group-order">
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" id="cpf" id="cpf" placeholder="555.555.555-55" />
+                        </div>
+
+                        <div class="group-order">
+                            <label for="dtEmissao">Data de Emissão</label>
+                            <input type="date" name="dtemissao" id="dtEmissao">
+                        </div>
+
+                        <div class="group-order">
+                            <label for="dtEstimada">Data Estimada</label>
+                            <input type="date" name="drestimada" id="dtEstimada">
+                        </div>
+
+                        <div class="group-order">
+                            <label for="precoService">Preço</label>
+                            <input type="number" name="preco" id="precoServico">
+                        </div>
+
+                        <div class="group-order">
+                            <label for="statusService">Status de Serviço</label>
+                            <select name="status" id="statusService">
+                                <option value="">Selecione o Status</option>
+                                <option value="0">- Não Iniciado</option>
+                                <option value="1">- Em Andamento</option>
+                                <option value="2">- Concluído</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <hr width="noshade%" class="tophr">
+
+
+            </div>
+        </div>
+    </body>
+
+</html>
