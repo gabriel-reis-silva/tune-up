@@ -12,60 +12,80 @@
     box-sizing: border-box;
 }
 
-.create-order-service {
+.container-orderService {
     display: flex;
 
     justify-content: center;
     align-items: center;
 }
 
-#container-orderService h1.title-order-service {
-    text-align: center;
+.container-orderService {
+    background-color: #FFF;
 
-    font-family: Staatliches;
+    width: 54%;
+
+    margin: 5vh auto 5vh auto;
+    padding: 10px 30px;
+
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
+#register-order h1.title-order-service {
+    font-family: Staatliches;
 
-#container-orderService h2.title-order-service-min {
+    margin-bottom: 20px;
     text-align: center;
+}
 
+#register-order h2.title-order-service-min {
     font-family: sans-serif;
     font-weight: 700;
 
     margin-top: 25px;
-}
+    margin-bottom: 15px;
 
-#container-orderService {
-    background-color: #fff;
-
-    width: 60%;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-
-    padding: 10px 30px;
-
-    border-radius: 10px;
-    border: 1px solid #000000;
-}
-
-.adding-service-in-order .add-service {
     text-align: center;
-
-    margin-top: 10px;
 }
 
-#container-orderService label {
-    font-family: Poppins;
+#register-order form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.group-order {
+    width: 23vw;
+}
+
+.group-order input,
+select {
+    border: 2px solid #323232;
+    border-radius: 11px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+
     font-size: 1rem;
 
-    margin-right: 10px;
-
-    font-weight: bold;
+    width: 23vw;
 }
 
-#container-orderService input.addService-order {
+.group-order label {
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+#register-order hr.bottomHrClient {
+    margin-top: 25px;
+
+    border: 1px solid black;
+}
+
+#register-order input.addService-order {
     border: 2px solid #323232;
     border-radius: 11px;
 
@@ -77,7 +97,15 @@
     width: 45%;
 }
 
-#container-orderService .add-service>button {
+.add-service label {
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+#register-order .add-service>button {
     border: none;
     border-radius: 8px;
 
@@ -105,24 +133,86 @@
     transform: scale(1.09);
 }
 
-#container-orderService hr.tophr {
+.container-serviceAdd {
+    margin-top: 20px;
+}
+
+.container-serviceAdd h2.addService-order {
+    font-family: sans-serif;
+    font-weight: 700;
+
+    margin-top: 25px;
+}
+
+.container-serviceAdd h3.addService-order {
+    font-family: sans-serif;
+    font-weight: 700;
+
+    font-size: 15px;
+
+    margin-top: 25px;
+
+    text-transform: uppercase;
+}
+
+#register-order hr.tophr {
     margin-top: 15px;
 
     border: 1px solid black;
 }
 
-#container-orderService hr.bottomhr {
+#register-order hr.bottomhr {
     margin-top: 30%;
 
     border: 1px solid black;
 }
 
-#container-orderService .register-order>form {
-    margin-top: 20px;
+.adding-service-in-order .add-service {
+    text-align: center;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin-top: 10px;
 }
 
+#register-order .buttons-order {
+    text-align: center;
+}
 
+#register-order .buttons-order>button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 7px;
+    margin: 20px;
+
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+    transition-duration: 0.5s;
+
+    cursor: pointer;
+}
+
+.buttons-order #addOrder {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.buttons-order #addOrder:hover {
+    background-color: #fdd73c;
+    color: black;
+
+    transform: scale(1.09);
+}
+
+.buttons-order #cancelOrder {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.buttons-order #cancelOrder:hover {
+    background-color: #215acc;
+    color: white;
+
+    transform: scale(1.09);
+}
