@@ -38,14 +38,14 @@ public class ProprietarioController {
         return ResponseEntity.status(200).body(proprietarios);
     }
 
-    @GetMapping("/login/{email}/{senha}")
-    public ResponseEntity loginUsuario(@PathVariable String email, @PathVariable String senha) {
-        Proprietario proprietarioLogin = repository.findByEmailAndSenha(email, senha);
-        if (proprietarioLogin == null) {
+    @PostMapping("/login")
+    public ResponseEntity loginProprietario(@RequestBody Proprietario proprietarioLogin) {
+        Proprietario proprietarioLogin1 = repository.findByEmailAndSenha(proprietarioLogin.getEmail(), proprietarioLogin.getSenha());
+        if (proprietarioLogin1 == null) {
             return ResponseEntity.status(401).build();
         } else {
-            proprietarioLogin.setLogado(true);
-            repository.save(proprietarioLogin);
+            proprietarioLogin1.setLogado(true);
+            repository.save(proprietarioLogin1);
             return ResponseEntity.status(200).build();
         }
     }

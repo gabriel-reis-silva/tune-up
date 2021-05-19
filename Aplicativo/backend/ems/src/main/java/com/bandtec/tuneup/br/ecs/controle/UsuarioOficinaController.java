@@ -170,14 +170,14 @@ public class UsuarioOficinaController {
         return ResponseEntity.status(200).body(usuarios);
     }
 
-    @GetMapping("/login/{email}/{senha}")
-    public ResponseEntity loginUsuario(@PathVariable String email, @PathVariable String senha) {
-        UsuarioOficina usuarioLogin = repository.findByEmailAndSenha(email, senha);
-        if (usuarioLogin == null) {
+    @PostMapping("/login")
+    public ResponseEntity loginUsuario(@RequestBody UsuarioOficina usuarioLogin) {
+        UsuarioOficina usuarioLogin1 = repository.findByEmailAndSenha(usuarioLogin.getEmail(), usuarioLogin.getSenha());
+        if (usuarioLogin1 == null) {
             return ResponseEntity.status(401).build();
         } else {
-            usuarioLogin.setLogado(true);
-            repository.save(usuarioLogin);
+            usuarioLogin1.setLogado(true);
+            repository.save(usuarioLogin1);
             return ResponseEntity.status(200).build();
         }
     }
