@@ -15,7 +15,7 @@ export default function HomeMechanic() {
     return (
         <React.Fragment>
             <Nav />
-            <div className="container">
+            <div className="container_home">
                 <div className="div_banner">
                     <div className="banner"></div>
                     <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
