@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import UserRegistration from "../pages/UserRegistration";
 import HomeMechanic from "../pages/HomeMechanic";
 import LoginSystem from "../pages/LoginSystem";
+import LoginSystemPost from "../pages/LoginSystemPost";
 import HomeUser from "../pages/HomeUser";
 import NotFound from "../pages/NotFound";
 import UsersList from "../services/UsuariosLista";
@@ -29,7 +30,7 @@ export default function Routes() {
                 <Route path="/user-registration" component={UserRegistration} />
                 <Route path="/home-mechanic" component={HomeMechanic} />
                 <Route path="/home-user" component={HomeUser} />
-                <Route path="/login" component={LoginSystem} />
+                <Route path="/login" component={LoginSystemPost} />
                 <Route path="/home-system" component={Home_System} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/employee-registration" component={RegisterEmployee} />
