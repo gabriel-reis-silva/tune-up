@@ -196,7 +196,7 @@ public class UsuarioOficinaController {
             repository.save(usuarioLogin1);
             return ResponseEntity.status(200).build();
         } else {
-            return ResponseEntity.status(401).build();
+            return ResponseEntity.badRequest().body("erro no login");
         }
         }
 

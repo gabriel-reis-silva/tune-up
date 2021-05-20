@@ -25,7 +25,7 @@ export default function LoginSystem() {
               ...usuario,
             });
             if(resposta.status === 200){
-              alert("Usuário logado");
+              alert(resposta.status);
             }else{
               alert("erro! " + resposta.status);
             }
