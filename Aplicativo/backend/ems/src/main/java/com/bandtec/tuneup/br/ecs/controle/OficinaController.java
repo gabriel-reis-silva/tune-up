@@ -1,0 +1,91 @@
+package com.bandtec.tuneup.br.ecs.controle;
+
+import com.bandtec.tuneup.br.ecs.dominio.Oficina;
+import com.bandtec.tuneup.br.ecs.repositorio.OficinaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/oficinas")
+public class OficinaController {
+
+    @Autowired
+    public OficinaRepository repository;
+
+    List<Oficina> oficinas;
+
+    @PostMapping
+    public ResponseEntity postOficina(@RequestBody Oficina novaOficina) {
+        repository.save(novaOficina);
+        return ResponseEntity.status(201).build();
+    }
+
+    @GetMapping
+    public ResponseEntity getOficina(){
+        oficinas = repository.findAll();
+        if (oficinas.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(oficinas);
+    }
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity getPorID(@PathVariable Integer id){
+        Optional<Oficina> oficina = repository.findById(id);
+        if (oficina == null) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(oficina);
+    }
+
+    @PutMapping("/alterar-dados/{id}")
+    public ResponseEntity putoficina(@PathVariable int id, @RequestBody Oficina oficinaAtributo) {
+        Optional<Oficina> oficina = repository.findById(id);
+        if (oficina.isPresent()) {
+            if(oficinaAtributo.getNome() != null) {
+                oficina.get().setNome(oficinaAtributo.getNome());
+            }
+            if(oficinaAtributo.getRazaoSocial() != null) {
+                oficina.get().setRazaoSocial(oficinaAtributo.getRazaoSocial());
+            }
+            if(oficinaAtributo.getEmail() != null) {
+                oficina.get().setEmail(oficinaAtributo.getEmail());
+            }
+            if(oficinaAtributo.getCnpj() != null) {
+                oficina.get().setCnpj(oficinaAtributo.getCnpj());
+            }
+            if(oficinaAtributo.getIe() != null) {
+                oficina.get().setIe(oficinaAtributo.getIe());
+            }
+            if(oficinaAtributo.getCep() != null) {
+                oficina.get().setCep(oficinaAtributo.getCep());
+            }
+            if(oficinaAtributo.getRua() != null) {
+                oficina.get().setRua(oficinaAtributo.getRua());
+            }
+            if(oficinaAtributo.getBairro() != null) {
+                oficina.get().setBairro(oficinaAtributo.getBairro());
+            }
+            if(oficinaAtributo.getComplemento() != null) {
+                oficina.get().setComplemento(oficinaAtributo.getComplemento());
+            }
+            if(oficinaAtributo.getNumero() != null) {
+                oficina.get().setNumero(oficinaAtributo.getNumero());
+            }
+            if(oficinaAtributo.getTelefone() != null) {
+                oficina.get().setTelefone(oficinaAtributo.getTelefone());
+            }
+
+            repository.save(oficina.get());
+            return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
+}
