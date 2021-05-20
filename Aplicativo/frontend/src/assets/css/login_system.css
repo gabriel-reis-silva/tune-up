@@ -28,19 +28,6 @@
     /* filter: contrast(10%); */
 }
 
-textarea:focus,
-input:focus {
-    outline: none;
-}
-
-a {
-    font-size: .8rem;
-}
-
-a:hover {
-    color: #08558B;
-}
-
 #login-container .img-back {
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,19 +52,26 @@ a:hover {
     text-align: center;
 }
 
-form {
+#login-container form {
     margin-top: 30px;
     margin-bottom: 25px;
 }
 
 /* label,
 input {
+#login-container label {
     display: block;
     width: 100%;
     text-align: left;
 }
 
-label {
+#login-container input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#login-container label {
     font-weight: bold;
     font-size: .8rem;
 
@@ -85,6 +79,7 @@ label {
 } */
 
 /* input {
+#login-container input {
     border: 2px solid #323232;
     border-radius: 11px;
 
@@ -99,7 +94,7 @@ label {
     display: block;
 }
 
-button {
+#login-container button {
     text-align: center;
     text-transform: uppercase;
 
