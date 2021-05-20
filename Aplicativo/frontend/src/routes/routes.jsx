@@ -19,8 +19,8 @@ import ModalService from "../pages/ModalService";
 import RegisterEmployee from "../pages/ResgisterEmployee";
 import OwnerRegistration from "../pages/OwnerRegistration";
 import CustomerRegistration from "../pages/CustomerRegistration";
-import RegistrationService from "../pages/RegistrationService";
-import ServiceOrder from "../pages/ServiceOrder";
+import WorkshopRegistration from "../pages/WorkshopRegistration";
+
 
 
 export default function Routes() {
@@ -30,6 +30,7 @@ export default function Routes() {
                 <Route exact path="/">
                     <Redirect to="home" />
                 </Route>
+                <Route path="/workshop-registration" component={WorkshopRegistration}/>
                 <Route path="/customer-registration" component={CustomerRegistration} />
                 <Route path="/owner-registration"  component={OwnerRegistration} />
                 <Route path="/home" component={Home} />

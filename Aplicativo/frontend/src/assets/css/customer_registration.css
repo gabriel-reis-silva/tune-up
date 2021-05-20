@@ -6,7 +6,7 @@
     background-color: black;
 } */
 
-.container_registration {
+.customer_container_registration {
     background-image: url('../img/fundo-login.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,9 +19,9 @@
     height: 100vh;
 }
 
-.box_registration {
+.customer_box_registration {
     width: 70vw;
-    height: 70vh;
+    height: 75vh;
 
     background-color: #FFF;
 
@@ -33,22 +33,22 @@
     align-items: center;
 }
 
-.logo_registration {
+.customer_logo_registration {
     width: 25vw;
 }
-.title_registration {
+.customer_title_registration {
     text-transform: uppercase;
     font-size: 30px;
 
     height: 1%;
 }
 
-.form_registration {
+.customer_form_registration {
     height: 60%;
     width: 80%;
 }
 
-.inputs-form_registration {
+.customer_inputs-form_registration {
     height: 90%;
 
     display: flex;
@@ -56,16 +56,16 @@
     align-items: center;
     justify-content: space-around;
 }
-.inputs_top_registration {
+.customer_inputs_top_registration {
     width: 100%;
-    height: 50%;
+    height: 60%;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-.inputs_left_registration,
-.inputs_right_registration {
+.customer_inputs_left_registration,
+.customer_inputs_right_registration {
     height: 100%;
 
     display: flex;
@@ -75,7 +75,7 @@
 
 
 
-.form_registration input {
+.customer_form_registration input {
     margin: 0;
     
     border: 3px solid #222;
@@ -85,16 +85,16 @@
 
     transition-duration: .5s;
 }
-.input_email {
+.customer_input_email {
     width: 100%;
-    height: 30%;
+    height: 25%;
     display: flex;
     justify-content: center;
 }
-.input_email input {
+.customer_input_email input {
     width: 95%;
 }
-.input-terms_registration {
+.customer_input-terms_registration {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -102,61 +102,43 @@
     height: 35px;
     width: 25vw;
 }
-.passwords {
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-around;
-}
-.input-terms_registration input {
-    width: 20px;
 
-    margin: 0;
-}
-
-.input-terms_registration label {
-    margin: 0;
-    margin-left: 5px;
-
-    font-size: 15px;
-}
-.form_registration input:hover,
-.form_registration input:focus {
+.customer_form_registration input:hover,
+.customer_form_registration input:focus {
     border-color: var(--cor-primaria);
 }
-.buttons_register {
+.customer_buttons_register {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     
 }
-.link_register {
+.customer_link_register {
     width: 45%;
 }
 
-.link_register button {
+.customer_link_register button {
     width: 100%;
 }
 
-.btn_regitration {
+.customer_btn_regitration {
     background-color: var(--cor-primaria);
-
     transition-duration: .2s;
 }
 
-.btn_regitration:hover {
+.customer_btn_regitration:hover {
     background-color: #222;
     color: var(--cor-primaria);
 
     transform: scale(1.03);
 }
 
-.btn_regitration:active {
+.customer_btn_regitration:active {
     transform: scale(1.0001);
 }
 
-.btn_back_registration {
+.customer_btn_back_registration {
     background-color: var(--cor-terciaria);
     color: #FFF;
 }
