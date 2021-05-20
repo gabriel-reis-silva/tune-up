@@ -1,36 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button";
 import Logo from "../assets/img/Tune-Up.png";
 import { Link } from "react-router-dom";
 import "../assets/css/login_system.css";
-import UserRegistration from "../pages/UserRegistration";
+import api from "../services/api";
 
 let email = 'nulo';
 let senha = 'nulo';
-function getData(email, senha) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:8080/proprietarios/login/${email}/${senha}`);
-    xhr.responseType = 'json';
-    xhr.onload = () => {
-        console.log(xhr.status);       
-        if(xhr.status === 200) {
-            console.log("foi");
-            window.location.href="http://localhost:3000/home-system";
-        }else{
-            alert("E-mail ou senha incorretos!");
-            console.log("não autorizado")
-        }
-    };
-    xhr.send();
-}
-function pegaEmail(emailGet){
-     email = emailGet.target.value;
-    //  console.log(emailGet.target.value);
-}
-function pegaSenha(senhaGet){
-    senha = senhaGet.target.value;
-}
+
 export default function LoginSystem() {
+
+    const [login, setLogin] = useState(
+        {
+            email: "",
+            senha: "",
+        });
+    
+    async function logar() {
+        let resposta = await api.post("/login", {
+            ...login,
+        });
+        if (resposta.status === 201) {
+            alert("Login efetuado");
+        } else {
+            alert("erro! " + resposta.status);
+        }
+    }
+    
+    function handleInput(evento) {
+        console.log("CAMPO" + evento.target.name);
+    
+        if (evento.target.name == "email") {
+            email = evento.target.value;
+            console.log(email);
+        }else if(evento.target.name === "senha")
+        {
+            senha = evento.target.value;
+            console.log("SENHA"+senha)
+        }
+        const { name, value } = evento.target;
+        setLogin({
+            ...login,
+            [name]: value
+        });
+    
+    }
+
     return (
         <div id="body-login">
             <div id="login-container">
@@ -44,18 +59,18 @@ export default function LoginSystem() {
                 <form action="">
                     {/*E-mail*/}
                     <label for="email">E-mail</label>
-                    <input onChange={pegaEmail} type="email" name="email" id="email" placeholder="Digite seu E-mail" autocomplete="off" />
+                    <input onChange={handleInput} type="email" name="email" id="email" placeholder="Digite seu E-mail" autocomplete="off" />
 
                     {/*Password*/}
                     <label for="password">Senha</label>
-                    <input onChange={pegaSenha} type="password" name="password" id="password" placeholder="Digite a sua senha" />
+                    <input onChange={handleInput} type="password" name="password" id="password" placeholder="Digite a sua senha" />
 
                     {/*Esqueceu a senha*/}
                     <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link>
                 </form>
                 <div className="buttons">
                     <Button classNameButton="register-button" name="cadastrar" id="cadastrar"><Link to="/user-registration" style={{color: 'white'}}>Cadastrar-se</Link></Button>
-                    <button style={{backgroundColor: '#FFC000', color: 'white'}} onClick={() => getData (email, senha)}>Entrar</button>
+                    <button style={{backgroundColor: '#FFC000', color: 'white'}} onClick={logar}>Entrar</button>
                 </div>
             </div>
         </div>
