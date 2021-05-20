@@ -3,7 +3,7 @@ import "../assets/css/workshop_registration.css";
 import Logo from "../assets/img/Tune-Up.png";
 import Button from "../components/Button";
 import React from "react";
-import InputMask from "react-input-mask";
+// import InputMask from "react-input-mask";
 
 export default function WorkshopRegistration() {
     return (
