@@ -57,6 +57,8 @@
     margin-bottom: 25px;
 }
 
+/* label,
+input {
 #login-container label {
     display: block;
     width: 100%;
@@ -74,8 +76,9 @@
     font-size: .8rem;
 
     margin-bottom: 7px;
-}
+} */
 
+/* input {
 #login-container input {
     border: 2px solid #323232;
     border-radius: 11px;
@@ -84,7 +87,7 @@
     margin-bottom: 20px;
 
     font-size: 1rem;
-}
+} */
 
 #forgot-pass {
     text-align: left;
