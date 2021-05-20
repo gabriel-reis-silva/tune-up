@@ -15,7 +15,7 @@ export default function HomeMechanic() {
     return (
         <React.Fragment>
             <Nav />
-            <div className="container_home">
+            <div className="container">
                 <div className="div_banner">
                     <div className="banner"></div>
                     <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
@@ -36,8 +36,8 @@ export default function HomeMechanic() {
                 </div>
                 <hr className="division_aboutus_msv" />
                 <div className="container_msv">
-                    <div classNameName="card">
-                        <h2>Missão</h2>
+                    <div className="card">
+           <h2>Missão</h2>
                         <img src={missionIcon} alt="" />
                         <p>
                             Satisfazer a necessidade de cada cliente, prestando um serviço com excelência em qualidade

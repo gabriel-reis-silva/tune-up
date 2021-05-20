@@ -205,6 +205,13 @@ body {
     flex-direction: column;
     
     transition-duration: .5s;
+
+    margin: 0!important;
+}
+
+.container_msv .card img {
+    height: 17vh;
+    width: 15vw;
 }
 
 .container_msv .card p{ 

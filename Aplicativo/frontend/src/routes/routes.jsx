@@ -9,6 +9,8 @@ import UsersList from "../services/UsuariosLista";
 import Home from "../pages/Home";
 import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
+import SearchResult from "../pages/SearchResult";
+import ProfileWorkshop from "../pages/ProfileWorkshop";
 import RegistrationService from "../pages/RegistrationService"
 import ServiceOrder from "../pages/ServiceOrder";
 import ServiceRequest from "../pages/ServiceRequest";
@@ -42,6 +44,8 @@ export default function Routes() {
                 <Route path="/login" component={LoginSystem} />
                 <Route path="/home-system" component={Home_System} />
                 <Route path="/dashboard" component={Dashboard} />
+                <Route path="/search-result" component={SearchResult} />
+                <Route path="/profile-workshop" component={ProfileWorkshop} />
                 <Route path="/ordem-de-servico" component={ServiceRequest} />
                 <Route path="/visualizacao-cliente" component={CustomerView} />
                 <Route path="/visualizacao-funcionario" component={StaffVisualization} />
