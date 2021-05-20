@@ -70,14 +70,6 @@
     justify-content: space-between;
 }
 
-#owner-register-container label,
-input,
-select {
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
 #owner-register-container select,
 input {
     border: 2px solid #323232;

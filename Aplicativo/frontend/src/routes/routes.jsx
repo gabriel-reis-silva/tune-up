@@ -13,6 +13,7 @@ import RegisterEmployee from "../pages/ResgisterEmployee";
 import OwnerRegistration from "../pages/OwnerRegistration";
 import CustomerRegistration from "../pages/CustomerRegistration";
 import RegistrationService from "../pages/RegistrationService";
+import ServiceOrder from "../pages/ServiceOrder";
 
 
 export default function Routes() {
@@ -34,6 +35,7 @@ export default function Routes() {
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/employee-registration" component={RegisterEmployee} />
                 <Route path="/registration-service" component={RegistrationService} />
+                <Route path="/service-order" component={ServiceOrder} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </Router>
