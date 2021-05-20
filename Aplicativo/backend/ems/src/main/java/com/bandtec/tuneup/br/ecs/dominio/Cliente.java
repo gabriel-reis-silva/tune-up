@@ -19,7 +19,7 @@ public abstract class Cliente {
 
     @Past
     @NotNull
-    @Column(name = "data_de_nascimento")
+    @Column(name = "dataNasc")
     private LocalDate dataNasc;
 
     @Email
@@ -28,16 +28,16 @@ public abstract class Cliente {
     private String email;
 
     @NotNull
-    @Pattern(regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})")
+    @Pattern(regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})")//fita do insert cliente carlos dando erro se altera senha
     private String telefone;
 
-    @Size(min = 8, max = 15)
+    @Size(min = 8, max = 20)
     @NotNull
     private String senha;
 
     @CPF
     @NotNull
-    @Column(length = 11, name = "cpf_cliente")
+    @Column(length = 11, unique = true)
     private String cpf;
 
     private Boolean logado = false;

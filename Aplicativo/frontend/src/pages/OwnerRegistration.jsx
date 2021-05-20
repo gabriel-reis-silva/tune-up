@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/owner_registration.css";
 import Logo from "../assets/img/Tune-Up.png";
@@ -32,6 +33,7 @@ export default function OwnerRegistration() {
                     <div className="owner_buttons_register">
                         <Link className="owner_link_register" to=""> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
                         <Link className="owner_link_register" to=""> <Button classNameButton="owner_btn_regitration" >Cadastrar</Button> </Link>
+
                     </div>
 
                 </form>

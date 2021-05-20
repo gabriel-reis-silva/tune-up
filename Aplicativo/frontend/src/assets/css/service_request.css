@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap%27');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+.geral_service {
+    width: 100vw;
+    height: 100vh;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+ 
+}
+
+.background_service {
+    background: #EDEDE9;
+    border-radius: 10px;
+    height: 52%;
+}
+
+.geral_container_service{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+ 
+}
+
+.service_request_container{
+    display: inline-block;
+    border-radius: 10px;
+}
+
+
+.title_service {
+    font-family: 'Staatliches';
+    text-transform: uppercase;
+    font-size: 32px;
+    height: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+}
+
+.title_container_service {
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 24%;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+.service_container_request{
+    background-color: var(--cor-secundaria);
+    width: 32vh;
+    height: 179px;
+    border-radius: 13px;
+    color: white;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+
+.service_container_request:hover {
+    -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
+.service_container_request h2 {
+    font-size: 20px;
+}
+
+.name_container_service {
+    font-size: 12px;
+    align-items: center;
+    padding-left: 5%;
+    margin-bottom: -29%;
+    
+}
+
+.details_car {
+    padding-top: 7%;
+}
+
+.license_plate_request{
+    width: 50%;
+    font-size: 13px;
+}
+
+.model_car{
+    font-size: 14px;
+}
+
+.image_menu_request {
+    display: inline-block;
+    filter: invert(1);
+    margin-top: -10%;
+    margin-left: 84%;
+   
+}
+
+.status {
+  padding-top: 29%;
+    margin-left: 5%;
+}
+
+.progress_status{
+    text-decoration: underline;
+    margin-top: 4%;
+}
+
+.geral_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+}
+
+.btn_service  {
+	padding: 1%;
+	cursor: pointer;
+	border: none;	
+	border-radius: 10px;
+    background-color: var(--cor-primaria);
+    transition-duration: .2s;
+    width: 19%;
+    height: 10%;
+}
+
+.btn_service:hover {
+    background-color: #222;
+    color: var(--cor-primaria);
+    transform: scale(1.03);
+}
+
+.btn_service:active{
+    transform: scale(1.0001);
+}
+
+/* MODAL SERVICE REQUEST */
+
+
+
+
+.mostrar_service .modal_service {
+    animation: modal .3s; 
+} 
+
+.modal_service_container {
+    width: 100vw;
+    height: 125vh;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.modal_service{
+    background: white;
+    width: 51%;
+    min-width: 300px;
+    height: 125%;
+    padding: 3%;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 30px 0;
+   
+}
+
+@keyframes modal_service {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.details_service_view {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 4%;
+}
+
+.details_service_view h3{
+    font-weight: 550;
+    text-decoration: underline;
+   
+}
+
+.details_service  {
+   display: flex;
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+
+.subtitle_request {
+    font-family: 'Staatliches';
+    text-transform: uppercase;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service {
+    width: 50%;
+    text-align: center;
+}
+
+
+
+
+.status_service {
+    width: 76%;
+    padding: 5px;
+    border-radius: 8px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    -moz-appearance:none; 
+    -webkit-appearance:none; 
+    appearance:none;
+    background: url("../img/seta-baixo.png") no-repeat center right rgb(224, 218, 218);
+    background-position: 90% center;
+   
+    
+}
+
+.status_service::after { 
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    z-index: 2001;
+  }
+
+.line_service {
+    background-color: black;
+    width: 90%;
+    height: 2px;
+    margin: 0 auto;
+  
+}
+
+.input-service {
+    text-align: center;
+   width: 100%;
+   font-weight: 405;
+   height: 100%;
+}
+
+.services .input-service {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: green;
+    text-decoration: underline;
+}
+
+.subtitle_service{
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.photos_cars {
+    background: var(--cor-primaria);
+    width: 104%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 11px;
+    overflow-x: auto;
+
+}
+::-webkit-scrollbar {
+    width: 1vw;
+}
+  
+::-webkit-scrollbar-track {
+    background: rgb(199, 195, 195);
+    box-shadow: none;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(99, 91, 91);
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+  
+.photo_container_img {
+    height: 63%;
+    background-color: rgb(224, 218, 218);
+    opacity: 94%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 23px;
+    min-width: 30%;
+    box-shadow: 0px 0px 15px #333;
+}
+
+.btn_yellow_service {
+    padding: 2%;
+	cursor: pointer;
+	border: none;	
+	border-radius: 10px;
+    background-color: var(--cor-primaria);
+    transition-duration: .2s;
+    width: 27%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    color: black;
+}
+
+.btn_yellow_service:hover {
+    background-color: #222;
+    color: var(--cor-primaria);
+    transform: scale(1.03);
+}
+
+.btn_yellow_service:active{
+    transform: scale(1.0001);
+}
+
+.btn_blue_service {
+    padding: 2%;
+	cursor: pointer;
+	border: none;	
+	border-radius: 10px;
+    background-color: var(--cor-secundaria);
+    transition-duration: .2s;
+    width: 27%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.btn_blue_service:hover {
+    background-color: #222;
+    color: var(--cor-secundaria);
+    transform: scale(1.03);
+}
+
+.btn_blue_service:active{
+    transform: scale(1.0001);
+}
+
+.service_btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4%;
+}
+
+.btn_black_service {
+    padding: 2%;
+	cursor: pointer;
+	border: none;	
+	border-radius: 10px;
+    background-color: #323232;
+    transition-duration: .2s;
+    width: 27%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.btn_black_service:hover {
+    background-color: rgb(231, 220, 220);
+    color: var(--cor-secundaria);
+    transform: scale(1.03);
+}
+
+.btn_black_service:active{
+    transform: scale(1.0001);
+}

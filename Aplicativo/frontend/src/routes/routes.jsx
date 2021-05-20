@@ -9,9 +9,18 @@ import UsersList from "../services/UsuariosLista";
 import Home from "../pages/Home";
 import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
+
+import ServiceRequest from "../pages/ServiceRequest";
+import CustomerView from "../pages/CustomerView";
+import StaffVisualization from "../pages/StaffVisualization";
+import ModalCustomer from "../pages/ModalCustomer";
+import ModalStaff from "../pages/ModalStaff";
+import ModalService from "../pages/ModalService";
+import RegisterEmployee from "../pages/ResgisterEmployee";
 import OwnerRegistration from "../pages/OwnerRegistration";
 import CustomerRegistration from "../pages/CustomerRegistration";
 import WorkshopRegistration from "../pages/WorkshopRegistration";
+
 
 
 export default function Routes() {
@@ -32,7 +41,18 @@ export default function Routes() {
                 <Route path="/login" component={LoginSystem} />
                 <Route path="/home-system" component={Home_System} />
                 <Route path="/dashboard" component={Dashboard} />
+
+                <Route path="/ordem-de-servico" component={ServiceRequest} />
+                <Route path="/visualizacao-cliente" component={CustomerView} />
+                <Route path="/visualizacao-funcionario" component={StaffVisualization} />
+                <Route path="/modal-cliente/:id" component={ModalCustomer} />
+                <Route path="/modal-funcionario/:id" component={ModalStaff} />
+                <Route path="/modal-ordem-de-servico/:id" component={ModalService} />
+                <Route path="/employee-registration" component={RegisterEmployee} />
+                <Route path="/registration-service" component={RegistrationService} />
+                <Route path="/service-order" component={ServiceOrder} />
                 <Route path="*" component={NotFound} />
+                
             </Switch>
         </Router>
     )
