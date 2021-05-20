@@ -3,29 +3,22 @@ import Button from "../components/Button";
 import Logo from "../assets/img/Tune-Up.png";
 import { Link } from "react-router-dom";
 import "../assets/css/login_system.css";
-import UserRegistration from "./UserRegistration";
 import api from "../services/api";
 
 
 export default function LoginSystem() {
     const [usuario, setUsuario] = useState(
         {
-            id: "",
-            nome: "",
-            dataNasc: "",
-            email: "",
             telefone: "",
             senha: "",
-            cpf: "",
-            logado: ""
-          });
+        });
     
         async function logar(){
             const resposta = await api.post("/usuarios/login", {
               ...usuario,
             });
             if(resposta.status === 200){
-              alert(resposta.status);
+              alert("Usuário Logado!");
             }else{
               alert("erro! " + resposta.status);
             }
