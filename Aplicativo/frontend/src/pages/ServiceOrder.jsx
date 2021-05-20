@@ -2,7 +2,7 @@ import React from "react"
 import NavSystem from '../components/NavSystem';
 import "../assets/css/order_of_service.css";
 
-export default function OrderOfService() {
+export default function ServiceOrder() {
     return (
         <React.Fragment>
         <NavSystem />
