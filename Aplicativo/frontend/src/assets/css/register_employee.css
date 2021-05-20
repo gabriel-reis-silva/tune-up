@@ -10,25 +10,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none;
-
-    font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-image: url("../img/fundo-login.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.main-banner img.imgfundo-employee {
+    width: 100vw;
+    height: 100vh;
 
-    /* filter: contrast(10%); */
+    object-fit: cover;
+
+    position: absolute;
+
+    z-index: -1;
 }
 
-a {
-    font-size: .8rem;
-}
+.container-employee {
+    display: flex;
 
-a:hover {
-    color: #08558B;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
 }
 
 #owner-register-container {
@@ -38,7 +39,7 @@ a:hover {
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
 
     padding: 10px 30px;
 
@@ -47,12 +48,7 @@ a:hover {
     text-align: center;
 }
 
-#owner-register-container .img-back {
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.img-back img {
+.img-back img.lgo-employee {
     width: 40%;
 }
 
@@ -65,7 +61,7 @@ a:hover {
     font-size: 40px;
 }
 
-form {
+#owner-register-container form {
     margin-top: 15px;
     margin-bottom: 15px;
 
@@ -74,23 +70,8 @@ form {
     justify-content: space-between;
 }
 
-label,
-input,
-select {
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
-label {
-    font-weight: bold;
-    font-size: .8rem;
-
-    margin-bottom: 7px;
-}
-
-input,
-select {
+#owner-register-container select,
+input {
     border: 2px solid #323232;
     border-radius: 11px;
 
@@ -100,7 +81,7 @@ select {
     font-size: 1rem;
 }
 
-.group {
+.group-employee {
     width: 48%;
 }
 

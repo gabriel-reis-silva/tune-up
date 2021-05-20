@@ -75,14 +75,11 @@ export default function UserRegistration() {
                             <input type="password" placeholder="Senha" name="senha" onChange={handleInput} required="true" />
                             <input type="password" placeholder="Confirmação senha" />
                         </div>
-                        <div className="input-terms_registration">
-                            <input type="checkbox" name="terms" />
-                            <label htmlFor="terms">Li e concordo com os termos de serviço</label>
-                        </div>
+        
                     </div>
-                    <div className="buttons_register">
-                        <Link className="link_register" to=""> <Button isBackButton={true} classNameButton="btn_back_registration" >Voltar</Button> </Link>
-                        <button className="btn_regitration" type="button" onClick={cadastrar}>Cadastrar</button>
+                    <div className="owner_buttons_register">
+                        <Link className="owner_link_register" to=""> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
+                        <Link className="owner_link_register" to=""> <Button classNameButton="owner_btn_regitration" >Cadastrar</Button> </Link>
                     </div>
 
                 </form>

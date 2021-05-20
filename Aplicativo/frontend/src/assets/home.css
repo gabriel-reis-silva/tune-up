@@ -4,12 +4,18 @@
     --cor-secundaria: #0942B4;
     --cor-terciaria: #222;
 }
-h2 {
+/* h2 {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+} */
+.container_home h2 {
     font-weight: 600;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
-* {
+.container_home * {
+
     margin: 0;
     padding: 0;
 
@@ -199,6 +205,13 @@ body {
     flex-direction: column;
     
     transition-duration: .5s;
+
+    margin: 0!important;
+}
+
+.container_msv .card img {
+    height: 17vh;
+    width: 15vw;
 }
 
 .container_msv .card p{ 
