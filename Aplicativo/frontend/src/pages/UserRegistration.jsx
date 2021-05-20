@@ -79,7 +79,7 @@ export default function UserRegistration() {
                         <input type="password" placeholder="Confirmação senha"  />{/* espaço reservado para que você faça a validação do campo*/}
                       <button onClick={cadastrar} type="button" className="btn_registration">Cadastrar</ button> 
                     </div>
-
+                </div>
                 </form>
             </div>
         </div>
