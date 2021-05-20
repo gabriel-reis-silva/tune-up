@@ -11,7 +11,8 @@ import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
 import SearchResult from "../pages/SearchResult";
 import ProfileWorkshop from "../pages/ProfileWorkshop";
-
+import RegistrationService from "../pages/RegistrationService"
+import ServiceOrder from "../pages/ServiceOrder";
 import ServiceRequest from "../pages/ServiceRequest";
 import CustomerView from "../pages/CustomerView";
 import StaffVisualization from "../pages/StaffVisualization";
