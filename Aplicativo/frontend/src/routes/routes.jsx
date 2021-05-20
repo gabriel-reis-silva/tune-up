@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
 import SearchResult from "../pages/SearchResult";
+import ProfileWorkshop from "../pages/ProfileWorkshop";
 
 export default function Routes() {
     return (
@@ -27,6 +28,7 @@ export default function Routes() {
                 <Route path="/home-system" component={Home_System} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/search-result" component={SearchResult} />
+                <Route path="/profile-workshop" component={ProfileWorkshop} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </Router>
