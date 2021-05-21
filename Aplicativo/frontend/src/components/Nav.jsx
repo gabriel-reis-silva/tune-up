@@ -5,7 +5,8 @@ export default function Nav() {
     return (
         <nav className="navigation">
             <div className="topbar_navigation">
-                <Link to="/login" className="btn_login">Entrar</Link>
+            <Link to="/proprietarios/login" className="btn_login">Dono</Link>
+                <Link to="/usuarios/login" className="btn_login">Cliente</Link>
                 <i className="far fa-user-circle"></i>
             </div>
             <div className="bottombar_navigation">

@@ -40,10 +40,6 @@ export default function OwnerRegistration() {
     }
 
     function handleInput(evento) {
-        if (evento.target.name == "nome") {
-            nome = evento.target.value;
-            console.log(nome);
-        }
         const { name, value } = evento.target;
         setProprietario({
             ...proprietario,
@@ -89,7 +85,7 @@ export default function OwnerRegistration() {
                         <p id="senhas-teste"></p>
                     </div>
                     <div className="owner_buttons_register">
-                        <Link className="owner_link_register" to=""> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
+                        <Link className="owner_link_register" to="/proprietarios/login"> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
                         <Link className="owner_link_register"> <Button classNameButton="owner_btn_regitration" onClick={cadastrar}>Cadastrar</Button> </Link>
                     </div>
 

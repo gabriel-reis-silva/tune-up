@@ -14,13 +14,16 @@ export default function LoginSystem() {
         });
     
         async function logar(){
-            const resposta = await api.post("/usuarios/login", {
+          try {
+              const resposta = await api.post("/usuarios/login", {
               ...usuario,
             });
             if(resposta.status === 200){
               alert("Usuário Logado!");
-            }else{
-              alert("erro! " + resposta.status);
+              window.location.href="/home-user";
+            }
+          }catch (err){
+              alert("Erro no Login, tente novamente");
             }
           }
     
@@ -38,7 +41,7 @@ export default function LoginSystem() {
       <div id="body-login">
       <div id="login-container">
           <div className="container-back-login">
-              <Link to="/home-mechanic" className="back-login">Voltar</Link>
+              <Link to="/home-user" className="back-login">Voltar</Link>
           </div>
 
           <div className="img-back">
@@ -53,10 +56,10 @@ export default function LoginSystem() {
 
               <div className="group-login-system">
                   <label for="password">Senha</label>
-                  <input onChange={handleInput} type="password" name="password" id="password" placeholder="Digite a sua senha" />
+                  <input onChange={handleInput} type="password" name="senha" id="senha" placeholder="Digite a sua senha" />
               </div>
 
-              <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link>
+              {/* <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link> */}
           </form>
 
           <div className="buttons-login-system">

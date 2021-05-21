@@ -46,21 +46,23 @@ export default function LoginSystem() {
                 </div>
                 {/*Login*/}
                 <form action="">
-                    {/*E-mail*/}
-                    <label for="email">E-mail</label>
-                    <input onChange={handleInput} type="email" name="email" id="email" placeholder="Digite seu E-mail" autocomplete="off" />
+              <div className="group-login-system">
+                  <label for="email">E-mail</label>
+                  <input onChange={handleInput} type="email" name="email" id="email" placeholder="Digite seu E-mail" autocomplete="off" />
+              </div>
 
-                    {/*Password*/}
-                    <label for="senha">Senha</label>
-                    <input onChange={handleInput} type="password" name="senha" id="senha" placeholder="Digite a sua senha" />
+              <div className="group-login-system">
+                  <label for="password">Senha</label>
+                  <input onChange={handleInput} type="password" name="senha" id="senha" placeholder="Digite a sua senha" />
+              </div>
 
-                    {/*Esqueceu a senha*/}
-                    <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link>
-                </form>
-                <div className="buttons">
-                    <Button classNameButton="register-button" name="cadastrar" id="cadastrar"><Link to="/user-registration" style={{color: 'white'}}>Cadastrar-se</Link></Button>
-                    <button style={{backgroundColor: '#FFC000', color: 'white'}} onClick={logar}>Entrar</button>
-                </div>
+              {/* <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link> */}
+          </form>
+
+          <div className="buttons-login-system">
+              <button className="register-button-login" name="cadastrar" id="cadastrar"><Link to="/owner-registration">Cadastrar-se</Link></button>
+              <button className="cancel-button-login" onClick={logar}>Entrar</button>
+          </div>
             </div>
         </div>
     );
