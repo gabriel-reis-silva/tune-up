@@ -39,6 +39,16 @@ export default function UserRegistration() {
             });
         
           }
+
+          function handleInput2(evento){
+            if(usuario.senha != null){
+              if(usuario.senha != evento.target.value){
+                document.getElementById("senhas-teste").innerHTML = "As senhas não combinam";
+              }else{
+                document.getElementById("senhas-teste").innerHTML = "";
+              }
+            }
+          }
     
 
     return (
@@ -63,10 +73,11 @@ export default function UserRegistration() {
                         </div>
                         <div className="passwords">
                           <input type="password" placeholder="Senha" name="senha" onChange={handleInput} />
-                          <input type="password" placeholder="Confirmação senha"  />{/* espaço reservado para que você faça a validação do campo*/}
+                          <input type="password" placeholder="Confirmação senha" name="senha2" onChange={handleInput2} onClick={handleInput2} />{/* espaço reservado para que você faça a validação do campo*/}
                         </div>
+                        <p id="senhas-teste"></p>
                     <div className="buttons_register">
-                      <button type="button" className="btn_cancel_registration">Cancelar</ button> 
+                    <Link to="/usuarios/login"><button type="button" className="btn_cancel_registration">Cancelar</ button></Link>
                       <button onClick={cadastrar} type="button" className="btn_registration">Cadastrar</ button> 
                     </div>
                   </div>
