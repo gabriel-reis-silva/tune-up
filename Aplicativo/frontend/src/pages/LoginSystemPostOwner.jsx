@@ -9,7 +9,7 @@ import api from "../services/api";
 export default function LoginSystem() {
     const [proprietario, setProprietario] = useState(
         {
-            telefone: "",
+            email: "",
             senha: "",
         });
     
@@ -19,6 +19,7 @@ export default function LoginSystem() {
             });
             if(resposta.status === 200){
               alert("Proprietário Logado!");
+              window.location.href="/home-system"
             }else{
               alert("erro! " + resposta.status);
             }

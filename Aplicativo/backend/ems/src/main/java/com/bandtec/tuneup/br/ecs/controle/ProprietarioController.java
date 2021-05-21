@@ -53,6 +53,14 @@ public class ProprietarioController {
         }
     }
 
+    @GetMapping("/proprietario")
+    public ResponseEntity getUser(){
+        if(Cliente.sessao != null){
+            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+        }
+        return ResponseEntity.status(404).build();
+    }
+
     @GetMapping("/logados")
     public ResponseEntity getLogados() {
         logados = repository.findAllByLogado(true);
@@ -69,6 +77,7 @@ public class ProprietarioController {
         if (proprietarioLogout == null) {
             return ResponseEntity.status(401).build();
         } else {
+            Cliente.sessao = null;
             proprietarioLogout.setLogado(false);
             repository.save(proprietarioLogout);
             return ResponseEntity.status(200).build();

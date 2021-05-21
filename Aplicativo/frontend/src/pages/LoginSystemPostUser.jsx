@@ -9,7 +9,7 @@ import api from "../services/api";
 export default function LoginSystem() {
     const [usuario, setUsuario] = useState(
         {
-            telefone: "",
+            email: "",
             senha: "",
         });
     
