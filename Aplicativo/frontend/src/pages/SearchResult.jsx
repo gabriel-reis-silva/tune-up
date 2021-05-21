@@ -1,4 +1,4 @@
-import Nav from "../components/Nav";
+import NavMechanic from "../components/NavMechanic";
 import Img from "../assets/img/Car-Workshop.jpg";
 import Workshop from "../components/Workshop";
 import "../assets/css/search-result.css";
@@ -10,7 +10,7 @@ export default function SearchResult() {
         <div><Search />
 
             <div className="container" id="containerPage">
-                <Nav />
+                <NavMechanic />
                 <div className="search_field">
                     <Button onClick={showSearch} classNameButton="btn_search">BUSCAR OFICINAS</Button>
                 </div>

@@ -1,5 +1,5 @@
 import "../assets/css/profile-workshop.css";
-import Nav from "../components/Nav";
+import NavMechanic from "../components/NavMechanic";
 import Button from "../components/Button"
 import imgWorshop from "../assets/img/Logo-TuneUp-Icon.png";
 
@@ -7,7 +7,7 @@ export default function ProfileWorkshop() {
     return (
 
         <div className="container_profile_workshop">
-            <Nav />
+            <NavMechanic />
             <div className="box-profile_workshop">
                 <div className="info_profile_workshop">
                     <div className="box-img_workshop-profile_workshop">

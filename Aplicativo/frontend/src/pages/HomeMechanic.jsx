@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from '../components/Nav';
+import NavMechanic from '../components/NavMechanic';
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import missionIcon from '../assets/img/missaoIcon.png';
@@ -14,7 +14,7 @@ import "../assets/home.css";
 export default function HomeMechanic() {
     return (
         <React.Fragment>
-            <Nav />
+            <NavMechanic />
             <div className="container">
                 <div className="div_banner">
                     <div className="banner"></div>
@@ -37,7 +37,7 @@ export default function HomeMechanic() {
                 <hr className="division_aboutus_msv" />
                 <div className="container_msv">
                     <div className="card">
-           <h2>Missão</h2>
+                        <h2>Missão</h2>
                         <img src={missionIcon} alt="" />
                         <p>
                             Satisfazer a necessidade de cada cliente, prestando um serviço com excelência em qualidade

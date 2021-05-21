@@ -72,26 +72,30 @@ body {
     height: 80%;
 }
 
-.links_navigation {
-    margin-left: 30%;
-    width: 50%;
+.links_navigation-home {
+    margin-left: 10%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
 }
 
-.link_navigation {
+.link_navigation-home {
     border: none;
     background-color: transparent;
+
+    font-weight: 500;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
 
     transition-duration: 0.5s;
 }
 
-.link_navigation:hover {
-    text-decoration: underline;
-
-    transform: scale(1.1) translateX(-3px) translateY(-3px);
+.link_navigation-home:hover {
+    transform: scale(1.07) translateX(-3px) translateY(-3px);
 }
 
 /* BODY */
