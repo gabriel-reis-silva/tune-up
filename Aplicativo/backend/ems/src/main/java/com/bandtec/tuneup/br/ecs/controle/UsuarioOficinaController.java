@@ -185,6 +185,14 @@ public class UsuarioOficinaController {
         }
         }
 
+    @GetMapping("/usuario")
+    public ResponseEntity getUser(){
+        if(Cliente.sessao != null){
+            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+        }
+        return ResponseEntity.status(404).build();
+    }
+
     @GetMapping("/logados")
     public ResponseEntity getLogados() {
         logados = repository.findAllByLogado(true);
@@ -201,6 +209,7 @@ public class UsuarioOficinaController {
         if (usuarioLogout == null) {
             return ResponseEntity.status(401).build();
         } else {
+            Cliente.sessao = null;
             usuarioLogout.setLogado(false);
             repository.save(usuarioLogout);
             return ResponseEntity.status(200).build();
