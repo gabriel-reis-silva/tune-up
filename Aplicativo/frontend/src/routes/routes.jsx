@@ -6,7 +6,6 @@ import LoginSystemPostOwner from "../pages/LoginSystemPostOwner";
 import LoginSystemPostUser from "../pages/LoginSystemPostUser";
 import HomeUser from "../pages/HomeUser";
 import NotFound from "../pages/NotFound";
-import UsersList from "../services/UsuariosLista";
 import Home from "../pages/Home";
 import Home_System from "../pages/Home_System";
 import Dashboard from "../pages/Dashboard";
@@ -34,11 +33,10 @@ export default function Routes() {
                 <Route exact path="/">
                     <Redirect to="home" />
                 </Route>
-                <Route path="/workshop-registration" component={WorkshopRegistration}/>
+                <Route path="/workshop-registration" component={WorkshopRegistration} />
                 <Route path="/customer-registration" component={CustomerRegistration} />
-                <Route path="/owner-registration"  component={OwnerRegistration} />
+                <Route path="/owner-registration" component={OwnerRegistration} />
                 <Route path="/home" component={Home} />
-                {/* <Route path="/user-list" component={UsersList} /> */}
                 <Route path="/user-registration" component={UserRegistration} />
                 <Route path="/home-mechanic" component={HomeMechanic} />
                 <Route path="/home-user" component={HomeUser} />
@@ -58,7 +56,7 @@ export default function Routes() {
                 <Route path="/registration-service" component={RegistrationService} />
                 <Route path="/service-order" component={ServiceOrder} />
                 <Route path="*" component={NotFound} />
-                
+
             </Switch>
         </Router>
     )
