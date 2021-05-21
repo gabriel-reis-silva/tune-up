@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/reset.css";
 import "../assets/home.css";
-import Nav from '../components/Nav';
+import NavUser from '../components/NavUser';
 import missionIcon from '../assets/img/missaoIcon.png';
 import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
@@ -14,7 +14,7 @@ export default function HomeMechanic() {
         <React.Fragment>
             <Search />
             <div className="container" id="containerPage">
-                <Nav />
+                <NavUser />
 
                 <div className="div_banner">
                     <div className="banner"></div>

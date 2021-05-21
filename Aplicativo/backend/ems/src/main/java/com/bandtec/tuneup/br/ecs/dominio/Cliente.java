@@ -13,6 +13,8 @@ public abstract class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    public static Integer sessao = null;
+
     @NotBlank
     @Size(min = 10, max = 50)
     private String nome;

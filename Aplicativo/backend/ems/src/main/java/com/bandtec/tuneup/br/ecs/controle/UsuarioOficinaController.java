@@ -1,5 +1,6 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
+import com.bandtec.tuneup.br.ecs.dominio.Cliente;
 import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
@@ -29,6 +30,7 @@ import java.text.SimpleDateFormat;
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioOficinaController {
+    public UsuarioOficina usuarioLogin1;
 
     private ListaObj<UsuarioOficina> usuarioCadastrado = new ListaObj<UsuarioOficina>(10);
     FileReader teste = null;
@@ -172,26 +174,9 @@ public class UsuarioOficinaController {
 
     @PostMapping("/login")
     public ResponseEntity loginUsuario(@RequestBody UsuarioOficina usuarioLogin) {
-        UsuarioOficina usuarioLogin1 = repository.findByEmailAndSenha(usuarioLogin.getEmail(), usuarioLogin.getSenha());
+        usuarioLogin1 = repository.findByEmailAndSenha(usuarioLogin.getEmail(), usuarioLogin.getSenha());
         if (usuarioLogin1 != null) {
-            if (usuarioLogin1.getNome() == null) {
-                usuarioLogin1.setNome(usuarioLogin1.getNome());
-            }
-            if (usuarioLogin1.getDataNasc() == null) {
-                usuarioLogin1.setDataNasc(usuarioLogin1.getDataNasc());
-            }
-            if (usuarioLogin1.getEmail() == null) {
-                usuarioLogin1.setEmail(usuarioLogin1.getEmail());
-            }
-            if (usuarioLogin1.getCpf() == null) {
-                usuarioLogin1.setCpf(usuarioLogin1.getCpf());
-            }
-            if (usuarioLogin1.getTelefone() == null) {
-                usuarioLogin1.setTelefone(usuarioLogin1.getTelefone());
-            }
-            if (usuarioLogin1.getSenha() == null) {
-                usuarioLogin1.setSenha(usuarioLogin.getSenha());
-            }
+            Cliente.sessao = usuarioLogin1.getId();
             usuarioLogin1.setLogado(true);
             repository.save(usuarioLogin1);
             return ResponseEntity.status(200).build();
@@ -199,6 +184,14 @@ public class UsuarioOficinaController {
             return ResponseEntity.badRequest().body("erro no login");
         }
         }
+
+    @GetMapping("/usuario")
+    public ResponseEntity getUser(){
+        if(Cliente.sessao != null){
+            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+        }
+        return ResponseEntity.status(404).build();
+    }
 
     @GetMapping("/logados")
     public ResponseEntity getLogados() {
@@ -216,6 +209,7 @@ public class UsuarioOficinaController {
         if (usuarioLogout == null) {
             return ResponseEntity.status(401).build();
         } else {
+            Cliente.sessao = null;
             usuarioLogout.setLogado(false);
             repository.save(usuarioLogout);
             return ResponseEntity.status(200).build();

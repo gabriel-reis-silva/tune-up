@@ -3,29 +3,23 @@ import Button from "../components/Button";
 import Logo from "../assets/img/Tune-Up.png";
 import { Link } from "react-router-dom";
 import "../assets/css/login_system.css";
-import UserRegistration from "./UserRegistration";
 import api from "../services/api";
 
 
 export default function LoginSystem() {
-    const [usuario, setUsuario] = useState(
+    const [proprietario, setProprietario] = useState(
         {
-            id: "",
-            nome: "",
-            dataNasc: "",
             email: "",
-            telefone: "",
             senha: "",
-            cpf: "",
-            logado: ""
-          });
+        });
     
         async function logar(){
-            const resposta = await api.post("/usuarios/login", {
-              ...usuario,
+            const resposta = await api.post("/proprietarios/login", {
+              ...proprietario,
             });
             if(resposta.status === 200){
-              alert(resposta.status);
+              alert("Proprietário Logado!");
+              window.location.href="/home-system"
             }else{
               alert("erro! " + resposta.status);
             }
@@ -34,25 +28,24 @@ export default function LoginSystem() {
         function handleInput(evento) {
     
             const { name, value } = evento.target;
-            setUsuario({
-              ...usuario,
+            setProprietario({
+              ...proprietario,
               [name]: value
             });
         
           }
     
     return (
-      <div id="body-login">
-      <div id="login-container">
-          <div className="container-back-login">
-              <Link to="/home-mechanic" className="back-login">Voltar</Link>
-          </div>
-
-          <div className="img-back">
-              <img src={Logo} alt="" />
-          </div>
-
-          <form action="">
+        <div id="body-login">
+            <div id="login-container">
+                <div className="container-back-login">
+                    <Link to="/home-mechanic" className="back-login">Voltar</Link>
+                </div>
+                <div className="img-back">
+                    <img src={Logo} alt="" />
+                </div>
+                {/*Login*/}
+                <form action="">
               <div className="group-login-system">
                   <label for="email">E-mail</label>
                   <input onChange={handleInput} type="email" name="email" id="email" placeholder="Digite seu E-mail" autocomplete="off" />
@@ -60,17 +53,19 @@ export default function LoginSystem() {
 
               <div className="group-login-system">
                   <label for="password">Senha</label>
-                  <input onChange={handleInput} type="password" name="password" id="password" placeholder="Digite a sua senha" />
+                  <input onChange={handleInput} type="password" name="senha" id="senha" placeholder="Digite a sua senha" />
               </div>
 
-              <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link>
+              {/* <Link to="/login" id="forgot-pass">Esqueceu a senha?</Link> */}
           </form>
 
           <div className="buttons-login-system">
-              <button className="register-button-login" name="cadastrar" id="cadastrar"><Link to="/user-registration">Cadastrar-se</Link></button>
+              <button className="register-button-login" name="cadastrar" id="cadastrar"><Link to="/owner-registration">Cadastrar-se</Link></button>
               <button className="cancel-button-login" onClick={logar}>Entrar</button>
           </div>
-      </div>
-  </div>
+            </div>
+        </div>
     );
+
+
 }

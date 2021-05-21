@@ -1,5 +1,6 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
+import com.bandtec.tuneup.br.ecs.dominio.Cliente;
 import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
@@ -12,6 +13,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/proprietarios")
@@ -41,13 +43,24 @@ public class ProprietarioController {
     @PostMapping("/login")
     public ResponseEntity loginProprietario(@RequestBody Proprietario proprietarioLogin) {
         Proprietario proprietarioLogin1 = repository.findByEmailAndSenha(proprietarioLogin.getEmail(), proprietarioLogin.getSenha());
-        if (proprietarioLogin1 == null) {
-            return ResponseEntity.status(401).build();
-        } else {
+        System.out.println(proprietarioLogin1.getEmail());
+        System.out.println(proprietarioLogin1.getSenha());
+        if (proprietarioLogin1 != null) {
             proprietarioLogin1.setLogado(true);
+            Cliente.sessao = proprietarioLogin1.getId();
             repository.save(proprietarioLogin1);
             return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(401).build();
         }
+    }
+
+    @GetMapping("/proprietario")
+    public ResponseEntity getUser() {
+        if (Cliente.sessao != null) {
+            return ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+        }
+        return ResponseEntity.status(404).build();
     }
 
     @GetMapping("/logados")
@@ -66,6 +79,7 @@ public class ProprietarioController {
         if (proprietarioLogout == null) {
             return ResponseEntity.status(401).build();
         } else {
+            Cliente.sessao = null;
             proprietarioLogout.setLogado(false);
             repository.save(proprietarioLogout);
             return ResponseEntity.status(200).build();
@@ -77,25 +91,25 @@ public class ProprietarioController {
     public ResponseEntity putProprietario(@PathVariable int id, @RequestBody Proprietario proprietarioAtributo) {
         Optional<Proprietario> proprietario = repository.findById(id);
         if (proprietario.isPresent()) {
-            if(proprietarioAtributo.getNome() != null) {
+            if (proprietarioAtributo.getNome() != null) {
                 proprietario.get().setNome(proprietarioAtributo.getNome());
             }
-            if(proprietarioAtributo.getDataNasc() != null) {
+            if (proprietarioAtributo.getDataNasc() != null) {
                 proprietario.get().setDataNasc(proprietarioAtributo.getDataNasc());
             }
-            if(proprietarioAtributo.getEmail() != null) {
+            if (proprietarioAtributo.getEmail() != null) {
                 proprietario.get().setEmail(proprietarioAtributo.getEmail());
             }
-            if(proprietarioAtributo.getCpf() != null) {
+            if (proprietarioAtributo.getCpf() != null) {
                 proprietario.get().setCpf(proprietarioAtributo.getCpf());
             }
-            if(proprietarioAtributo.getTelefone() != null) {
+            if (proprietarioAtributo.getTelefone() != null) {
                 proprietario.get().setTelefone(proprietarioAtributo.getTelefone());
             }
-            if(proprietarioAtributo.getNivelAcesso() > 0 && proprietarioAtributo.getNivelAcesso() <= 3) {
+            if (proprietarioAtributo.getNivelAcesso() > 0 && proprietarioAtributo.getNivelAcesso() <= 3) {
                 proprietario.get().setNivelAcesso(proprietarioAtributo.getNivelAcesso());
             }
-            if(proprietarioAtributo.getSenha() != null){
+            if (proprietarioAtributo.getSenha() != null) {
                 proprietario.get().setSenha(proprietarioAtributo.getSenha());
             }
             repository.save(proprietario.get());

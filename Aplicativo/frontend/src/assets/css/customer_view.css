@@ -6,7 +6,6 @@
     height: 100vh;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
- 
 }
 
 .background {
@@ -66,11 +65,7 @@
    transform: scale(1.1);
 }
 
-.details_view {
-    display: flex;
-    width: 100%;
-    margin-bottom: 4%;
-}
+
 
 .name_container_customer {
     font-size: 12px;
@@ -157,10 +152,9 @@
 
 .modal_customer{
     background: white;
-    width: 37%;
+    width: 50%;
     min-width: 300px;
-    height: 52%;
-    padding: 3%;
+    padding: 3% 0;
     border-radius: 10px;
     border: 2px solid black;
 }
@@ -191,34 +185,45 @@
 
 .details_customer_view{
     width: 100%;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    flex-wrap: wrap;
+
     margin-top: 4%;
-    
 }
 
 .details_customer_view h3{
     font-weight: 550;
     text-decoration: underline;
     margin: 3px;
-    
 }
 
 .details_customer_view p{
     padding-bottom: 5%;
-    
+}
+
+.details_view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 4%;
 }
 
 .client {
     width: 50%;
+    min-width: 230px;
     text-align: center;
 }
 
 .input-music {
     text-align: center;
-   width: 100%;
+    width: 70%;
+    min-width: 230px;
    font-weight: 405;
 }
 

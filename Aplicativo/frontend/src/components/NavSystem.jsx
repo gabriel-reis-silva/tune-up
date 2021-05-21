@@ -1,12 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logoEms from "../assets/img/EMS-Sem-Fundo-Black.png";
-
+import api from "../services/api";
 
 export default function NavSystem() {
+    const [usuario, getUsuario] = useState([]);
+
+  useEffect(() => {
+    async function getUser() {
+      const resposta = await api.get("/proprietarios/proprietario");
+      getUsuario(resposta.data);
+    }
+    getUser();
+  }, []);
+
     return(
+        <>
         <nav className="navigation">
         <div className="topbar_navigation">
-            <a className="btn_login">OFICINA DO ZÉ</a>
+            <a className="btn_login">
+            {usuario.nome}</a>
             <i className="far fa-user-circle"></i>
         </div>
         <div className="bottombar_navigation">
@@ -19,5 +32,6 @@ export default function NavSystem() {
             </div>
         </div>
     </nav>
+    </>
     )
 }

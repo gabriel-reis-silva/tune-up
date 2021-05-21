@@ -12,7 +12,7 @@ let senha = "";
 let telefone = "";
 let cpf = "";
 
-export default function UserRegistration() {
+export default function OwnerRegistration() {
 
     const [proprietario, setProprietario] = useState(
         {
@@ -26,23 +26,20 @@ export default function UserRegistration() {
         });
 
     async function cadastrar() {
+        try{
         const resposta = await api.post("/proprietarios", {
             ...proprietario,
         });
-        if (resposta.status === 201) {
-            alert("Proprietário cadastrado");
-        } else {
-            alert("erro! " + resposta.status);
+        if(resposta.status === 201){
+            alert("Usuário cadastrado");
+            window.location.href="/home-mechanic"
+          }
+        }catch (err){
+          alert("Erro no cadastro, tente novamente");
         }
     }
 
     function handleInput(evento) {
-        console.log("CAMPO" + evento.target.name);
-
-        if (evento.target.name == "nome") {
-            nome = evento.target.value;
-            console.log(nome);
-        }
         const { name, value } = evento.target;
         setProprietario({
             ...proprietario,
@@ -50,6 +47,16 @@ export default function UserRegistration() {
         });
 
     }
+
+    function handleInput2(evento){
+        if(proprietario.senha != null){
+          if(proprietario.senha != evento.target.value){
+            document.getElementById("senhas-teste").innerHTML = "As senhas não combinam";
+          }else{
+            document.getElementById("senhas-teste").innerHTML = "";
+          }
+        }
+      }
 
     return (
         <div className="container_registration">
@@ -73,13 +80,13 @@ export default function UserRegistration() {
                         </div>
                         <div className="passwords">
                             <input type="password" placeholder="Senha" name="senha" onChange={handleInput} required="true" />
-                            <input type="password" placeholder="Confirmação senha" />
+                            <input type="password" placeholder="Confirmação senha" name="senha2" onChange={handleInput2} onClick={handleInput2} />
                         </div>
-        
+                        <p id="senhas-teste"></p>
                     </div>
                     <div className="owner_buttons_register">
-                        <Link className="owner_link_register" to=""> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
-                        <Link className="owner_link_register" to=""> <Button classNameButton="owner_btn_regitration" >Cadastrar</Button> </Link>
+                        <Link className="owner_link_register" to="/proprietarios/login"> <Button isBackButton={true} classNameButton="owner_btn_back_registration" >Voltar</Button> </Link>
+                        <Link className="owner_link_register"> <Button classNameButton="owner_btn_regitration" onClick={cadastrar}>Cadastrar</Button> </Link>
                     </div>
 
                 </form>
