@@ -17,14 +17,17 @@ export default function UserRegistration() {
         });
     
         async function cadastrar(){
+          try {
             const resposta = await api.post("/usuarios", {
               ...usuario,
             });
             if(resposta.status === 201){
               alert("Usuário cadastrado");
-            }else{
-              alert("erro! " + resposta.status);
+              window.location.href="/home-user"
             }
+          }catch (err){
+            alert("Erro no cadastro, tente novamente");
+          }
           }
     
         function handleInput(evento) {
@@ -46,21 +49,21 @@ export default function UserRegistration() {
                 <form action="" className="form_registration">
                     <div className="inputs-form_registration">
                         <div className="inputs_top_registration">
-                            <div className="inputs_left_registration">
-                                <input type="text" placeholder="Nome completo" />
-                                <input type="text" placeholder="CPF" />
-                            </div>
-                            <div className="inputs_right_registration">
-                                <input type="date" placeholder="Data de nascimento" />
-                                <input type="text" placeholder="Telefone" />
-                            </div>
+                           <div className="inputs_left_registration">
+                        <input type="text" placeholder="Nome completo" name="nome" onChange={handleInput} />
+                        <input type="text" placeholder="CPF" name="cpf"onChange={handleInput} />
+                    </div>
+                    <div className="inputs_right_registration">
+                    <input type="date" name="dataNasc" onChange={handleInput} />
+                    <input type="text" placeholder="Telefone" name="telefone" onChange={handleInput} />
+                    </div>
                         </div>
                         <div className="input_email">
-                            <input type="text" placeholder="Email" />
+                          <input type="email" placeholder="Email" name="email" onChange={handleInput} />
                         </div>
                         <div className="passwords">
-                            <input type="password" placeholder="Senha" />
-                            <input type="password" placeholder="Confirmação senha" />
+                          <input type="password" placeholder="Senha" name="senha" onChange={handleInput} />
+                          <input type="password" placeholder="Confirmação senha"  />{/* espaço reservado para que você faça a validação do campo*/}
                         </div>
                     <div className="buttons_register">
                       <button type="button" className="btn_cancel_registration">Cancelar</ button> 
