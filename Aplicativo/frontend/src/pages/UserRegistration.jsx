@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/user_registration.css";
 import Logo from "../assets/img/Tune-Up.png";
-import Button from "../components/Button";
 import api from "../services/api";    
 
 export default function UserRegistration() {
@@ -63,23 +62,11 @@ export default function UserRegistration() {
                             <input type="password" placeholder="Senha" />
                             <input type="password" placeholder="Confirmação senha" />
                         </div>
-                        <div className="input-terms_registration">
-                            <input type="checkbox" name="terms" />
-                            <label htmlFor="terms">Li e concordo com os termos de serviço</label>
-                        </div>
-                    <div className="inputs_left_registration">
-                        <input type="text" placeholder="Nome completo" name="nome" onChange={handleInput} />
-                        <input type="date" name="dataNasc" onChange={handleInput} />
-                        <input type="text" placeholder="CPF" name="cpf"onChange={handleInput} />
-                        <input type="text" placeholder="Telefone" name="telefone" onChange={handleInput} />
-                    </div>
-                    <div className="inputs_right_registration">
-                        <input type="email" placeholder="Email" name="email" onChange={handleInput} />
-                        <input type="password" placeholder="Senha" name="senha" onChange={handleInput} />
-                        <input type="password" placeholder="Confirmação senha"  />{/* espaço reservado para que você faça a validação do campo*/}
+                    <div className="buttons_register">
+                      <button type="button" className="btn_cancel_registration">Cancelar</ button> 
                       <button onClick={cadastrar} type="button" className="btn_registration">Cadastrar</ button> 
                     </div>
-                </div>
+                  </div>
                 </form>
             </div>
         </div>
