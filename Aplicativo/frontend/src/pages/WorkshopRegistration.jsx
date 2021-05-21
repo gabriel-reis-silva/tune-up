@@ -16,21 +16,17 @@ export default function WorkshopRegistration() {
 
                 <form action="">
                         <div className="group-work">
-                           
                             <input type="name" name="name" id="name" placeholder="Nome da oficina"
                                 autocomplete="off" />
                         </div>
 
                         <div className="group-work">
-                           
                             <input type="name" id="date" name="date" placeholder="Razão social" />
                         </div>
 
                         <div className="group-work">
-                        
                             <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" /> 
                         </div>
-
 
                         <div className="group-work">
                             <input type="name" name="rua" id="rua" placeholder="Rua"
@@ -38,20 +34,15 @@ export default function WorkshopRegistration() {
                         </div>
 
                         <div className="group-work">
-                            
                             <input type="cep" name="cep" id="cep" placeholder="CEP" />
                         </div>
 
-                    
-
                         <div className="group-work">
-                     
                             <input type="bairro" name="bairro" id="bairro" placeholder="Bairro"
                                 autocomplete="off" />
                         </div>
 
                         <div className="group-work">
-        
                             <input type="numero" name="numero" id="numero" placeholder="Número" />
                         </div>
 
@@ -73,10 +64,8 @@ export default function WorkshopRegistration() {
                             <input type="text" name="text" id="text"
                                 placeholder="IE(Inscrição Estadual)" />
                         </div>
-                    
-                    
-
                     </form>
+                    
                     <div className="group-workshop">
                         <label for="horario">Horário de funcionamento:</label>
                             <textarea type="horario" name="horario" id="horario"

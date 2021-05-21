@@ -38,14 +38,14 @@ export default function Routes() {
                 <Route path="/customer-registration" component={CustomerRegistration} />
                 <Route path="/owner-registration"  component={OwnerRegistration} />
                 <Route path="/home" component={Home} />
-                <Route path="/user-list" component={UsersList} />
+                {/* <Route path="/user-list" component={UsersList} /> */}
                 <Route path="/user-registration" component={UserRegistration} />
                 <Route path="/home-mechanic" component={HomeMechanic} />
                 <Route path="/home-user" component={HomeUser} />
                 <Route path="/proprietarios/login" component={LoginSystemPostOwner} />
                 <Route path="/usuarios/login" component={LoginSystemPostUser} />
                 <Route path="/home-system" component={Home_System} />
-                <Route path="/dashboard" component={Dashboard} />
+                {/* <Route path="/dashboard" component={Dashboard} /> */}
                 <Route path="/search-result" component={SearchResult} />
                 <Route path="/profile-workshop" component={ProfileWorkshop} />
                 <Route path="/ordem-de-servico" component={ServiceRequest} />

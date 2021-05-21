@@ -83,6 +83,15 @@ input {
 
 .group-employee {
     width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.group-employee label {
+    text-align: left;
+
+    margin-bottom: 5px;
+    font-weight: bolder;
 }
 
 #owner-register-container .buttons button {

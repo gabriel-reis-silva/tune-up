@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "../assets/css/customer_registration.css";
 import Logo from "../assets/img/Tune-Up.png";
-import Button from "../components/Button";
 export default function CustomerRegistration() {
     return (
         <div className="customer_container_registration">
@@ -24,16 +23,15 @@ export default function CustomerRegistration() {
                         </div>
                         <div className="customer_input_email">
                             <input type="text" placeholder="Email" />
-                        </div>
-                       
-                        
+                        </div>                        
                     </div>
-                    <div className="customer_buttons_register">
-                        <Link className="customer_link_register" to=""> <Button isBackButton={true} classNameButton="btn_back_registration" >Cancelar</Button> </Link>
-                        <Link className="customer_link_register" to=""> <Button classNameButton="btn_regitration" >Cadastrar</Button> </Link>
-                    </div>
-
                 </form>
+
+                <div className="customer_buttons_register">
+                        <button className="btn_cancelar_customer">Cancelar</button> 
+                        <button className="btn_regitration_costumer">Cadastrar</button> 
+                </div>
+
             </div>
         </div>
     );

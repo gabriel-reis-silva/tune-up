@@ -43,14 +43,14 @@ export default function HomeMechanic() {
                             Satisfazer a necessidade de cada cliente, prestando um serviço com excelência em qualidade
                         </p>
                     </div>
-                    <div classNameName="card">
+                    <div className="card">
                         <h2>Visão</h2>
                         <img src={visionIcon} alt="" />
                         <p>
                             Ser reconhecida como uma empresa de ponta no segmento de oficinas mecânicas, inovando e gerando resultados
                         </p>
                     </div>
-                    <div classNameName="card">
+                    <div className="card">
                         <h2>Valores</h2>
                         <img src={valuesIcon} alt="" />
                         <p>
@@ -61,10 +61,10 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <div classNameName="container_ems">
+                <div className="container_ems">
                     <img src={logoEms} alt="" />
-                    <div classNameName="card_ems">
-                        <h2 classNameName="title-card_ems">EMS</h2>
+                    <div className="card_ems">
+                        <h2 className="title-card_ems">EMS</h2>
                         <p>
                             Inovando e contribuindo para o aprimoramento das oficinas, a EMS
                             produz dashboards, status  de produção, controle de fluxo de clientes e muito mais..
@@ -72,31 +72,31 @@ export default function HomeMechanic() {
                         <p>
                             Assim que a EMS supera a cada dia, o desafio de oferecer meios para que oficinas acompanhem a dinâmica e correria do dia a dia
                         </p>
-                        <Button classNameNameButton="btn_ems" colorButton="#FFC000">Conheça a EMS</Button>
+                        <Button classNameButton="btn_ems" colorButton="#FFC000">Conheça a EMS</Button>
                     </div>
                 </div>
-                <div classNameName="container_contact">
-                    <div classNameName="box_contact">
-                        <h1 classNameName="title_contact">ENTRE EM CONTATO CONOSCO</h1>
-                        <div classNameName="box_inputs-contact">
-                            <div classNameName="description_input-contact">
+                <div className="container_contact">
+                    <div className="box_contact">
+                        <h1 className="title_contact">ENTRE EM CONTATO CONOSCO</h1>
+                        <div className="box_inputs-contact">
+                            <div className="description_input-contact">
                                 <label htmlFor="name">Nome:</label>
                                 <input type="text" name="name" placeholder="Damião Oliveira" />
                             </div>
-                            <div classNameName="description_input-contact">
+                            <div className="description_input-contact">
                                 <label htmlFor="name">Email:</label>
                                 <input type="email" placeholder="damiãoOliveira@gmail.com" />
                             </div>
-                            <div classNameName="description_input-contact">
+                            <div className="description_input-contact">
                                 <label htmlFor="name">Telefone:</label>
                                 <input type="text" placeholder="(11) 94123-4560" />
                             </div>
                         </div>
-                        <div classNameName="box_msg-contact">
+                        <div className="box_msg-contact">
                             <label htmlFor="msg">Digite sua mensagem:</label>
                             <textarea name="msg" placeholder="Estou entrando em contato para falar de..."></textarea>
                         </div>
-                        <Button classNameNameButton="btn_send">Enviar</Button>
+                        <Button classNameButton="btn_send">Enviar</Button>
                     </div>
 
                 </div>
