@@ -83,7 +83,7 @@
 
 .link_navigation:hover {
     text-decoration: underline;
-
+    filter: contrast(0.5);
     transform: scale(1.1) translateX(-1px) translateY(-1px);
 }
 
@@ -107,4 +107,6 @@
 
     animation-name: anm_title_banner;
     animation-duration: 2s;
+
+    filter: contrast(0.5)
 }

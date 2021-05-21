@@ -27,11 +27,13 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
+
 .name-address {
     width: 60%;
 
     color: #FFF;
 }
+
 .btn-details {
     background-color: var(--cor-primaria);
 
