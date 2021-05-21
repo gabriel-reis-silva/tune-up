@@ -26,58 +26,36 @@ export default function ModalCustomer() {
 
 
     return (
-
-
         <React.Fragment>
-
-
             <div id="modal_process" className="modal_container_customer show_customer">
                 <div className="modal_customer">
                     <h1 className="subtitle">Detalhes do seu cliente</h1>
                     <div className="details_customer_view">
-
-
                         <div className="details_view">
                             <div className="client">
                                 <h3>Nome do cliente:</h3>
-                                
-                                <input className="input-music" type="text" value="Thiago Silva"/>
-        
+                                <input className="input-music" type="text" value="Thiago Silva" />
                             </div>
                             <div className="client">
-                            <h3>CPF do cliente: </h3>
-                            <input className="input-music" type="text" value="465.768.546-87"/>
-                               
+                                <h3>CPF do cliente: </h3>
+                                <input className="input-music" type="text" value="465.768.546-87" />
                             </div>
-                           
-
                         </div>
-
                         <div className="details_view">
                             <div className="client">
                                 <h3>E-mail do cliente: </h3>
-                                <input className="input-music" type="text" value="thiagoSilva@gmail.com"/>
-                            
-
-                                
+                                <input className="input-music" type="text" value="thiagoSilva@gmail.com" />
                             </div>
                             <div className="client">
-                            <h3>Telefone do cliente:</h3>
-                            <input className="input-music" type="text" value="(11) 94156-3680"/>
-                                
+                                <h3>Telefone do cliente:</h3>
+                                <input className="input-music" type="text" value="(11) 94156-3680" />
                             </div>
-                            
                         </div>
-
-
                     </div>
                     <div class="client_btn">
-
                         <Link to="/visualizacao-cliente" class="btn_blue_customer"> Fechar </Link>
                         <Link to="/visualizacao-cliente" class="btn_black_customer"> Excluir </Link>
-
                     </div>
-
                 </div>
             </div>
             <CustomerView />
