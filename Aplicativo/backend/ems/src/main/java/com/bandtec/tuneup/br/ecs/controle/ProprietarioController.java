@@ -43,20 +43,22 @@ public class ProprietarioController {
     @PostMapping("/login")
     public ResponseEntity loginProprietario(@RequestBody Proprietario proprietarioLogin) {
         Proprietario proprietarioLogin1 = repository.findByEmailAndSenha(proprietarioLogin.getEmail(), proprietarioLogin.getSenha());
-        if (proprietarioLogin1 == null) {
-            return ResponseEntity.status(401).build();
-        } else {
+        System.out.println(proprietarioLogin1.getEmail());
+        System.out.println(proprietarioLogin1.getSenha());
+        if (proprietarioLogin1 != null) {
             proprietarioLogin1.setLogado(true);
             Cliente.sessao = proprietarioLogin1.getId();
             repository.save(proprietarioLogin1);
             return ResponseEntity.status(200).build();
+        } else {
+            return ResponseEntity.status(401).build();
         }
     }
 
     @GetMapping("/proprietario")
-    public ResponseEntity getUser(){
-        if(Cliente.sessao != null){
-            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+    public ResponseEntity getUser() {
+        if (Cliente.sessao != null) {
+            return ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
         }
         return ResponseEntity.status(404).build();
     }
