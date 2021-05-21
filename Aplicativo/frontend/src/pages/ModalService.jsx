@@ -25,8 +25,9 @@ export default function ModalService() {
     //     })    
 
     // }, [params.id]);
-
-
+const mapa = {
+    color: "red"
+  };
     return (
 
 
@@ -199,8 +200,10 @@ export default function ModalService() {
                         <div className="photo_container_img">
                             <div className="photo_plus">
 
-                                <img src={plus} />
-
+                                {/* <input type="file" style={{width:"50%"}}></input> */}
+                                <label for='selecao-arquivo' >Selecionar um arquivo 
+                                <input id='selecao-arquivo' style={{mapa}} type='file' ></input>
+                                </label>
                             </div>
                         </div>
 
