@@ -1,34 +1,57 @@
 import NavMechanic from "../components/NavMechanic";
 import Img from "../assets/img/Car-Workshop.jpg";
+import React, { useEffect, useState } from "react";
 import Workshop from "../components/Workshop";
 import "../assets/css/search-result.css";
 import Search from "../components/Search";
 import Button from "../components/Button";
+import api from "../services/api";
 
 export default function SearchResult() {
+    const [listaOficina, getOficina] = useState([]);
+    const [nomeOficina, setNomeOficina] = useState({
+        nome: ""
+    });
+    async function search() {
+        try {
+            const resposta = await api.get(`oficinas/search/${nomeOficina.nome}`);
+            getOficina(resposta.data);
+
+        } catch (err) {
+            alert("Erro no buscar oficina, tente novamente");
+        }
+        console.log(listaOficina);
+    }
+    function handleInput(evento) {
+        const { name, value } = evento.target;
+        setNomeOficina({
+            ...nomeOficina,
+            [name]: value
+        });
+    }
     return (
-        <div><Search />
+        <div>
+            <Search functionSearch={search} handleInput={handleInput} />
 
             <div className="container" id="containerPage">
                 <NavMechanic />
                 <div className="search_field">
                     <Button onClick={showSearch} classNameButton="btn_search">BUSCAR OFICINAS</Button>
                 </div>
-                <div className="box_workshops">
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
-                    <Workshop img={Img} name="Oficina do zé" address="Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001" />
+                <div className="box_workshops" id="workshops-search">
+                    {listaOficina.map((oficina) => (
+
+                        < Workshop img={Img} name={oficina.nome} address={
+                            oficina.rua
+                            + ", " +
+                            oficina.numero
+                            + " - " +
+                            oficina.bairro
+                            + ", " +
+                            oficina.complemento
+                            + "."
+                        } />
+                    ))}
                 </div>
             </div>
         </div>
