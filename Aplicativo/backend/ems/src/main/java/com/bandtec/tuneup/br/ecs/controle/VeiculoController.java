@@ -47,6 +47,13 @@ public class VeiculoController {
         return ResponseEntity.status(200).body(veiculo);
     }
 
+    @DeleteMapping("/deletar/{placa}")
+    public ResponseEntity deleteVeiculo(@PathVariable String placa){
+        if(!repository.findByPlaca(placa).equals(null)){
+            return ResponseEntity.status(200).body("Veículo de placa: " + placa +" excluído!");
+        }
+        return ResponseEntity.status(400).build();
+    }
     @PutMapping("/alterar-dados/{id}")
     public ResponseEntity putVeiculo(@PathVariable int id, @RequestBody Veiculo veiculoAtributo) {
         Optional<Veiculo> veiculo = repository.findById(id);
