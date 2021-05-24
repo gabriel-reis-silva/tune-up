@@ -185,10 +185,11 @@ public class UsuarioOficinaController {
         }
         }
 
-    @GetMapping("/usuario")
-    public ResponseEntity getUser(){
-        if(Cliente.sessao != null){
-            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+    @GetMapping("/usuario/{email}")
+    public ResponseEntity getUser(@PathVariable String email) {
+        UsuarioOficina usuario = repository.findByEmail(email);
+        if ( usuario != null) {
+            return ResponseEntity.status(200).body(repository.findById(usuario.getId()));
         }
         return ResponseEntity.status(404).build();
     }

@@ -18,6 +18,8 @@ export default function LoginSystem() {
               ...proprietario,
             });
             if(resposta.status === 200){
+              localStorage.setItem('emailProprietario', proprietario.email);
+              localStorage.setItem('senhaProprietario', proprietario.senha);
               alert("Proprietário Logado!");
               window.location.href="/home-system"
             }else{

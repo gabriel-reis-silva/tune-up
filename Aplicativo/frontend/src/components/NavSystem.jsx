@@ -8,7 +8,7 @@ export default function NavSystem() {
 
   useEffect(() => {
     async function getUser() {
-      const resposta = await api.get("/proprietarios/proprietario");
+      const resposta = await api.get(`/proprietarios/proprietario/${localStorage.getItem('emailProprietario')}`);
       getUsuario(resposta.data);
     }
     getUser();

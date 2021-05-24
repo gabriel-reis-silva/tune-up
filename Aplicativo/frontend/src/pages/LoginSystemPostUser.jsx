@@ -19,6 +19,8 @@ export default function LoginSystem() {
               ...usuario,
             });
             if(resposta.status === 200){
+              localStorage.setItem('emailUsuario', usuario.email);
+              localStorage.setItem('senhaUsuario', usuario.senha);
               alert("Usuário Logado!");
               window.location.href="/home-user";
             }
