@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/oficinas")
+@CrossOrigin
 public class OficinaController {
 
     @Autowired
@@ -39,6 +40,15 @@ public class OficinaController {
         Optional<Oficina> oficina = repository.findById(id);
         if (oficina == null) {
             return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(oficina);
+    }
+
+    @GetMapping("/search/{nome}")
+    public ResponseEntity getPorNome(@PathVariable String nome){
+        List<Oficina> oficina = repository.findAllByNome(nome);
+        if (oficina == null) {
+            return ResponseEntity.status(404).build();
         }
         return ResponseEntity.status(200).body(oficina);
     }

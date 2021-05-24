@@ -49,16 +49,6 @@ public class Oficina {
 
     private String hrFunc;
 
-    private Integer fkPrope;
-
-    public Integer getFkPrope() {
-        return fkPrope;
-    }
-
-    public void setFkPrope(Integer fkPrope) {
-        this.fkPrope = fkPrope;
-    }
-
     public Integer getId() {
         return id;
     }

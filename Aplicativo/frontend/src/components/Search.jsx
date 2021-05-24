@@ -1,13 +1,29 @@
 import logo from "../assets/img/Tune-Up.png";
-import { useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
+import Workshop from "./Workshop";
+import Img from "../assets/img/Car-Workshop.jpg";
 import "../assets/css/search.css";
+import api from "../services/api";
 
-export default function Search() {
-    let history = useHistory();
-    function redirect() {
-        history.push('/search-result')
-    }
+export default function Search({ functionSearch, handleInput }) {
+
+    // function populaOficinas() {
+    //     listaOficina.map((oficina) => (
+    //         // document.getElementById("workshops-search").innerHTML +=
+    //         // `${< Workshop img={Img} name={oficina.nome} address={
+    //         //     oficina.rua
+    //         //     + ", " +
+    //         //     oficina.numero
+    //         //     + " - " +
+    //         //     oficina.bairro
+    //         //     + ", " +
+    //         //     oficina.complemento
+    //         //     + "."
+    //         // } />}`
+    //     ))
+    // }
+
     return (
         <div className="search" id="searchScreen">
             <div className="box_search" id="boxScreen">
@@ -15,8 +31,8 @@ export default function Search() {
                 <h1 className="title">BUSCAR POR OFICINAS</h1>
                 <div className="inputs_search">
                     <div className="field">
-                        <label htmlFor="state">Estado:</label>
-                        <input type="text" name="state" />
+                        <label htmlFor="name">Nome:</label>
+                        <input type="text" name="nome" id="nameWorkshop" onChange={handleInput} />
                     </div>
                     <div className="field">
                         <label htmlFor="city">Cidade:</label>
@@ -29,12 +45,14 @@ export default function Search() {
                 </div>
                 <div className="buttons_search">
                     <Button onClick={hideSearch}>Cancelar</Button>
-                    <Button onClick={redirect}>Buscar</Button>
+                    <Button onClick={functionSearch}>Buscar</Button>
                 </div>
             </div>
         </div>
     )
 }
+
+
 function hideSearch() {
     const search = document.getElementById("searchScreen");
     const boxSearch = document.getElementById("boxScreen");
