@@ -25,7 +25,7 @@ public class OficinaController {
     }
 
     @GetMapping
-    public ResponseEntity getOficina(){
+    public ResponseEntity getOficina() {
         oficinas = repository.findAll();
         if (oficinas.isEmpty()) {
             return ResponseEntity.status(204).build();
@@ -35,7 +35,7 @@ public class OficinaController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity getPorID(@PathVariable Integer id){
+    public ResponseEntity getPorID(@PathVariable Integer id) {
         Optional<Oficina> oficina = repository.findById(id);
         if (oficina == null) {
             return ResponseEntity.status(204).build();
@@ -47,37 +47,37 @@ public class OficinaController {
     public ResponseEntity putoficina(@PathVariable int id, @RequestBody Oficina oficinaAtributo) {
         Optional<Oficina> oficina = repository.findById(id);
         if (oficina.isPresent()) {
-            if(oficinaAtributo.getNome() != null) {
+            if (oficinaAtributo.getNome() != null) {
                 oficina.get().setNome(oficinaAtributo.getNome());
             }
-            if(oficinaAtributo.getRazaoSocial() != null) {
+            if (oficinaAtributo.getRazaoSocial() != null) {
                 oficina.get().setRazaoSocial(oficinaAtributo.getRazaoSocial());
             }
-            if(oficinaAtributo.getEmail() != null) {
+            if (oficinaAtributo.getEmail() != null) {
                 oficina.get().setEmail(oficinaAtributo.getEmail());
             }
-            if(oficinaAtributo.getCnpj() != null) {
+            if (oficinaAtributo.getCnpj() != null) {
                 oficina.get().setCnpj(oficinaAtributo.getCnpj());
             }
-            if(oficinaAtributo.getIe() != null) {
+            if (oficinaAtributo.getIe() != null) {
                 oficina.get().setIe(oficinaAtributo.getIe());
             }
-            if(oficinaAtributo.getCep() != null) {
+            if (oficinaAtributo.getCep() != null) {
                 oficina.get().setCep(oficinaAtributo.getCep());
             }
-            if(oficinaAtributo.getRua() != null) {
+            if (oficinaAtributo.getRua() != null) {
                 oficina.get().setRua(oficinaAtributo.getRua());
             }
-            if(oficinaAtributo.getBairro() != null) {
+            if (oficinaAtributo.getBairro() != null) {
                 oficina.get().setBairro(oficinaAtributo.getBairro());
             }
-            if(oficinaAtributo.getComplemento() != null) {
+            if (oficinaAtributo.getComplemento() != null) {
                 oficina.get().setComplemento(oficinaAtributo.getComplemento());
             }
-            if(oficinaAtributo.getNumero() != null) {
+            if (oficinaAtributo.getNumero() != null) {
                 oficina.get().setNumero(oficinaAtributo.getNumero());
             }
-            if(oficinaAtributo.getTelefone() != null) {
+            if (oficinaAtributo.getTelefone() != null) {
                 oficina.get().setTelefone(oficinaAtributo.getTelefone());
             }
 
@@ -88,4 +88,15 @@ public class OficinaController {
         }
     }
 
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity deleteOficina(@PathVariable Integer id) {
+        if (repository.findById(id).isPresent()) {
+            String nome = repository.findById(id).get().getNome();
+            repository.deleteById(id);
+            return ResponseEntity.status(200).body("Oficina " +
+                    nome + " excluída com sucesso!");
+        } else {
+            return ResponseEntity.status(401).build();
+        }
+    }
 }
