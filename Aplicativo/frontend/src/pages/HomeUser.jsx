@@ -20,7 +20,7 @@ export default function HomeMechanic() {
                     <div className="banner"></div>
                     <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
                 </div>
-                <div className="container_aboutus">
+                <div className="container_aboutus" id="navegacao-sobrenos-usuario">
                     <div className="aboutus">
                         <h2 className="title_aboutus">
                             Quem somos
@@ -61,7 +61,7 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <div className="container_tuneup">
+                <div className="container_tuneup" id="navegacao-buscaroficinas">
                     <div className="box_tuneup">
                         <h2 className="title_tuneup">Tune up</h2>
                         <p>
@@ -78,7 +78,7 @@ export default function HomeMechanic() {
                         <Button onClick={showSearch} classNameButton="btn_search_tuneup">Buscar por oficinas</Button>
                     </div>
                 </div>
-                <div className="container_contact">
+                <div className="container_contact" id="navegacao-contato-usuario">
                     <div className="box_contact">
                         <h1 className="title_contact">ENTRE EM CONTATO CONOSCO</h1>
                         <div className="box_inputs-contact">
