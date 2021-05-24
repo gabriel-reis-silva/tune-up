@@ -15,7 +15,7 @@ export default function Nav() {
                     <a href="#containerPage" className="link_navigation-home">PÁGINA INICIAL</a>
                     <a href="#navegacao-sobrenos-usuario" className="link_navigation-home">QUEM SOMOS</a>
                     <a href="#navegacao-buscaroficinas" className="link_navigation-home">BUSCAR OFICINAS</a>
-                    <a href="#navegacao-buscaroficinas" className="link_navigation-home">CONTATO CONOSCO</a>
+                    <a href="#navegacao-contato-usuario" className="link_navigation-home">CONTATO CONOSCO</a>
                 </div>
             </div>
         </nav>
