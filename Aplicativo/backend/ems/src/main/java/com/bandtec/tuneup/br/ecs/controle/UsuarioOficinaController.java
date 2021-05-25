@@ -5,6 +5,7 @@ import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
 import com.bandtec.tuneup.br.ecs.repositorio.UsuarioOficinaRepository;
+import com.bandtec.tuneup.br.ecs.repositorio.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -31,6 +32,8 @@ import java.text.SimpleDateFormat;
 @RequestMapping("/usuarios")
 public class UsuarioOficinaController {
     public UsuarioOficina usuarioLogin1;
+    @Autowired
+    public VeiculoRepository veiculoRepository;
 
     private ListaObj<UsuarioOficina> usuarioCadastrado = new ListaObj<UsuarioOficina>(10);
     FileReader teste = null;
@@ -109,7 +112,7 @@ public class UsuarioOficinaController {
     }
 
     public void geraRegistro(ListaObj<UsuarioOficina> lista) {
-        String nomeArq = "usuario.txt";
+        String nomeArq = "usuario-veiculo.txt";
         String header = "";
         String corpo = "";
         String trailer = "";
@@ -117,32 +120,43 @@ public class UsuarioOficinaController {
 
         Date dataDeHoje = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        if (lista.getTamanho() > 0) {
-            for (int i = 0; i < lista.getTamanho(); i++) {
-                header += "00USUARIO2021";
-                header += formatter.format(dataDeHoje);
-                header += "01";
-                gravaRegistro(nomeArq, header);
+        if (repository.findAll().size() > 0) {
+            header += "00USUARIO2021";
+            header += formatter.format(dataDeHoje);
+            header += "01";
+            gravaRegistro(nomeArq, header);
+            for (int i = 1; i <= repository.findAll().size(); i++) {
+
 
                 corpo += "02";
-                corpo += String.format("%-2s", lista.getElemento(i).getId());
-                corpo += String.format("%-30s", lista.getElemento(i).getNome());
-                corpo += String.format("%-8s", lista.getElemento(i).getDataNasc());
-                corpo += String.format("%-20s", lista.getElemento(i).getEmail());
-                corpo += String.format("%-9s", lista.getElemento(i).getTelefone());
-                corpo += String.format("%-15s", lista.getElemento(i).getCpf());
+                corpo += String.format("%-2s", repository.findById(i).get().getId());
+                corpo += String.format("%-30s", repository.findById(i).get().getNome());
+                corpo += String.format("%-8s", repository.findById(i).get().getDataNasc());
+                corpo += String.format("%-20s", repository.findById(i).get().getEmail());
+                corpo += String.format("%-9s", repository.findById(i).get().getTelefone());
+                corpo += String.format("%-15s", repository.findById(i).get().getCpf());
 
-                contRegDados++;
-                gravaRegistro(nomeArq, corpo);
-
-                // monta o trailer
-                trailer += "01";
-                trailer += String.format("%010d", contRegDados);
-                gravaRegistro(nomeArq, trailer);
             }
         } else {
             System.out.println("Lista vazia");
         }
+        for (int i2 = 1; i2 <= veiculoRepository.findAll().size(); i2++) {
+            corpo += "03";
+            corpo += String.format("%-2s", veiculoRepository.findById(i2).get().getId());
+            corpo += String.format("%-20s", veiculoRepository.findById(i2).get().getMarca());
+            corpo += String.format("%-15s", veiculoRepository.findById(i2).get().getModelo());
+            corpo += String.format("%-10s",veiculoRepository.findById(i2).get().getCor());
+            corpo += String.format("%-7s", veiculoRepository.findById(i2).get().getPlaca());
+            corpo += String.format("%-4d", veiculoRepository.findById(i2).get().getAno());
+            contRegDados++;
+        }
+        contRegDados++;
+        gravaRegistro(nomeArq, corpo);
+
+        // monta o trailer
+        trailer += "01";
+        trailer += String.format("%010d", contRegDados);
+        gravaRegistro(nomeArq, trailer);
     }
 
     @Autowired
@@ -183,12 +197,12 @@ public class UsuarioOficinaController {
         } else {
             return ResponseEntity.badRequest().body("erro no login");
         }
-        }
+    }
 
     @GetMapping("/usuario")
-    public ResponseEntity getUser(){
-        if(Cliente.sessao != null){
-            return  ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
+    public ResponseEntity getUser() {
+        if (Cliente.sessao != null) {
+            return ResponseEntity.status(200).body(repository.findById(Cliente.sessao));
         }
         return ResponseEntity.status(404).build();
     }
@@ -258,22 +272,22 @@ public class UsuarioOficinaController {
     public ResponseEntity putUsuario(@PathVariable int id, @RequestBody UsuarioOficina usuarioAtributo) {
         Optional<UsuarioOficina> usuarioOficina = repository.findById(id);
         if (usuarioOficina.isPresent()) {
-            if(usuarioAtributo.getNome() != null) {
+            if (usuarioAtributo.getNome() != null) {
                 usuarioOficina.get().setNome(usuarioAtributo.getNome());
             }
-            if(usuarioAtributo.getDataNasc() != null) {
+            if (usuarioAtributo.getDataNasc() != null) {
                 usuarioOficina.get().setDataNasc(usuarioAtributo.getDataNasc());
             }
-            if(usuarioAtributo.getEmail() != null) {
+            if (usuarioAtributo.getEmail() != null) {
                 usuarioOficina.get().setEmail(usuarioAtributo.getEmail());
             }
-            if(usuarioAtributo.getCpf() != null) {
+            if (usuarioAtributo.getCpf() != null) {
                 usuarioOficina.get().setCpf(usuarioAtributo.getCpf());
             }
-            if(usuarioAtributo.getTelefone() != null) {
+            if (usuarioAtributo.getTelefone() != null) {
                 usuarioOficina.get().setTelefone(usuarioAtributo.getTelefone());
             }
-            if(usuarioAtributo.getSenha() != null){
+            if (usuarioAtributo.getSenha() != null) {
                 usuarioOficina.get().setSenha(usuarioAtributo.getSenha());
             }
             repository.save(usuarioOficina.get());
