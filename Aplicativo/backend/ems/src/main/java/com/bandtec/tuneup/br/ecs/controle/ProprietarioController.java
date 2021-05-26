@@ -41,7 +41,7 @@ public class ProprietarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity loginProprietario(@RequestBody @Valid Proprietario proprietarioLogin) {
+    public ResponseEntity loginProprietario(@RequestBody Proprietario proprietarioLogin) {
         Proprietario proprietarioLogin1 = repository.findByEmailAndSenha(proprietarioLogin.getEmail(), proprietarioLogin.getSenha());
         if (proprietarioLogin1 != null) {
             proprietarioLogin1.setLogado(true);
