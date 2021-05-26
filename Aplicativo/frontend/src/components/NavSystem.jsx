@@ -8,7 +8,7 @@ export default function NavSystem() {
 
   useEffect(() => {
     async function getUser() {
-      const resposta = await api.get(`/proprietarios/proprietario/${localStorage.getItem('emailProprietario')}`);
+      const resposta = await api.get(`/proprietarios/proprietario/${sessionStorage.getItem('emailProprietario')}`);
       getUsuario(resposta.data);
     }
     getUser();
@@ -25,10 +25,10 @@ export default function NavSystem() {
         <div className="bottombar_navigation">
             <img className="logo_navigation" src={logoEms} alt="Logo da empresa tuneup"/>
             <div className="links_navigation">
-                <Link to="/dashboard"><button className="link_navigation">DASHBOARD</button></Link>
-                <a href=""><button className="link_navigation">ORDEM DE SERVIÇO</button></a>
-                <a href=""><button className="link_navigation">CLIENTES</button></a>
-                <a href=""><button className="link_navigation">FUNCIONÁRIOS</button></a>
+                {/* <Link to="/dashboard"><button className="link_navigation">DASHBOARD</button></Link> */}
+                <a href="/ordem-de-servico"><button className="link_navigation">ORDEM DE SERVIÇO</button></a>
+                <a href="/visualizacao-cliente"><button className="link_navigation">CLIENTES</button></a>
+                <a href="/visualizacao-funcionario"><button className="link_navigation">FUNCIONÁRIOS</button></a>
             </div>
         </div>
     </nav>

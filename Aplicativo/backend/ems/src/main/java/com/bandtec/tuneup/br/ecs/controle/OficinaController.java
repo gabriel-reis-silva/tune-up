@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,7 @@ public class OficinaController {
     List<Oficina> oficinas;
 
     @PostMapping
-    public ResponseEntity postOficina(@RequestBody Oficina novaOficina) {
+    public ResponseEntity postOficina(@RequestBody @Valid Oficina novaOficina) {
         repository.save(novaOficina);
         return ResponseEntity.status(201).build();
     }

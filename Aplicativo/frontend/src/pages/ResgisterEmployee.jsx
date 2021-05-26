@@ -20,12 +20,12 @@ export default function RegisterEmployee() {
 
     async function cadastrar() {
         try{
-        const resposta = await api.post("/funcionarios", {
+        const resposta = await api.post("/proprietarios", {
             ...funcionario,
         });
         if(resposta.status === 201){
             alert("Usuário cadastrado");
-            window.location.href="/home-mechanic"
+            window.location.href="/home-system"
           }
         }catch (err){
           alert("Erro no cadastro, tente novamente");

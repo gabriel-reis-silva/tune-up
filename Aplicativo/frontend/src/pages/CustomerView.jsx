@@ -22,6 +22,9 @@ export default function CustomerView() {
     //     getServices();
     // })
 
+    function changePage(){
+        window.location.href="/user-registration";
+    }
 
     return (
         <React.Fragment>
@@ -46,7 +49,7 @@ export default function CustomerView() {
                 </div>
 
                 <div className="geral_btn">
-                    <button className="btn_customer">Adicionar um novo cliente</button>
+                    <button className="btn_customer" onClick={changePage}>Adicionar um novo cliente</button>
                 </div>
 
 

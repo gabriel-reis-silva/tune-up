@@ -19,7 +19,9 @@ export default function StaffVisualization() {
     //     getServices();
     // })
 
-
+    function changePage(){
+        window.location.href="/employee-registration";
+    }
     return (
         <React.Fragment>
             <NavSystem />
@@ -43,7 +45,7 @@ export default function StaffVisualization() {
                 </div>
 
                 <div className="geral_btn_staff">
-                <button className="btn_staff">Adicionar um novo funcionário</button>
+                <button className="btn_staff" onClick={changePage}>Adicionar um novo funcionário</button>
                 </div>
 
                 
