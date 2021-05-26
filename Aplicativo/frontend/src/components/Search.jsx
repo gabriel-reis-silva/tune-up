@@ -45,20 +45,31 @@ export default function Search({ functionSearch, handleInput }) {
                 </div>
                 <div className="buttons_search">
                     <Button onClick={hideSearch}>Cancelar</Button>
-                    <Button onClick={functionSearch}>Buscar</Button>
+                    <Button onClick={hideAndSearch}>Buscar</Button>
                 </div>
             </div>
         </div>
     )
+    function hideAndSearch() {
+        functionSearch();
+        const search = document.getElementById("searchScreen");
+        const boxSearch = document.getElementById("boxScreen");
+        const containerPage = document.getElementById("containerPage");
+        search.style.display = "none";
+        boxSearch.style.display = "none";
+        containerPage.style.filter = "blur(0px)";
+    }
+    function hideSearch() {
+        functionSearch();
+        const search = document.getElementById("searchScreen");
+        const boxSearch = document.getElementById("boxScreen");
+        const containerPage = document.getElementById("containerPage");
+        search.style.display = "none";
+        boxSearch.style.display = "none";
+        containerPage.style.filter = "blur(0px)";
+    }
 }
 
 
-function hideSearch() {
-    const search = document.getElementById("searchScreen");
-    const boxSearch = document.getElementById("boxScreen");
-    const containerPage = document.getElementById("containerPage");
-    search.style.display = "none";
-    boxSearch.style.display = "none";
-    containerPage.style.filter = "blur(0px)";
-}
+
 

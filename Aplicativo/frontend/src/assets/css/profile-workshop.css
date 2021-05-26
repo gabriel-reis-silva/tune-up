@@ -38,9 +38,13 @@
     flex-direction: column;
     justify-content: space-around;
 
+    font-weight: 500;
+
     height: 100%;
 }
-
+.opening_hours_text-profile_workshop {
+    min-width: 300px;
+}
 .name-profile_workshop{
     font-size: 30px;
     font-weight: bold;

@@ -41,7 +41,7 @@ export default function SearchResult() {
                 <div className="box_workshops" id="workshops-search">
                     {listaOficina.map((oficina) => (
 
-                        < Workshop img={Img} name={oficina.nome} address={
+                        < Workshop id={oficina.id} img={Img} name={oficina.nome} address={
                             oficina.rua
                             + ", " +
                             oficina.numero

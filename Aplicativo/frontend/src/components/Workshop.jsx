@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import "../assets/css/workshop.css";
-import Button from "./Button"
 
-export default function Workshop({ img, name, address, }) {
+export default function Workshop({ id, img, name, address, }) {
     return (
         <div className="workshop">
             <img src={img} alt={"Imagem da oficina " + name} />
@@ -10,7 +10,7 @@ export default function Workshop({ img, name, address, }) {
                     <h2 className="name-workshop">{name}</h2>
                     <p className="workshop_address">{address}</p>
                 </div>
-                <Button classNameButton="btn-details" >Detalhes da oficina</Button>
+                <Link to={`profile-workshop/${id}`} className="btn-details btn" >Detalhes da oficina</Link>
             </div>
         </div>
     )

@@ -2,8 +2,21 @@ import "../assets/css/profile-workshop.css";
 import NavMechanic from "../components/NavMechanic";
 import Button from "../components/Button"
 import imgWorshop from "../assets/img/Logo-TuneUp-Icon.png";
+import { useParams } from "react-router";
+import React, { useEffect, useState } from "react";
+import api from "../services/api";
 
 export default function ProfileWorkshop() {
+    const params = useParams();
+    const [oficina, getOficina] = useState([]);
+    useEffect(() => {
+        api.get(`oficinas/${params.id}`).then(response => {
+            getOficina(response.data);
+        })
+
+    }, []);
+
+
     return (
 
         <div className="container_profile_workshop">
@@ -16,23 +29,27 @@ export default function ProfileWorkshop() {
                     <div className="info_workshop">
                         <div className="name_opening_hours_info_workshop">
                             <h1 className="name-profile_workshop">
-                                Oficina do Zé
+                                {oficina.nome}
                             </h1>
                             <div className="opening_hours-profile_workshop">
                                 <h2 className="opening_hours_title-profile_workshop">
                                     Horário de funcionamento
                             </h2>
                                 <p className="opening_hours_text-profile_workshop">
-                                    Segunda- feira até Sábados: 8h até às 20h
-                                    Feríados e Domingos: 12h até às 19h
-                            </p>
+                                    {oficina.hrFunc}
+                                </p>
                             </div>
                         </div>
                         <div className="location_contact-profile_workshop">
                             <div className="location-profile_workshop">
                                 <h2 className="title_location-profile_workshop">Endereço</h2>
                                 <p className="location_text-profile_workshop">
-                                    Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01414-001
+                                    {
+                                        oficina.rua + ", " +
+                                        oficina.numero + " - " +
+                                        oficina.complemento + " - Bairro " +
+                                        oficina.bairro
+                                    }
                                 </p>
                             </div>
                             <div className="contact-profile_workshop">
@@ -41,7 +58,7 @@ export default function ProfileWorkshop() {
                                 </h2>
                                 <div className="contact_title-profile_workshop">
                                     <h3 className="phone_title-profile_workshop">Telefone:</h3>
-                                    <p className="phone-profile_workshop">(11) 5560 -3437</p>
+                                    <p className="phone-profile_workshop">{oficina.telefone}</p>
                                 </div>
                             </div>
                         </div>

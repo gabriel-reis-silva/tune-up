@@ -45,7 +45,7 @@ export default function Routes() {
                 <Route path="/home-system" component={Home_System} />
                 {/* <Route path="/dashboard" component={Dashboard} /> */}
                 <Route path="/search-result" component={SearchResult} />
-                <Route path="/profile-workshop" component={ProfileWorkshop} />
+                <Route path="/profile-workshop/:id" component={ProfileWorkshop} />
                 <Route path="/ordem-de-servico" component={ServiceRequest} />
                 <Route path="/visualizacao-cliente" component={CustomerView} />
                 <Route path="/visualizacao-funcionario" component={StaffVisualization} />
