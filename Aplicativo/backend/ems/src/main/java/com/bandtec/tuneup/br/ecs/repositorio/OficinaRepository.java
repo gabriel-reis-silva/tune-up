@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface OficinaRepository extends JpaRepository<Oficina, Integer> {
 
-    @Query("select o from Oficina o where nome like ?1%")
+    @Query("select o from Oficina o where nome like %?1%")
     List<Oficina> findAllByNome(String nome);
 }

@@ -7,12 +7,12 @@ import visionIcon from '../assets/img/visaoIcon.png';
 import valuesIcon from '../assets/img/valoresIcon.png';
 import Button from "../components/Button";
 import Footer from "../components/Footer";
-import Search from "../components/Search";
+import SearchHome from "../components/SearchHome";
 
 export default function HomeMechanic() {
     return (
         <React.Fragment>
-            <Search />
+            <SearchHome />
             <div className="container" id="containerPage">
                 <NavUser />
 
