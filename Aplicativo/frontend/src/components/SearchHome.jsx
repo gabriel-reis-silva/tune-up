@@ -1,14 +1,23 @@
 import logo from "../assets/img/Tune-Up.png";
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
-import Workshop from "./Workshop";
-import Img from "../assets/img/Car-Workshop.jpg";
 import "../assets/css/search.css";
-import api from "../services/api";
 
-export default function Search({ functionSearch, handleInput }) {
-
-
+export default function Search() {
+    const [pesquisaOficina, setPesquisa] = useState({
+        nome: ''
+    });
+    function handleInput(evento) {
+        const { name, value } = evento.target;
+        setPesquisa({
+            ...pesquisaOficina,
+            [name]: value
+        });
+    }
+    function search() {
+        sessionStorage.setItem("nameSearch", pesquisaOficina.nome);
+        window.location.href = "/search-result";
+    }
     return (
         <div className="search" id="searchScreen">
             <div className="box_search" id="boxScreen">
@@ -30,7 +39,7 @@ export default function Search({ functionSearch, handleInput }) {
                 </div>
                 <div className="buttons_search">
                     <Button onClick={hideSearch}>Cancelar</Button>
-                    <Button onClick={functionSearch}>Buscar</Button>
+                    <Button onClick={search}>Buscar</Button>
                 </div>
             </div>
         </div>

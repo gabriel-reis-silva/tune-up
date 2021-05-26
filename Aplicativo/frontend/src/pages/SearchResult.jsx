@@ -10,18 +10,22 @@ import api from "../services/api";
 export default function SearchResult() {
     const [listaOficina, getOficina] = useState([]);
     const [nomeOficina, setNomeOficina] = useState({
-        nome: ""
+        nome: sessionStorage.nameSearch
     });
+    useEffect(() => {
+        search()
+    }, []);
     async function search() {
         try {
             const resposta = await api.get(`oficinas/search/${nomeOficina.nome}`);
             getOficina(resposta.data);
 
         } catch (err) {
-            alert("Erro no buscar oficina, tente novamente");
+            console.log(err);
         }
         console.log(listaOficina);
     }
+
     function handleInput(evento) {
         const { name, value } = evento.target;
         setNomeOficina({
