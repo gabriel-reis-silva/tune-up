@@ -30,7 +30,7 @@ public abstract class Cliente {
     private String email;
 
     @NotNull
-    @Pattern(regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})")//fita do insert cliente carlos dando erro se altera senha
+//    @Pattern(regexp = "(\\(?\\d{2}\\)?\\s)?(\\d{4,5}\\-\\d{4})")//fita do insert cliente carlos dando erro se altera senha
     private String telefone;
 
     @Size(min = 8, max = 20)

@@ -6,7 +6,7 @@ import "../assets/css/login_system.css";
 import api from "../services/api";
 
 
-export default function LoginSystem() {
+export default function LoginSystemOwner() {
     const [proprietario, setProprietario] = useState(
         {
             email: "",
@@ -14,15 +14,19 @@ export default function LoginSystem() {
         });
     
         async function logar(){
+          try {
             const resposta = await api.post("/proprietarios/login", {
-              ...proprietario,
-            });
-            if(resposta.status === 200){
-              alert("Proprietário Logado!");
-              window.location.href="/home-system"
-            }else{
-              alert("erro! " + resposta.status);
-            }
+            ...proprietario,
+          });
+          if(resposta.status === 200){
+            sessionStorage.setItem('emailProprietario', proprietario.email);
+            sessionStorage.setItem('senhaProprietario', proprietario.senha);
+            
+            window.location.href="/home-system";
+          }
+        }catch (err){
+            alert("Erro no Login, tente novamente");
+          }
           }
     
         function handleInput(evento) {

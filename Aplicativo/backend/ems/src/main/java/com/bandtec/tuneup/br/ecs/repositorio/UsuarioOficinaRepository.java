@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface UsuarioOficinaRepository extends JpaRepository<UsuarioOficina, Integer> {
     UsuarioOficina findByEmailAndSenha(String email, String pass);
+    UsuarioOficina findByEmail(String email);
     UsuarioOficina findByLogado (Boolean logado);
     List<UsuarioOficina> findAllByLogado(Boolean logado);
 }

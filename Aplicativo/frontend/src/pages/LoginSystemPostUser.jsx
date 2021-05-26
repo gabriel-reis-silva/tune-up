@@ -6,7 +6,7 @@ import "../assets/css/login_system.css";
 import api from "../services/api";
 
 
-export default function LoginSystem() {
+export default function LoginSystemUser() {
     const [usuario, setUsuario] = useState(
         {
             email: "",
@@ -19,7 +19,8 @@ export default function LoginSystem() {
               ...usuario,
             });
             if(resposta.status === 200){
-              alert("Usuário Logado!");
+              sessionStorage.setItem('emailUsuario', usuario.email);
+              sessionStorage.setItem('senhaUsuario', usuario.senha);
               window.location.href="/home-user";
             }
           }catch (err){
