@@ -87,3 +87,15 @@
     background-color: #0942B4;
     color: white;
 }
+
+a.link_navigation-home{
+    color: rgb(0, 0, 0);
+}
+
+a.btn_login{
+    color: rgb(0, 0, 0);
+}
+
+h2.title_aboutus {
+    font-size: 25px;
+}

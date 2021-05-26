@@ -12,10 +12,10 @@ export default function Nav() {
             <div className="bottombar_navigation">
                 <img className="logo_navigation" src={logoNav} alt="Logo da empresa tuneup" />
                 <div className="links_navigation-home">
-                    <a className="link_navigation-home">PÁGINA INICIAL</a>
-                    <a className="link_navigation-home">QUEM SOMOS</a>
-                    <a className="link_navigation-home">BUSCAR OFICINAS</a>
-                    <a className="link_navigation-home">CONTATO CONOSCO</a>
+                    <a href="#containerPage" className="link_navigation-home">PÁGINA INICIAL</a>
+                    <a href="#navegacao-sobrenos-usuario" className="link_navigation-home">QUEM SOMOS</a>
+                    <a href="#navegacao-buscaroficinas" className="link_navigation-home">BUSCAR OFICINAS</a>
+                    <a href="#navegacao-contato-usuario" className="link_navigation-home">CONTATO CONOSCO</a>
                 </div>
             </div>
         </nav>

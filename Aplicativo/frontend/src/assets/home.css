@@ -170,7 +170,7 @@ body {
 }
 
 .paragraph_aboutus {
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .division_aboutus_msv {
@@ -232,7 +232,11 @@ body {
     font-weight: 600;
 }
 
-/* ECS */
+.card h2 {
+    font-size: 22px;
+}
+
+/* EMS */
 
 .container_ems {
     height: 100vh;
@@ -259,6 +263,7 @@ body {
 }
 .title-card_ems {
     font-size: 50px;
+    font-weight: bold;
 }
 
 .card_ems p {

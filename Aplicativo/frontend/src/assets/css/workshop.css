@@ -28,6 +28,12 @@
     border-bottom-left-radius: 20px;
 }
 
+.name-workshop {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
 .name-address {
     width: 60%;
 

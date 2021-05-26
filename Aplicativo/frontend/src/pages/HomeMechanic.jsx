@@ -15,12 +15,12 @@ export default function HomeMechanic() {
     return (
         <React.Fragment>
             <NavMechanic />
-            <div className="container">
+            <div className="container" id="navegacao-paginainicial">
                 <div className="div_banner">
                     <div className="banner"></div>
                     <h1 className="title_banner">Qualquer problema, nós vamos solucionar</h1>
                 </div>
-                <div className="container_aboutus">
+                <div className="container_aboutus" id="navegacao-sobrenos">
                     <div className="aboutus">
                         <h2 className="title_aboutus">
                             Quem somos
@@ -34,7 +34,7 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <hr className="division_aboutus_msv" />
+                <hr className="division_aboutus_msv"/>
                 <div className="container_msv">
                     <div className="card">
                         <h2>Missão</h2>
@@ -61,7 +61,7 @@ export default function HomeMechanic() {
                         </p>
                     </div>
                 </div>
-                <div className="container_ems">
+                <div className="container_ems" id="navegacao-ems">
                     <img src={logoEms} alt="" />
                     <div className="card_ems">
                         <h2 className="title-card_ems">EMS</h2>
@@ -75,7 +75,7 @@ export default function HomeMechanic() {
                         <Button classNameButton="btn_ems" colorButton="#FFC000">Conheça a EMS</Button>
                     </div>
                 </div>
-                <div className="container_contact">
+                <div className="container_contact" id="navegacao-contato">
                     <div className="box_contact">
                         <h1 className="title_contact">ENTRE EM CONTATO CONOSCO</h1>
                         <div className="box_inputs-contact">
