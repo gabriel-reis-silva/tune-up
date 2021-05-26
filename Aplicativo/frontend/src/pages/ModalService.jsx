@@ -16,18 +16,18 @@ import plus from "../assets/img/plus.png";
 export default function ModalService() {
 
 
-    // const params = useParams();
-    // const [modalCustomer, setModalCustomer] = useState();
+  {/*  const params = useParams();
+    const [modalCustomer, setModalCustomer] = useState();
 
-    // useEffect(() => {
-    //     api.get(`modalCustomer/${params.id}`).then(response => {
-    //         setModalCustomer(response.data);
-    //     })    
+    useEffect(() => {
+        api.get(`modalCustomer/${params.id}`).then(response => {
+            setModalCustomer(response.data);
+        })    
 
-    // }, [params.id]);
+    }, [params.id]);
 const mapa = {
     color: "red"
-  };
+  }; */}
     return (
 
 
@@ -202,7 +202,7 @@ const mapa = {
 
                                 {/* <input type="file" style={{width:"50%"}}></input> */}
                                 <label for='selecao-arquivo' >Selecionar um arquivo 
-                                <input id='selecao-arquivo' style={{mapa}} type='file' ></input>
+                                {/* <input id='selecao-arquivo' style={{mapa}} type='file' ></input> */}
                                 </label>
                             </div>
                         </div>

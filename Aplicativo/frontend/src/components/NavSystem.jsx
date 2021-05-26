@@ -25,10 +25,10 @@ export default function NavSystem() {
         <div className="bottombar_navigation">
             <img className="logo_navigation" src={logoEms} alt="Logo da empresa tuneup"/>
             <div className="links_navigation">
-                <Link to="/dashboard"><button className="link_navigation">DASHBOARD</button></Link>
-                <a href=""><button className="link_navigation">ORDEM DE SERVIÇO</button></a>
-                <a href=""><button className="link_navigation">CLIENTES</button></a>
-                <a href=""><button className="link_navigation">FUNCIONÁRIOS</button></a>
+                {/* <Link to="/dashboard"><button className="link_navigation">DASHBOARD</button></Link> */}
+              <Link to="/ordem-de-servico">  <button className="link_navigation">ORDEM DE SERVIÇO</button> </Link>
+              <Link to="/visualizacao-cliente"><button className="link_navigation">CLIENTES</button></Link>
+              <Link to="/visualizacao-funcionario"> <button className="link_navigation">FUNCIONÁRIOS</button></Link>
             </div>
         </div>
     </nav>
