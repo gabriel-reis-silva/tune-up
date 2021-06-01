@@ -1,5 +1,8 @@
 package com.bandtec.tuneup.br.ecs.dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FilaObj <T> {
 
     int tamanho;
@@ -9,7 +12,7 @@ public class FilaObj <T> {
     private T[] filaServicos;
 
     public FilaObj(int capacidade) {
-        filaServicos = (T[]) new String[capacidade];
+        filaServicos = (T[]) new Object[capacidade];
         tamanho = 0;
         inicio = 0;
         fim = 0;
@@ -62,6 +65,18 @@ public class FilaObj <T> {
                 System.out.println(filaServicos[i]);
             }
         }
+    }
+
+    public List<Object> peekAll() {
+        List<Object> filaServicosAux = new ArrayList<>();
+        if (isEmpty()) {
+            System.out.println("Fila Vazia");
+        } else {
+            for (int i = inicio, cont = 0; cont < tamanho; i = (i+1) % filaServicos.length, cont++) {
+                filaServicosAux.add(filaServicos[i]);
+            }
+        }
+        return filaServicosAux;
     }
 }
 
