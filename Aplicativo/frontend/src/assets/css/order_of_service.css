@@ -43,6 +43,7 @@
 #register-order h2.title-order-service-min {
     font-family: sans-serif;
     font-weight: 700;
+    font-size: 20px;
 
     margin-top: 25px;
     margin-bottom: 15px;
@@ -173,6 +174,14 @@ select {
     text-align: center;
 
     margin-top: 10px;
+}
+
+.save-image-bd {
+    width: 100%;
+}
+
+span.ant-upload-picture-card-wrapper {
+    margin-left: 50px;
 }
 
 #register-order .buttons-order {

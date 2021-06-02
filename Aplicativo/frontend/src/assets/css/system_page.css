@@ -87,6 +87,14 @@
     transform: scale(1.1) translateX(-1px) translateY(-1px);
 }
 
+.nav-title-system {
+    color: #000;
+}
+
+.nav-title-system:hover {
+    color: #000;
+}
+
 /* BANNER */
 .div_banner {
     width: 100%;

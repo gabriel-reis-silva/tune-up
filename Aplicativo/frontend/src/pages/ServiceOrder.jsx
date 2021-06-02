@@ -2,6 +2,9 @@ import React from "react"
 import NavSystem from '../components/NavSystem';
 import "../assets/css/order_of_service.css";
 
+import SavingImage from '../components/SavingImageBD';
+import "antd/dist/antd.css"
+
 export default function ServiceOrder() {
     return (
         <React.Fragment>
@@ -103,6 +106,16 @@ export default function ServiceOrder() {
                             <input type="text" name="identifierCar" id="identifierCar" placeholder="GI87AT4" />
                         </div>
                     </form>
+                </div>
+
+                <hr width="noshade" className="tophr" />
+
+                <div className="adding-car-in-order">
+                    <h2 className="title-order-service-min">Imagens do Veículo</h2>
+                    
+                    <div className="save-image-bd">
+                        <SavingImage />
+                    </div>
                 </div>
 
                 <div className="buttons-order">
