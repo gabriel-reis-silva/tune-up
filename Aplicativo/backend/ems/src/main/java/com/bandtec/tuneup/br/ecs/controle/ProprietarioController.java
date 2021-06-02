@@ -39,7 +39,15 @@ public class ProprietarioController {
         }
         return ResponseEntity.status(200).body(proprietarios);
     }
-
+    @GetMapping("/{id}")
+    public ResponseEntity getPorID(@PathVariable Integer id) {
+        Optional<Proprietario> proprietario = repository.findById(id);
+        if (proprietario == null) {
+            return ResponseEntity.status(204).build();
+        }
+        System.out.println(proprietario);
+        return ResponseEntity.status(200).body(proprietario);
+    }
     @PostMapping("/login")
     public ResponseEntity loginProprietario(@RequestBody Proprietario proprietarioLogin) {
         Proprietario proprietarioLogin1 = repository.findByEmailAndSenha(proprietarioLogin.getEmail(), proprietarioLogin.getSenha());

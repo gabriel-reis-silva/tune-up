@@ -1,23 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavSystem from "../components/NavSystem";
 import pencil from "../assets/img/pencil.png";
 import "../assets/css/staff_visualization.css";
 // import "../assets/css/style.css";
 // import "../assets/reset.css";
 import StaffVisualizationContainer from "../components/StaffVisualizationContainer";
+import api from "../services/api";
 
 export default function StaffVisualization() {
+    const [funcionario, addFuncionario] = useState([]);
 
-    // const[services, addServicesList] = useState([]);
-
-    // useEffect(() => {
-    //     async function getServices() {
-    //         const answer = await api.getServices("/");
-    //         addServicesList(answer.data);
-    //     }
-        
-    //     getServices();
-    // })
+    useEffect(() => {
+        async function getFuncionarios() {
+            const resposta = await api.get("/proprietarios/");
+            addFuncionario(resposta.data);
+        }
+        getFuncionarios();
+    }, []);
 
     function changePage(){
         window.location.href="/employee-registration";
@@ -36,9 +35,13 @@ export default function StaffVisualization() {
 
                 <div className="background_staff">
                 <div className="geral_container_staff">
-                <StaffVisualizationContainer />
-                <StaffVisualizationContainer />
-                <StaffVisualizationContainer />
+                {funcionario.map((funcionarios) => (
+                            <StaffVisualizationContainer
+                                id={funcionarios.id}
+                                nome = {funcionarios.nome}
+                                nivel={funcionarios.nivelAcesso}
+                            />
+                        ))}
                 </div>    
                
 

@@ -10,20 +10,26 @@ import "../assets/home.css";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import StaffVisualization from "./StaffVisualization";
-
+import api from "../services/api";
 export default function ModalStaff() {
 
-    
-    // const params = useParams();
-    // const [modalCustomer, setModalCustomer] = useState();
-    
-    // useEffect(() => {
-    //     api.get(`modalCustomer/${params.id}`).then(response => {
-    //         setModalCustomer(response.data);
-    //     })    
-        
-    // }, [params.id]);
+    const { id } = useParams();
+    const [funcionario, addFuncionario] = useState([]);
+    useEffect(() => {
+        async function getFuncionarios() {
+            const resposta = await api.get(`/proprietarios/${id}`);
+            addFuncionario(resposta.data);
+        }
+        getFuncionarios();
+    }, []);
 
+    if(funcionario.nivelAcesso=== 1){
+        funcionario.nivelAcesso = "Gerente";
+    }else if(funcionario.nivelAcesso=== 2){
+        funcionario.nivelAcesso = "Chefe de Oficina";
+    }else if(funcionario.nivelAcesso === 3){
+        funcionario.nivelAcesso = "Mecânico";
+    }
 
     return (
         
@@ -41,12 +47,12 @@ export default function ModalStaff() {
                         <div className="staff">
 
                             <h3>Nome do funcionário:</h3>
-                            <input className="input-staff" type="text" value="Damião Silva"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.nome}/>
                         </div>
 
                         <div className="staff">
                             <h3>Nascimento:</h3>
-                            <input className="input-staff" type="text" value="21/02/1976"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.dataNasc}/>
                            
                             </div>
                         </div>
@@ -56,13 +62,13 @@ export default function ModalStaff() {
 
                       <div className="staff">
                             <h3>Cargo do funcionário: </h3>
-                            <input className="input-staff" type="text" value="Gerente"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.nivelAcesso}/>
                         
                         </div>
 
                       <div className="staff">
                             <h3>CPF do funcionário: </h3>
-                            <input className="input-staff" type="text" value="463.748.746-67"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.cpf}/>
                          
                         </div>
                       </div>
@@ -72,13 +78,13 @@ export default function ModalStaff() {
 
                         <div className="staff">
                             <h3>E-mail do funcionário: </h3>
-                            <input className="input-staff" type="text" value="damiaoSilva@gmail.com"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.email}/>
                         
                         </div>
 
                         <div className="staff">
                             <h3>Telefone do funcionário:</h3>
-                            <input className="input-staff" type="text" value="(11) 94156-3680"/>
+                            <input className="input-staff" type="text" defaultValue={funcionario.telefone}/>
                             </div>
                         </div>
                         
