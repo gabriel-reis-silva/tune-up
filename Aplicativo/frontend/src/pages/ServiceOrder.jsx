@@ -110,10 +110,10 @@ export default function ServiceOrder() {
 
                 <hr width="noshade" className="tophr" />
 
-                <div className="adding-car-in-order">
+                {/*<div className="adding-car-in-order">
                     <h2 className="title-order-service-min">Imagens do Veículo</h2>
                     <ImageSavingBD />
-                </div>
+                </div>*/}
 
                 <div className="buttons-order">
                     <button name="cancel" id="cancelOrder" className="cancel-order">Cancelar Serviço</button>

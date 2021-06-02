@@ -70,6 +70,8 @@
     width: 30%;
     display: flex;
     justify-content: space-around;
+
+    color: #000;
 }
 
 .link_navigation {
@@ -85,6 +87,14 @@
     text-decoration: underline;
     filter: contrast(0.5);
     transform: scale(1.1) translateX(-1px) translateY(-1px);
+}
+
+.title-nav-mechanic {
+    color: #000;
+}
+
+.title-nav-mechanic:hover {
+    color: #000;
 }
 
 /* BANNER */
