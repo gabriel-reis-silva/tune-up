@@ -49,6 +49,16 @@ public class VeiculoController {
         return ResponseEntity.status(200).body(veiculo);
     }
 
+    @GetMapping("/fk/{fkCliente}")
+    public ResponseEntity getPorFk(@PathVariable Integer fkCliente) {
+        Veiculo veiculo = repository.findByFkCliente(fkCliente);
+        System.out.println(veiculo);
+        if (veiculo == null) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(veiculo);
+    }
+
     @GetMapping("/placa/{placa}")
     public ResponseEntity getVeiculo(@PathVariable String placa){
         Veiculo veiculo  = repository.findByPlaca(placa);

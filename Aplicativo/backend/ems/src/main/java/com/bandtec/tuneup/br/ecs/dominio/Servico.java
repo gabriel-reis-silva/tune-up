@@ -12,5 +12,31 @@ public class Servico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nomeServico;
+    private Integer fkOficina;
+
+    private String descricaoServico;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getFkOficina() {
+        return fkOficina;
+    }
+
+    public void setFkOficina(Integer fkOficina) {
+        this.fkOficina = fkOficina;
+    }
+
+    public String getDescricaoServico() {
+        return descricaoServico;
+    }
+
+    public void setDescricaoServico(String descricaoServico) {
+        this.descricaoServico = descricaoServico;
+    }
 }

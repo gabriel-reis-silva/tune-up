@@ -43,9 +43,7 @@ export default function ServiceRequest() {
                             <ServiceRequestContainer
                                 id={ordem.id}
                                 status={ordem.statusServico}
-                                // placa={ordem.placa}
                                 fkVeiculo = {ordem.fkVeiculoOrdem}
-                                // onClick={() => deleteMusicById(ordem.id)}
                             />
                         ))}
                     </div>
@@ -54,7 +52,7 @@ export default function ServiceRequest() {
                 </div>
 
                 <div className="geral_btn">
-                    <button className="btn_service">Adicionar um novo serviço</button>
+                    <button className="btn_service"><a href="/service-order">Nova ordem de serviço</a></button>
                 </div>
 
 

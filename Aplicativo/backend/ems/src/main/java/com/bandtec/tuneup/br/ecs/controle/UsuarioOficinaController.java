@@ -1,9 +1,6 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
-import com.bandtec.tuneup.br.ecs.dominio.Cliente;
-import com.bandtec.tuneup.br.ecs.dominio.ListaObj;
-import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
-import com.bandtec.tuneup.br.ecs.dominio.UsuarioOficina;
+import com.bandtec.tuneup.br.ecs.dominio.*;
 import com.bandtec.tuneup.br.ecs.repositorio.UsuarioOficinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -170,6 +167,16 @@ public class UsuarioOficinaController {
             usuarioCadastrado.exibe();
         }
         return ResponseEntity.status(200).body(usuarios);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getPorID(@PathVariable Integer id) {
+        Optional<UsuarioOficina> user = repository.findById(id);
+        if (user == null) {
+            return ResponseEntity.status(204).build();
+        }
+        System.out.println(user);
+        return ResponseEntity.status(200).body(user);
     }
 
     @PostMapping("/login")

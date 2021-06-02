@@ -1,10 +1,7 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
-import com.bandtec.tuneup.br.ecs.dominio.Oficina;
-import com.bandtec.tuneup.br.ecs.dominio.OrdemServico;
 import com.bandtec.tuneup.br.ecs.dominio.OrdemServico;
 import com.bandtec.tuneup.br.ecs.repositorio.OrdemServicoRepository;
-import com.bandtec.tuneup.br.ecs.repositorio.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +18,7 @@ public class OrdemServicoController {
     @Autowired
     public OrdemServicoRepository repository;
 
-    @Autowired
-    public VeiculoRepository veiculoRepository;
+
 
 
 
@@ -41,15 +37,16 @@ public class OrdemServicoController {
         return ResponseEntity.status(200).body(listaOrdens);
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity getPorID(@PathVariable Integer id) {
-        Optional<OrdemServico> ordem = repository.findById(id);
-        if (ordem == null) {
+        Optional<OrdemServico> ordemServico = repository.findById(id);
+        if (ordemServico == null) {
             return ResponseEntity.status(204).build();
         }
-        return ResponseEntity.status(200).body(ordem);
+        System.out.println(ordemServico);
+        return ResponseEntity.status(200).body(ordemServico);
     }
+
 
     @PutMapping("/alterar-dados/{id}")
     public ResponseEntity putOrdem(@PathVariable int id, @RequestBody OrdemServico ordemAtributo) {

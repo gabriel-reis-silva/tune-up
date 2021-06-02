@@ -10,19 +10,18 @@ import "../assets/home.css";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CustomerView from "./CustomerView";
+import api from "../services/api";
 
 export default function ModalCustomer() {
-
-
-    // const params = useParams();
-    // const [modalCustomer, setModalCustomer] = useState();
-
-    // useEffect(() => {
-    //     api.get(`modalCustomer/${params.id}`).then(response => {
-    //         setModalCustomer(response.data);
-    //     })    
-
-    // }, [params.id]);
+    const [user, addUser] = useState([]);
+    const { id } = useParams();
+    useEffect(() => {
+        async function getUser() {
+            const resposta = await api.get(`/usuarios/${id}`);
+            addUser(resposta.data);
+        }
+        getUser();
+    }, []);
 
 
     return (
@@ -34,21 +33,21 @@ export default function ModalCustomer() {
                         <div className="details_view">
                             <div className="client">
                                 <h3>Nome do cliente:</h3>
-                                <input className="input-music" type="text" value="Thiago Silva" />
+                                <input className="input-music" type="text" defaultValue={user.nome}/>
                             </div>
                             <div className="client">
                                 <h3>CPF do cliente: </h3>
-                                <input className="input-music" type="text" value="465.768.546-87" />
+                                <input className="input-music" type="text" defaultValue={user.cpf}/>
                             </div>
                         </div>
                         <div className="details_view">
                             <div className="client">
                                 <h3>E-mail do cliente: </h3>
-                                <input className="input-music" type="text" value="thiagoSilva@gmail.com" />
+                                <input className="input-music" type="text" defaultValue={user.email}/>
                             </div>
                             <div className="client">
                                 <h3>Telefone do cliente:</h3>
-                                <input className="input-music" type="text" value="(11) 94156-3680" />
+                                <input className="input-music" type="text" defaultValue={user.telefone}/>
                             </div>
                         </div>
                     </div>

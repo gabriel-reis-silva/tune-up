@@ -37,10 +37,6 @@ public class Veiculo {
     @NotNull
     private String categoria;
 
-//    @OneToMany(mappedBy ="veiculo")
-//    @JsonIgnore
-//    private List<OrdemServico> ordens;
-
     public Integer getId() {
         return id;
     }

@@ -51,7 +51,7 @@ export default function Routes() {
                 <Route path="/visualizacao-funcionario" component={StaffVisualization} />
                 <Route path="/modal-cliente/:id" component={ModalCustomer} />
                 <Route path="/modal-funcionario/:id" component={ModalStaff} />
-                <Route path="/modal-ordem-de-servico/:id" component={ModalService} />
+                <Route path="/modal-ordem-de-servico/:id/:fk/:fkVeiculo" component={ModalService} />
                 <Route path="/employee-registration" component={RegisterEmployee} />
                 <Route path="/registration-service" component={RegistrationService} />
                 <Route path="/service-order" component={ServiceOrder} />

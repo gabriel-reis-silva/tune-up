@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavSystem from "../components/NavSystem";
 import Button from "../components/Button";
 import pencil from "../assets/img/pencil.png";
@@ -8,19 +8,20 @@ import "../assets/css/style.css";
 import "../assets/reset.css";
 import "../assets/home.css";
 import CustomerViewContainer from "../components/CustomerViewContainer";
+import api from "../services/api";
 
 export default function CustomerView() {
 
-    // const[services, addServicesList] = useState([]);
+    const [clientes, addCliente] = useState([]);
 
-    // useEffect(() => {
-    //     async function getServices() {
-    //         const answer = await api.getServices("/");
-    //         addServicesList(answer.data);
-    //     }
+    useEffect(() => {
+        async function getClientes() {
+            const resposta = await api.get("/usuarios/");
+            addCliente(resposta.data);
+        }
+        getClientes();
+    }, []);
 
-    //     getServices();
-    // })
 
     function changePage(){
         window.location.href="/user-registration";
@@ -40,9 +41,12 @@ export default function CustomerView() {
 
                 <div className="background">
                     <div className="geral_container">
-                        <CustomerViewContainer />
-                        <CustomerViewContainer />
-                        <CustomerViewContainer />
+                    {clientes.map((clientes) => (
+                            <CustomerViewContainer
+                                id={clientes.id}
+                                nome={clientes.nome}
+                            />
+                        ))}
                     </div>
 
 

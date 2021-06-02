@@ -20,6 +20,8 @@ export default function ServiceRequestContainer({ id, status, fkVeiculo, ...prop
         getVeiculos();
     }, []);
 
+const fk = veiculo.fkCliente;
+
     return (    
 
 
@@ -40,7 +42,7 @@ export default function ServiceRequestContainer({ id, status, fkVeiculo, ...prop
                                 <h2>Placa:</h2>
                                 <p className="license_plate_request">{veiculo.placa}</p>
                             </div>
-                        <Link to="/modal-ordem-de-servico/1"><img className="image_menu_request" src={pencil} /> </Link>
+                        <Link to={`/modal-ordem-de-servico/${id}/${fk}/${fkVeiculo}`}><img className="image_menu_request" src={pencil} /> </Link>
                             <div className="status">
                                 <h3>Status:</h3>
                                 <h4 className="progress_status">{status}</h4>
