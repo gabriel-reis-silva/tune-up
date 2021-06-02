@@ -1,9 +1,12 @@
 package com.bandtec.tuneup.br.ecs.dominio;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.PositiveOrZero;
+import java.util.List;
 
 @Entity(name = "Veiculo")
 public class Veiculo {
@@ -11,6 +14,8 @@ public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private Integer fkCliente;
 
     @NotNull
     private String marca;
@@ -31,6 +36,10 @@ public class Veiculo {
 
     @NotNull
     private String categoria;
+
+//    @OneToMany(mappedBy ="veiculo")
+//    @JsonIgnore
+//    private List<OrdemServico> ordens;
 
     public Integer getId() {
         return id;
@@ -86,5 +95,13 @@ public class Veiculo {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public Integer getFkCliente() {
+        return fkCliente;
+    }
+
+    public void setFkCliente(Integer fkCliente) {
+        this.fkCliente = fkCliente;
     }
 }

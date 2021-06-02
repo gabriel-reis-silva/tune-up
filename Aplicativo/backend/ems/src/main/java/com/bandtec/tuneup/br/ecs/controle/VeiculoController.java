@@ -1,5 +1,6 @@
 package com.bandtec.tuneup.br.ecs.controle;
 
+import com.bandtec.tuneup.br.ecs.dominio.OrdemServico;
 import com.bandtec.tuneup.br.ecs.dominio.Proprietario;
 import com.bandtec.tuneup.br.ecs.dominio.Veiculo;
 import com.bandtec.tuneup.br.ecs.repositorio.VeiculoRepository;
@@ -36,6 +37,16 @@ public class VeiculoController {
             return ResponseEntity.status(204).build();
         }
         return ResponseEntity.status(200).body(veiculos);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getPorID(@PathVariable Integer id) {
+        Optional<Veiculo> veiculo = repository.findById(id);
+        System.out.println(veiculo);
+        if (veiculo == null) {
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(veiculo);
     }
 
     @GetMapping("/placa/{placa}")

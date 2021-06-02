@@ -1,21 +1,22 @@
 package com.bandtec.tuneup.br.ecs.dominio;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 
-@Entity
+@Entity(name = "OrdemDeServico")
 public class OrdemServico {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private Integer fkClienteordem;
+
+    private Integer fkVeiculoOrdem;
 
     @NotNull
     @PastOrPresent
@@ -69,5 +70,21 @@ public class OrdemServico {
 
     public void setPrecoTotal(Double precoTotal) {
         this.precoTotal = precoTotal;
+    }
+
+    public Integer getFkClienteordem() {
+        return fkClienteordem;
+    }
+
+    public void setFkClienteordem(Integer fkClienteordem) {
+        this.fkClienteordem = fkClienteordem;
+    }
+
+    public Integer getFkVeiculoOrdem() {
+        return fkVeiculoOrdem;
+    }
+
+    public void setFkVeiculoOrdem(Integer fkVeiculoOrdem) {
+        this.fkVeiculoOrdem = fkVeiculoOrdem;
     }
 }
