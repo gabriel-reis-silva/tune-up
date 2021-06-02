@@ -2,8 +2,46 @@ import "../assets/css/profile-workshop.css";
 import NavMechanic from "../components/NavMechanic";
 import Button from "../components/Button"
 import imgWorshop from "../assets/img/Logo-TuneUp-Icon.png";
+import { useState } from "react";
+import api from "../services/api";
 
 export default function ProfileWorkshop() {
+
+    const [mensagem, setMensagem] = useState([]);
+    
+    async function enviarMensagem() {
+
+        // if (mensagem.value === "" || data.value === "" || horario.value === "") {
+        //     alert("Campos vazios!");
+        // } else if(mensagem.value === null || data.value === null || horario.value === null){
+        //     alert("Campos vazios!")
+        // }else {
+
+        try {
+            const resposta = await api.post("/envia-email", {
+                ...mensagem,
+            });
+            if (resposta.status === 200) {
+                alert("Mensagem enviada com sucesso!");
+            }
+        } catch (err) {
+            alert("Erro ao enviar mensagem, tente novamente");
+        }
+    // }
+}
+
+    function handleInput(evento) {
+
+        
+        const { name, value } = evento.target;
+        console.log(evento.name)
+        setMensagem({
+            ...mensagem,
+            [name]: value
+        });
+        console.log(mensagem);
+    }
+
     return (
 
         <div className="container_profile_workshop">
@@ -76,18 +114,20 @@ export default function ProfileWorkshop() {
                 </div>
                 <div className="scheduling-profile_workshop">
                     <h1 className="title_scheduling-profile_workshop">Agendar Visita</h1>
-                    <div className="fields_scheduling-profile_workshop">
+                    <form className="fields_scheduling-profile_workshop" action="">
+                    {/* <div className="fields_scheduling-profile_workshop"> */}
                         <div className="field_scheduling-profile_workshop">
                             <label htmlFor="data_schedule">Data:</label>
-                            <input type="date" name="data_schedule" />
+                            <input required="true" onChange={handleInput} type="date" name="data" />
                         </div>
                         <div className="field_scheduling-profile_workshop">
                             <label htmlFor="schedule">Horario:</label>
-                            <input type="text" name="schedule" />
+                            <input required="true" onChange={handleInput} type="text" name="horario" id="horario" />
                         </div>
-                    </div>
-                    <textarea name="" id="" placeholder="Estou entrando em contato pois..." className="msg_scheduling-profile_workshop"></textarea>
-                    <Button classNameButton="btn_scheduling-profile_workshop" >Agendar</Button>
+                    {/* </div> */}
+                    <textarea required="true" onChange={handleInput} name="texto" id="" placeholder="Estou entrando em contato pois..." className="msg_scheduling-profile_workshop"></textarea>
+                    </form>
+                    <Button type="submit" onClick={enviarMensagem} classNameButton="btn_scheduling-profile_workshop" >Agendar</Button>
                 </div>
             </div>
 
