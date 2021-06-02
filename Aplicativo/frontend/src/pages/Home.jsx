@@ -5,7 +5,6 @@ import "../assets/css/home.css";
 import "../assets/css/home-style.css";
 import { Link } from "react-router-dom";
 
-
 export default function Home() {
     return (
         <React.Fragment>

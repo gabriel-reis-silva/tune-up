@@ -149,7 +149,7 @@
 .modal_service_container {
     width: 100vw;
     background: rgba(0, 0, 0, .5);
-    position: absolute;
+    /* position: fixed; */
     top: 0px;
     left: 0px;
     z-index: 2000;

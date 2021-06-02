@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import ServiceRequest from "./ServiceRequest";
 import plus from "../assets/img/plus.png";
 
-
 export default function ModalService() {
 
 
@@ -196,16 +195,21 @@ const mapa = {
 
                     <h1 className="subtitle_service">Imagens do veículo</h1>
                     <div className="photos_cars">
+                        
+                        <div className="photo_container_img">
+                            <div className="photo_plus">
+
+                                <label for='selecao-arquivo' >Selecionar um arquivo</label>
+                            </div>
+                        </div> 
 
                         <div className="photo_container_img">
                             <div className="photo_plus">
 
-                                {/* <input type="file" style={{width:"50%"}}></input> */}
-                                <label for='selecao-arquivo' >Selecionar um arquivo 
-                                {/* <input id='selecao-arquivo' style={{mapa}} type='file' ></input> */}
-                                </label>
+                                <img src={plus} />
+
                             </div>
-                        </div>
+                       </div> 
 
                         <div className="photo_container_img">
                             <div className="photo_plus">
@@ -231,24 +235,16 @@ const mapa = {
                             </div>
                         </div>
 
-                        <div className="photo_container_img">
-                            <div className="photo_plus">
-
-                                <img src={plus} />
-
-                            </div>
-                        </div>
-
-
+                        
                     </div>
 
-                    <div class="service_btn">
+                    <div className="service_btn">
 
-                        <Link to="/ordem-de-servico" class="btn_blue_service"> Fechar </Link>
+                        <Link to="/ordem-de-servico" className="btn_blue_service"> Fechar </Link>
 
-                        <Link to="/ordem-de-servico" class="btn_yellow_service"> Salvar </Link>
+                        <Link to="/ordem-de-servico" className="btn_yellow_service"> Salvar </Link>
 
-                        <Link to="/ordem-de-servico" class="btn_black_service"> Excluir </Link>
+                        <Link to="/ordem-de-servico" className="btn_black_service"> Excluir </Link>
 
                     </div>
 
