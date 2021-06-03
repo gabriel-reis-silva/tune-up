@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import ServiceRequest from "./ServiceRequest";
 import plus from "../assets/img/plus.png";
 import api from "../services/api";
+import ServiceRequestContainer from "../components/ServiceRequestContainer";
 
 
 export default function ModalService() {
@@ -33,7 +34,8 @@ export default function ModalService() {
     const { id } = useParams();
     const { fk } = useParams();
     const { fkVeiculo } = useParams();
-    
+
+   
     useEffect(() => {
             async function getServices() {
                 const resposta = await api.get(`/ordens-de-servico/${id}`);
@@ -51,6 +53,7 @@ export default function ModalService() {
                 addUser(resposta.data);
             }
             getUser();
+         
         }, []);
 
     const [veiculo, addVeiculosList] = useState([]);
@@ -64,7 +67,11 @@ export default function ModalService() {
         });
     }
 
+    async function deleteVeiculo() {
+        const resposta = await api.delete(`/ordens-de-servico/deletar/${id}`);
+    }
 
+    
     return (
         <React.Fragment>
 
@@ -76,7 +83,10 @@ export default function ModalService() {
             statusServico = { services.statusServico};
             precoTotal = { services.precoTotal}; */}
 
-            <div id="modal_process" className="modal_service_container mostrar_service">
+
+
+
+<div id="modal_process" className="modal_service_container mostrar_service">
                 <div className="modal_service">
                     <h1 className="subtitle_request">Detalhes da sua ordem de serviço</h1>
                     <div className="details_service_view">
@@ -86,7 +96,6 @@ export default function ModalService() {
 
                                 <h3>Nome do cliente:</h3>
                                 <input onChange={handleInput} className="input-service" type="text" defaultValue={user.nome} />
-
 
                             </div>
 
@@ -288,9 +297,9 @@ export default function ModalService() {
 
                         <Link to="/ordem-de-servico" class="btn_blue_service"> Fechar </Link>
 
-                        <Link to="/ordem-de-servico" class="btn_yellow_service"> Salvar </Link>
+                        <Link  to="/ordem-de-servico" class="btn_yellow_service"> Salvar </Link>
 
-                        <Link to="/ordem-de-servico" class="btn_black_service"> Excluir </Link>
+                        <Link onClick={deleteVeiculo} class="btn_black_service"> Excluir </Link>
 
                     </div>
 
@@ -298,7 +307,8 @@ export default function ModalService() {
 
                 </div>
             </div>
-            <ServiceRequest />
+         
+            
         </React.Fragment>
     )
 }

@@ -8,18 +8,21 @@ import "../assets/css/style.css";
 import "../assets/reset.css";
 import "../assets/home.css";
 import api from "../services/api";
-
 import ServiceRequestContainer from "../components/ServiceRequestContainer";
+import { useParams } from "react-router";
 
 export default function ServiceRequest() {
 
     const [services, addServicesList] = useState([]);
-
+    const {idRemover} = useParams();
     useEffect(() => {
         async function getServices() {
-            const resposta = await api.get("/ordens-de-servico");
+            const resposta = await api.get("/ordens-de-servico/nao-concluido");
             addServicesList(resposta.data);
-            console.log(resposta);
+            // console.log(services[0].id);
+            const novaLista = services.filter((service) => service.id != idRemover);
+            // console.log(novaLista);
+            // addServicesList(novaLista);
         }
         getServices();
     }, []);
@@ -29,7 +32,7 @@ export default function ServiceRequest() {
         <React.Fragment>
             <NavSystem />
 
-            <div className="geral_service">
+            <div className="geral_service" id="id_service">
                 <div>
                     <b>
                         <h1 className="title_service">ORDEM DE SERVIÇO</h1>
@@ -46,6 +49,7 @@ export default function ServiceRequest() {
                                 fkVeiculo = {ordem.fkVeiculoOrdem}
                             />
                         ))}
+                     
                     </div>
 
 

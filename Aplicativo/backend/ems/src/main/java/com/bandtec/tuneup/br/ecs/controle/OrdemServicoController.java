@@ -19,6 +19,12 @@ public class OrdemServicoController {
     public OrdemServicoRepository repository;
 
 
+    @GetMapping("/nao-concluido")
+    public ResponseEntity geStatusOrdem() {
+
+        return ResponseEntity.status(200).body(repository.findByStatusServicoIsNot("Concluido"));
+
+    }
 
 
 
@@ -73,7 +79,7 @@ public class OrdemServicoController {
 
     @DeleteMapping("/deletar/{id}")
     public ResponseEntity deleteOrdemServico(@PathVariable Integer id) {
-        if (repository.findById(id).isPresent()) {
+        if (repository.existsById(id))  {
             repository.deleteById(id);
             return ResponseEntity.status(200).body("Ordem de Servico " +
                     id + " excluída com sucesso!");

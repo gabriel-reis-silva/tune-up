@@ -16,7 +16,7 @@ export default function NavSystem() {
 
     return(
         <>
-        <nav className="navigation">
+        <nav id="nav_id" className="navigation">
         <div className="topbar_navigation">
             <a className="btn_login">
             {usuario.nome}</a>
