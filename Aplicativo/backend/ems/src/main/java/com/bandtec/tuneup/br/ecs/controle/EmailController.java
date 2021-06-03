@@ -31,10 +31,9 @@ public class EmailController {
             try {
                 mailSender.send(message);
                 return ResponseEntity.status(201).build();
-//            return "Email enviado com sucesso!";
             } catch (Exception e) {
                 e.printStackTrace();
-//            return "Erro ao enviar email.";
+                return ResponseEntity.status(400).build();
             }
         }
         return ResponseEntity.status(400).build();
